@@ -225,7 +225,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd gambatte\nmake -f \"../GNUmakefile\" libgambatte";
+			shellScript = "cd gambatte\nmake libgambatte";
 		};
 /* End PBXShellScriptBuildPhase section */
 
