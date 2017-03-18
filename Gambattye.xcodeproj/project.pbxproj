@@ -79,7 +79,7 @@
 				B57101F21E433807008A11CD /* include */,
 			);
 			name = libgambatte;
-			path = ../../libgambatte;
+			path = ../../gambatte/libgambatte;
 			sourceTree = "<group>";
 		};
 		B57101F21E433807008A11CD /* include */ = {
@@ -141,7 +141,7 @@
 				B5FFE1741E3E6AF90014F99C /* InterfaceInputGetter.mm */,
 				B57101F11E433807008A11CD /* libgambatte */,
 			);
-			name = "Gambatte Interface";
+			path = "Gambatte Interface";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
