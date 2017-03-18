@@ -1,0 +1,434 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B51C47CC1E40EB3F001C6BF4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B51C47CB1E40EB3F001C6BF4 /* AudioToolbox.framework */; };
+		B52C8FBA1E3F7DD80027CC0E /* InputGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C8FB91E3F7DD80027CC0E /* InputGetter.swift */; };
+		B52C8FBC1E3FF8A10027CC0E /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C8FBB1E3FF8A10027CC0E /* AudioEngine.swift */; };
+		B57102AD1E433D30008A11CD /* libgambatte.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B57102AC1E433D30008A11CD /* libgambatte.a */; };
+		B577D3261E3D53F100B5A99F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577D3251E3D53F100B5A99F /* AppDelegate.swift */; };
+		B577D3281E3D53F100B5A99F /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577D3271E3D53F100B5A99F /* Document.swift */; };
+		B577D32B1E3D53F100B5A99F /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = B577D3291E3D53F100B5A99F /* Document.xib */; };
+		B577D32D1E3D53F100B5A99F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B577D32C1E3D53F100B5A99F /* Assets.xcassets */; };
+		B577D3301E3D53F100B5A99F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B577D32E1E3D53F100B5A99F /* MainMenu.xib */; };
+		B577D3381E3D56CD00B5A99F /* GBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577D3371E3D56CD00B5A99F /* GBView.swift */; };
+		B577D33A1E3D5A7300B5A99F /* VibrantDarkWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577D3391E3D5A7300B5A99F /* VibrantDarkWindow.swift */; };
+		B5FFE1641E3E47130014F99C /* GB.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5FFE1631E3E47130014F99C /* GB.mm */; };
+		B5FFE1721E3E653A0014F99C /* InterfacePakInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5FFE1711E3E653A0014F99C /* InterfacePakInfo.mm */; };
+		B5FFE1751E3E6AF90014F99C /* InterfaceInputGetter.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5FFE1741E3E6AF90014F99C /* InterfaceInputGetter.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B51C47CB1E40EB3F001C6BF4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		B52C8FB91E3F7DD80027CC0E /* InputGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputGetter.swift; sourceTree = "<group>"; };
+		B52C8FBB1E3FF8A10027CC0E /* AudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
+		B57101F31E433807008A11CD /* gambatte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gambatte.h; sourceTree = "<group>"; };
+		B57101F41E433807008A11CD /* gbint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gbint.h; sourceTree = "<group>"; };
+		B57101F51E433807008A11CD /* inputgetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inputgetter.h; sourceTree = "<group>"; };
+		B57101F61E433807008A11CD /* loadres.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loadres.h; sourceTree = "<group>"; };
+		B57101F71E433807008A11CD /* pakinfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pakinfo.h; sourceTree = "<group>"; };
+		B57102AC1E433D30008A11CD /* libgambatte.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgambatte.a; sourceTree = "<group>"; };
+		B577D3221E3D53F100B5A99F /* Gambattye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gambattye.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B577D3251E3D53F100B5A99F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B577D3271E3D53F100B5A99F /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		B577D32A1E3D53F100B5A99F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Document.xib; sourceTree = "<group>"; };
+		B577D32C1E3D53F100B5A99F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B577D32F1E3D53F100B5A99F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		B577D3311E3D53F100B5A99F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B577D3371E3D56CD00B5A99F /* GBView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBView.swift; sourceTree = "<group>"; };
+		B577D3391E3D5A7300B5A99F /* VibrantDarkWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VibrantDarkWindow.swift; sourceTree = "<group>"; };
+		B5FFE1611E3E47130014F99C /* Gambattye-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gambattye-Bridging-Header.h"; sourceTree = "<group>"; };
+		B5FFE1621E3E47130014F99C /* GB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GB.h; sourceTree = "<group>"; };
+		B5FFE1631E3E47130014F99C /* GB.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GB.mm; sourceTree = "<group>"; };
+		B5FFE1701E3E653A0014F99C /* InterfacePakInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfacePakInfo.h; sourceTree = "<group>"; };
+		B5FFE1711E3E653A0014F99C /* InterfacePakInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = InterfacePakInfo.mm; sourceTree = "<group>"; };
+		B5FFE1731E3E6AF90014F99C /* InterfaceInputGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceInputGetter.h; sourceTree = "<group>"; };
+		B5FFE1741E3E6AF90014F99C /* InterfaceInputGetter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = InterfaceInputGetter.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B577D31F1E3D53F100B5A99F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B57102AD1E433D30008A11CD /* libgambatte.a in Frameworks */,
+				B51C47CC1E40EB3F001C6BF4 /* AudioToolbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B51C47CA1E40EB3F001C6BF4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B51C47CB1E40EB3F001C6BF4 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B57101F11E433807008A11CD /* libgambatte */ = {
+			isa = PBXGroup;
+			children = (
+				B57102AC1E433D30008A11CD /* libgambatte.a */,
+				B57101F21E433807008A11CD /* include */,
+			);
+			name = libgambatte;
+			path = ../../libgambatte;
+			sourceTree = "<group>";
+		};
+		B57101F21E433807008A11CD /* include */ = {
+			isa = PBXGroup;
+			children = (
+				B57101F31E433807008A11CD /* gambatte.h */,
+				B57101F41E433807008A11CD /* gbint.h */,
+				B57101F51E433807008A11CD /* inputgetter.h */,
+				B57101F61E433807008A11CD /* loadres.h */,
+				B57101F71E433807008A11CD /* pakinfo.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		B577D3191E3D53F100B5A99F = {
+			isa = PBXGroup;
+			children = (
+				B577D3241E3D53F100B5A99F /* Gambattye */,
+				B577D3231E3D53F100B5A99F /* Products */,
+				B51C47CA1E40EB3F001C6BF4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B577D3231E3D53F100B5A99F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B577D3221E3D53F100B5A99F /* Gambattye.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B577D3241E3D53F100B5A99F /* Gambattye */ = {
+			isa = PBXGroup;
+			children = (
+				B577D3251E3D53F100B5A99F /* AppDelegate.swift */,
+				B52C8FBB1E3FF8A10027CC0E /* AudioEngine.swift */,
+				B577D3271E3D53F100B5A99F /* Document.swift */,
+				B52C8FB91E3F7DD80027CC0E /* InputGetter.swift */,
+				B5FFE16B1E3E58FE0014F99C /* Gambatte Interface */,
+				B577D3391E3D5A7300B5A99F /* VibrantDarkWindow.swift */,
+				B577D3291E3D53F100B5A99F /* Document.xib */,
+				B577D3371E3D56CD00B5A99F /* GBView.swift */,
+				B577D32C1E3D53F100B5A99F /* Assets.xcassets */,
+				B577D32E1E3D53F100B5A99F /* MainMenu.xib */,
+				B577D3311E3D53F100B5A99F /* Info.plist */,
+				B5FFE1611E3E47130014F99C /* Gambattye-Bridging-Header.h */,
+			);
+			path = Gambattye;
+			sourceTree = "<group>";
+		};
+		B5FFE16B1E3E58FE0014F99C /* Gambatte Interface */ = {
+			isa = PBXGroup;
+			children = (
+				B5FFE1621E3E47130014F99C /* GB.h */,
+				B5FFE1631E3E47130014F99C /* GB.mm */,
+				B5FFE1701E3E653A0014F99C /* InterfacePakInfo.h */,
+				B5FFE1711E3E653A0014F99C /* InterfacePakInfo.mm */,
+				B5FFE1731E3E6AF90014F99C /* InterfaceInputGetter.h */,
+				B5FFE1741E3E6AF90014F99C /* InterfaceInputGetter.mm */,
+				B57101F11E433807008A11CD /* libgambatte */,
+			);
+			name = "Gambatte Interface";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B577D3211E3D53F100B5A99F /* Gambattye */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B577D3341E3D53F100B5A99F /* Build configuration list for PBXNativeTarget "Gambattye" */;
+			buildPhases = (
+				B5C376891E4341250009A9B0 /* ShellScript */,
+				B577D31E1E3D53F100B5A99F /* Sources */,
+				B577D31F1E3D53F100B5A99F /* Frameworks */,
+				B577D3201E3D53F100B5A99F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Gambattye;
+			productName = Gambatte;
+			productReference = B577D3221E3D53F100B5A99F /* Gambattye.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B577D31A1E3D53F100B5A99F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Ben10do;
+				TargetAttributes = {
+					B577D3211E3D53F100B5A99F = {
+						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B577D31D1E3D53F100B5A99F /* Build configuration list for PBXProject "Gambattye" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B577D3191E3D53F100B5A99F;
+			productRefGroup = B577D3231E3D53F100B5A99F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B577D3211E3D53F100B5A99F /* Gambattye */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B577D3201E3D53F100B5A99F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B577D32D1E3D53F100B5A99F /* Assets.xcassets in Resources */,
+				B577D32B1E3D53F100B5A99F /* Document.xib in Resources */,
+				B577D3301E3D53F100B5A99F /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B5C376891E4341250009A9B0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd gambatte\nmake -f \"../GNUmakefile\" libgambatte";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B577D31E1E3D53F100B5A99F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5FFE1721E3E653A0014F99C /* InterfacePakInfo.mm in Sources */,
+				B577D3281E3D53F100B5A99F /* Document.swift in Sources */,
+				B5FFE1751E3E6AF90014F99C /* InterfaceInputGetter.mm in Sources */,
+				B52C8FBC1E3FF8A10027CC0E /* AudioEngine.swift in Sources */,
+				B52C8FBA1E3F7DD80027CC0E /* InputGetter.swift in Sources */,
+				B5FFE1641E3E47130014F99C /* GB.mm in Sources */,
+				B577D3381E3D56CD00B5A99F /* GBView.swift in Sources */,
+				B577D33A1E3D5A7300B5A99F /* VibrantDarkWindow.swift in Sources */,
+				B577D3261E3D53F100B5A99F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B577D3291E3D53F100B5A99F /* Document.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B577D32A1E3D53F100B5A99F /* Base */,
+			);
+			name = Document.xib;
+			sourceTree = "<group>";
+		};
+		B577D32E1E3D53F100B5A99F /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B577D32F1E3D53F100B5A99F /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B577D3321E3D53F100B5A99F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B577D3331E3D53F100B5A99F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		B577D3351E3D53F100B5A99F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					HAVE_STDINT_H,
+				);
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/gambatte/";
+				INFOPLIST_FILE = Gambattye/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Gambattye",
+					"$(PROJECT_DIR)/gambatte/libgambatte",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ben10do.Gambattye;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gambattye/Gambattye-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		B577D3361E3D53F100B5A99F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = HAVE_STDINT_H;
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/gambatte/";
+				INFOPLIST_FILE = Gambattye/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Gambattye",
+					"$(PROJECT_DIR)/gambatte/libgambatte",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.ben10do.Gambattye;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Gambattye/Gambattye-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B577D31D1E3D53F100B5A99F /* Build configuration list for PBXProject "Gambattye" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B577D3321E3D53F100B5A99F /* Debug */,
+				B577D3331E3D53F100B5A99F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B577D3341E3D53F100B5A99F /* Build configuration list for PBXNativeTarget "Gambattye" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B577D3351E3D53F100B5A99F /* Debug */,
+				B577D3361E3D53F100B5A99F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B577D31A1E3D53F100B5A99F /* Project object */;
+}
