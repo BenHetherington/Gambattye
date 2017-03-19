@@ -16,6 +16,7 @@ class AudioEngine {
     fileprivate var renderVars = RenderVars()
     
     class RenderVars {
+        fileprivate var lastSample: UInt32 = 0
         fileprivate var dataBuffer = [[UInt32]]()
         fileprivate var positionInDataBuffer = 0
         fileprivate var dataBufferToRead = 0
@@ -50,6 +51,7 @@ class AudioEngine {
                 renderVars.dataAccessQueue.sync {
                     while i < count && renderVars.dataBufferDifference > 0 {
                         buffer[i] = renderVars.dataBuffer[renderVars.dataBufferToRead][renderVars.positionInDataBuffer]
+                        renderVars.lastSample = buffer[i]
                         
                         i += 1
                         renderVars.positionInDataBuffer += 45
@@ -64,7 +66,7 @@ class AudioEngine {
                 }
                 
                 while i < count {
-                    buffer[i] = 0xE200E200
+                    buffer[i] = renderVars.lastSample
                     i += 1
                 }
             }
