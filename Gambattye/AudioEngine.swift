@@ -16,10 +16,12 @@ class AudioEngine {
     fileprivate var renderVars = RenderVars()
     
     class RenderVars {
-        fileprivate var dataQueue = [[UInt32]]()
-        fileprivate var positionInData = 0
+        fileprivate var dataBuffer = [[UInt32]]()
+        fileprivate var positionInDataBuffer = 0
+        fileprivate var dataBufferToRead = 0
+        fileprivate var dataBufferToWrite = 0
+        fileprivate var dataBufferDifference = 0
         fileprivate let dataAccessQueue = DispatchQueue(label: "com.ben10do.Gambattye.AudioEngine.DataAccess")
-        
     }
     
     init() throws {
@@ -46,15 +48,17 @@ class AudioEngine {
                 var i = 0
                 let count = Int(inNumberFrames)
                 renderVars.dataAccessQueue.sync {
-                    while i < count && renderVars.dataQueue.count > 0 {
-                        buffer[i] = renderVars.dataQueue[0][renderVars.positionInData]
+                    while i < count && renderVars.dataBufferDifference > 0 {
+                        buffer[i] = renderVars.dataBuffer[renderVars.dataBufferToRead][renderVars.positionInDataBuffer]
                         
                         i += 1
-                        renderVars.positionInData += 45
+                        renderVars.positionInDataBuffer += 45
                         
-                        if renderVars.positionInData >= renderVars.dataQueue[0].count {
-                            renderVars.positionInData %= renderVars.dataQueue[0].count
-                            renderVars.dataQueue.removeFirst()
+                        if renderVars.positionInDataBuffer >= renderVars.dataBuffer[renderVars.dataBufferToRead].count {
+                            renderVars.positionInDataBuffer %= renderVars.dataBuffer[renderVars.dataBufferToRead].count
+                            renderVars.dataBufferToRead += 1
+                            renderVars.dataBufferToRead %= renderVars.dataBuffer.count
+                            renderVars.dataBufferDifference -= 1
                         }
                     }
                 }
@@ -93,7 +97,7 @@ class AudioEngine {
             throw NSError() // TODO: Throw a more specific error
         }
         
-        renderVars.dataQueue.removeAll()
+        restartAudio()
         
         error = AudioOutputUnitStart(audioComponentInstance)
         guard error == noErr else {
@@ -107,19 +111,21 @@ class AudioEngine {
     
     func restartAudio() {
         renderVars.dataAccessQueue.sync {
-            self.renderVars.dataQueue.removeAll()
-            self.renderVars.positionInData = 0
+            self.renderVars.dataBuffer = [[UInt32]](repeatElement([], count: 8))
+            self.renderVars.positionInDataBuffer = 0
+            self.renderVars.dataBufferToRead = 0
+            self.renderVars.dataBufferToWrite = 0
+            self.renderVars.dataBufferDifference = 0
         }
     }
     
     func pushData(newData: [UInt32]) {
         renderVars.dataAccessQueue.async {
-            if self.renderVars.dataQueue.count > 8 { // TODO: Find a better solution
-                // This hack ensures that the audio and video remain in sync
-                self.renderVars.dataQueue.removeAll()
-                self.renderVars.positionInData = 0
-            }
-            self.renderVars.dataQueue.append(newData)
+            self.renderVars.dataBuffer[self.renderVars.dataBufferToWrite] = newData
+            self.renderVars.dataBufferToWrite += 1
+            self.renderVars.dataBufferToWrite %= self.renderVars.dataBuffer.count
+            self.renderVars.dataBufferDifference += 1
+            self.renderVars.dataBufferDifference %= self.renderVars.dataBuffer.count
         }
     }
     
