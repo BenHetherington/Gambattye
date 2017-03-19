@@ -152,9 +152,11 @@
 			buildConfigurationList = B577D3341E3D53F100B5A99F /* Build configuration list for PBXNativeTarget "Gambattye" */;
 			buildPhases = (
 				B5C376891E4341250009A9B0 /* ShellScript */,
+				B5A1899F1E7F45750011FE10 /* ShellScript */,
 				B577D31E1E3D53F100B5A99F /* Sources */,
 				B577D31F1E3D53F100B5A99F /* Frameworks */,
 				B577D3201E3D53F100B5A99F /* Resources */,
+				B5A189A01E7F45840011FE10 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -214,6 +216,32 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		B5A1899F1E7F45750011FE10 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Set the build number to the count of Git commits\nbuildNumber=$(git rev-list HEAD | wc -l | tr -d ' ')\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
+		B5A189A01E7F45840011FE10 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Set the build number to \"DEVELOPMENT\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion dev\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+		};
 		B5C376891E4341250009A9B0 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
