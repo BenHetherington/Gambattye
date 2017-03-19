@@ -348,17 +348,26 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="sym-4E-kfv"/>
-                            <menuItem title="Emulate as:" enabled="NO" id="BcA-Mm-s68">
+                            <menuItem title="Reset &amp; Emulate as:" enabled="NO" id="BcA-Mm-s68">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                             </menuItem>
                             <menuItem title="Original Game Boy" id="GRz-8E-mhA">
                                 <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <binding destination="-2" name="value" keyPath="mainWindow.document.consoleIsGB" id="IAd-EX-nYW"/>
+                                </connections>
                             </menuItem>
                             <menuItem title="Game Boy Color (Auto)" tag="1" id="XKd-hF-ime">
                                 <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <binding destination="-2" name="value" keyPath="mainWindow.document.consoleIsGBC" id="6ni-XV-Ycw"/>
+                                </connections>
                             </menuItem>
                             <menuItem title="Game Boy Advance" tag="2" id="7N7-jK-06T">
                                 <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <binding destination="-2" name="value" keyPath="mainWindow.document.consoleIsGBA" id="V8X-Mb-h6r"/>
+                                </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="Y66-Uw-kBv"/>
                             <menuItem title="Emulate Sound" state="on" id="UWM-vF-feo">

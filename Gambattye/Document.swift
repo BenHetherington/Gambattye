@@ -21,6 +21,9 @@ class Document: NSDocument {
     var videoBuffer = [UInt32](repeating: 0xF8F8F8, count: 160 * 144)
     var dataProvider: CGDataProvider?
     
+    var loadFlags: LoadFlags = []
+    var keyToConsole = ["consoleIsGB" : Console.GB, "consoleIsGBC": .GBC, "consoleIsGBA" : .GBA]
+    
     @IBOutlet var gbWindow: NSWindow? {
         didSet {
             gbWindow?.makeFirstResponder(inputGetter)
@@ -56,7 +59,7 @@ class Document: NSDocument {
     
     override func read(from url: URL, ofType typeName: String) throws {
         try romData = Data(contentsOf: url) // Just in case someone tries to save the ROM
-        try emulator.load(from: url, flags: [])
+        try emulator.load(from: url, flags: [.forceDMG])
         emulator.setInputGetter(inputGetter)
         soundEnabled = true
         
@@ -138,6 +141,53 @@ class Document: NSDocument {
     dynamic var canEnableSound: Bool {
         get {
             return audioEngine != nil
+        }
+    }
+    
+    enum Console {
+        case GB, GBC, GBA
+    }
+    
+    var console: Console = .GBC {
+        didSet {
+            for key in keyToConsole.keys {
+                willChangeValue(forKey: key)
+            }
+            
+            switch console {
+            case .GB:
+                loadFlags = loadFlags.union(.forceDMG).subtracting(.useGBA)
+                
+            case .GBC:
+                loadFlags = loadFlags.subtracting([.forceDMG, .useGBA])
+                
+            case .GBA:
+                loadFlags = loadFlags.subtracting(.forceDMG).union(.useGBA)
+            }
+            
+            for key in keyToConsole.keys {
+                didChangeValue(forKey: key)
+            }
+            
+            // TODO: Reset the emulator
+        }
+    }
+    
+    override func value(forKey key: String) -> Any? {
+        if let theConsole = keyToConsole[key] {
+            return console == theConsole
+            
+        } else {
+            return super.value(forKey: key)
+        }
+    }
+    
+    override func setValue(_ value: Any?, forKey key: String) {
+        if let theConsole = keyToConsole[key] {
+            console = theConsole
+            
+        } else {
+            super.setValue(value, forKey: key)
         }
     }
     
