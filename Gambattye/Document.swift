@@ -58,11 +58,7 @@ class Document: NSDocument {
         try romData = Data(contentsOf: url) // Just in case someone tries to save the ROM
         try emulator.load(from: url, flags: [])
         emulator.setInputGetter(inputGetter)
-        do {
-            try audioEngine?.startAudio()
-        } catch {
-            Swift.print("Failed to start audio engine.")
-        }
+        soundEnabled = true
         
         // TODO: Set the correct interval!
         let startTime = DispatchTime(uptimeNanoseconds: DispatchTime.now().uptimeNanoseconds + 100000000)
@@ -80,7 +76,7 @@ class Document: NSDocument {
                 audioEngineAPIQueue.sync {
                     result = emulator.run(withVideoBuffer: &this.videoBuffer, pitch: 160, audioBuffer: &audioBuffer, samples: &samples)
                     
-                    if let audioEngine = self?.audioEngine {
+                    if this.internalSoundEnabled, let audioEngine = self?.audioEngine {
                         audioBuffer.removeLast(audioBuffer.count - samples)
                         audioEngine.pushData(newData: audioBuffer)
                     }
@@ -117,25 +113,29 @@ class Document: NSDocument {
         }
     }
     
-    var soundEnabled: Bool {
+    dynamic var soundEnabled: Bool {
         get {
-            return internalSoundEnabled
+            return internalSoundEnabled && canEnableSound
         }
         set {
-            internalSoundEnabled = newValue
-            if newValue {
-                do {
-                    try audioEngine?.startAudio()
-                } catch {
-                    NSAlert(error: error).runModal()
+            if canEnableSound {
+                if newValue {
+                    do {
+                        try audioEngine?.startAudio()
+                        internalSoundEnabled = newValue
+                    } catch {
+                        NSAlert(error: error).runModal()
+                        internalSoundEnabled = false
+                    }
+                } else {
+                    audioEngine?.stopAudio()
+                    internalSoundEnabled = newValue
                 }
-            } else {
-                audioEngine?.stopAudio()
             }
         }
     }
     
-    var canEnableSound: Bool {
+    dynamic var canEnableSound: Bool {
         get {
             return audioEngine != nil
         }
