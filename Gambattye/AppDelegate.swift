@@ -16,7 +16,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+        for document in NSDocumentController.shared().documents {
+            if let document = document as? Document {
+                document.saveSaveData()
+            }
+        }
     }
     
     func applicationShouldOpenUntitledFile(_ sender: NSApplication) -> Bool {

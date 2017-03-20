@@ -105,6 +105,10 @@ class Document: NSDocument {
         }
     }
     
+    func saveSaveData() {
+        emulator.saveSaveData()
+    }
+    
     override func read(from url: URL, ofType typeName: String) throws {
         try romData = Data(contentsOf: url) // Just in case someone tries to save the ROM
         try emulator.load(from: url, flags: [])
