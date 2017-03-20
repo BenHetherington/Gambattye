@@ -62,7 +62,7 @@ class Document: NSDocument {
         let frameRate = 262144.0 / 4389.0
         timer.scheduleRepeating(deadline: startTime, interval: 1 / (frameRate * 4.0))
         
-        dataProvider = CGDataProvider.init(data: Data(bytesNoCopy: &videoBuffer, count: 4 * videoBuffer.count, deallocator: .none) as CFData)!
+        dataProvider = CGDataProvider(data: Data(bytesNoCopy: &videoBuffer, count: 4 * videoBuffer.count, deallocator: .none) as CFData)!
         
         
         let dispatchHandler = DispatchWorkItem() { [weak self] in
@@ -94,8 +94,7 @@ class Document: NSDocument {
         }
             
         if result != -1, let dataProvider = dataProvider {
-            let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.noneSkipFirst.rawValue).union([.byteOrder32Little])
-            let image = CGImage(width: 160, height: 144, bitsPerComponent: 8, bitsPerPixel: 32, bytesPerRow: 4 * 160, space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: bitmapInfo, provider: dataProvider, decode: nil, shouldInterpolate: false, intent: .defaultIntent)
+            let image = CGImage(width: 160, height: 144, bitsPerComponent: 8, bitsPerPixel: 32, bytesPerRow: 4 * 160, space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: [], provider: dataProvider, decode: nil, shouldInterpolate: false, intent: .defaultIntent)
             
             DispatchQueue.main.async { [weak self] in
                 if let display = self?.display {
