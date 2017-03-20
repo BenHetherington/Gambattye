@@ -18,6 +18,7 @@
 		B577D3301E3D53F100B5A99F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B577D32E1E3D53F100B5A99F /* MainMenu.xib */; };
 		B577D3381E3D56CD00B5A99F /* GBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577D3371E3D56CD00B5A99F /* GBView.swift */; };
 		B577D33A1E3D5A7300B5A99F /* VibrantDarkWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577D3391E3D5A7300B5A99F /* VibrantDarkWindow.swift */; };
+		B5A7DB391E80635500404A5E /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5A7DB381E80635500404A5E /* Defaults.plist */; };
 		B5FFE1641E3E47130014F99C /* GB.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5FFE1631E3E47130014F99C /* GB.mm */; };
 		B5FFE1721E3E653A0014F99C /* InterfacePakInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5FFE1711E3E653A0014F99C /* InterfacePakInfo.mm */; };
 		B5FFE1751E3E6AF90014F99C /* InterfaceInputGetter.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5FFE1741E3E6AF90014F99C /* InterfaceInputGetter.mm */; };
@@ -42,6 +43,7 @@
 		B577D3311E3D53F100B5A99F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B577D3371E3D56CD00B5A99F /* GBView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBView.swift; sourceTree = "<group>"; };
 		B577D3391E3D5A7300B5A99F /* VibrantDarkWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VibrantDarkWindow.swift; sourceTree = "<group>"; };
+		B5A7DB381E80635500404A5E /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
 		B5FFE1611E3E47130014F99C /* Gambattye-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gambattye-Bridging-Header.h"; sourceTree = "<group>"; };
 		B5FFE1621E3E47130014F99C /* GB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GB.h; sourceTree = "<group>"; };
 		B5FFE1631E3E47130014F99C /* GB.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GB.mm; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				B577D32C1E3D53F100B5A99F /* Assets.xcassets */,
 				B577D32E1E3D53F100B5A99F /* MainMenu.xib */,
 				B577D3311E3D53F100B5A99F /* Info.plist */,
+				B5A7DB381E80635500404A5E /* Defaults.plist */,
 				B5FFE1611E3E47130014F99C /* Gambattye-Bridging-Header.h */,
 			);
 			path = Gambattye;
@@ -207,6 +210,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5A7DB391E80635500404A5E /* Defaults.plist in Resources */,
 				B577D32D1E3D53F100B5A99F /* Assets.xcassets in Resources */,
 				B577D32B1E3D53F100B5A99F /* Document.xib in Resources */,
 				B577D3301E3D53F100B5A99F /* MainMenu.xib in Resources */,

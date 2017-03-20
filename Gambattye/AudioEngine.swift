@@ -23,6 +23,11 @@ class AudioEngine {
         fileprivate var dataBufferToWrite = 0
         fileprivate var dataBufferDifference = 0
         fileprivate let dataAccessQueue = DispatchQueue(label: "com.ben10do.Gambattye.AudioEngine.DataAccess")
+        fileprivate let sampleSkip = AudioEngine.sampleSkip
+    }
+    
+    class var sampleSkip: Int {
+        return UserDefaults.standard.integer(forKey: "AudioSampleSkip")
     }
     
     init() throws {
@@ -54,7 +59,7 @@ class AudioEngine {
                         renderVars.lastSample = buffer[i]
                         
                         i += 1
-                        renderVars.positionInDataBuffer += 45
+                        renderVars.positionInDataBuffer += renderVars.sampleSkip
                         
                         if renderVars.positionInDataBuffer >= renderVars.dataBuffer[renderVars.dataBufferToRead].count {
                             renderVars.positionInDataBuffer %= renderVars.dataBuffer[renderVars.dataBufferToRead].count
@@ -75,7 +80,7 @@ class AudioEngine {
         }
         
         let callback = AURenderCallbackStruct(inputProc: render, inputProcRefCon: &renderVars)
-        try startAudio(rate: (35112 * (262144.0 / 4389.0)) / 45.0, callback: callback)
+        try startAudio(rate: (35112 * (262144.0 / 4389.0)) / Double(AudioEngine.sampleSkip), callback: callback)
     }
     
     func startAudio(rate: Float64, callback inputCallback: AURenderCallbackStruct) throws {
