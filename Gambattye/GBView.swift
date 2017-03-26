@@ -17,15 +17,6 @@ class GBView: NSView {
         layer?.isOpaque = true
     }
     
-    override var layer: CALayer? {
-        get {
-            return super.layer
-        }
-        set {
-            super.layer = newValue
-        }
-    }
-    
     override var mouseDownCanMoveWindow: Bool {
         get {
             return true

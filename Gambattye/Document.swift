@@ -57,45 +57,19 @@ class Document: NSDocument {
         return romData
     }
     
-    override func read(from url: URL, ofType typeName: String) throws {
-        try romData = Data(contentsOf: url) // Just in case someone tries to save the ROM
-        try emulator.load(from: url, flags: [.forceDMG])
+    func beginEmulation() {
         emulator.setInputGetter(inputGetter)
         soundEnabled = true
         
-        // TODO: Set the correct interval!
         let startTime = DispatchTime(uptimeNanoseconds: DispatchTime.now().uptimeNanoseconds + 100000000)
         let frameRate = 262144.0 / 4389.0
         timer.scheduleRepeating(deadline: startTime, interval: 1 / (frameRate * 4.0))
         
-        dataProvider = CGDataProvider.init(data: Data(bytesNoCopy: &videoBuffer, count: 4 * videoBuffer.count, deallocator: .none) as CFData)!
+        dataProvider = CGDataProvider(data: Data(bytesNoCopy: &videoBuffer, count: 4 * videoBuffer.count, deallocator: .none) as CFData)!
         
-        let dispatchHandler = DispatchWorkItem { [weak self] in
-            var samples = 35112 / 4
-            var audioBuffer = [UInt32](repeating: 0, count: samples + 2064)
-            
-            if let emulator = self?.emulator, let this = self, let audioEngineAPIQueue = self?.emulationStateAccessQueue {
-                var result = 0
-                audioEngineAPIQueue.sync {
-                    result = emulator.run(withVideoBuffer: &this.videoBuffer, pitch: 160, audioBuffer: &audioBuffer, samples: &samples)
-                    
-                    if this.internalSoundEnabled, let audioEngine = self?.audioEngine {
-                        audioBuffer.removeLast(audioBuffer.count - samples)
-                        audioEngine.pushData(newData: audioBuffer)
-                    }
-                }
-                
-                if result != -1, let dataProvider = self?.dataProvider {
-                    let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.noneSkipFirst.rawValue).union([.byteOrder32Little])
-                    let image = CGImage(width: 160, height: 144, bitsPerComponent: 8, bitsPerPixel: 32, bytesPerRow: 4 * 160, space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: bitmapInfo, provider: dataProvider, decode: nil, shouldInterpolate: false, intent: .defaultIntent)
-                    
-                    DispatchQueue.main.async {
-                        if let display = self?.display {
-                            display.image = image
-                        }
-                    }
-                }
-            }
+        
+        let dispatchHandler = DispatchWorkItem() { [weak self] in
+            self?.emulate()
         }
         
         timer.setEventHandler(handler: dispatchHandler)
@@ -106,7 +80,41 @@ class Document: NSDocument {
             // Fallback on earlier versions
             timer.resume()
         }
+    }
+    
+    func emulate() {
+        var samples = 35112 / 4
+        var audioBuffer = [UInt32](repeating: 0, count: samples + 2064)
         
+        var result = 0
+        emulationStateAccessQueue.sync {
+            result = emulator.run(withVideoBuffer: &videoBuffer, pitch: 160, audioBuffer: &audioBuffer, samples: &samples)
+            
+            if internalSoundEnabled, let audioEngine = audioEngine {
+                audioBuffer.removeLast(audioBuffer.count - samples)
+                audioEngine.pushData(newData: audioBuffer)
+            }
+        }
+            
+        if result != -1, let dataProvider = dataProvider {
+            let image = CGImage(width: 160, height: 144, bitsPerComponent: 8, bitsPerPixel: 32, bytesPerRow: 4 * 160, space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: [], provider: dataProvider, decode: nil, shouldInterpolate: false, intent: .defaultIntent)
+            
+            DispatchQueue.main.async { [weak self] in
+                if let display = self?.display {
+                    display.image = image
+                }
+            }
+        }
+    }
+    
+    func saveSaveData() {
+        emulator.saveSaveData()
+    }
+    
+    override func read(from url: URL, ofType typeName: String) throws {
+        try romData = Data(contentsOf: url) // Just in case someone tries to save the ROM
+        try emulator.load(from: url, flags: [])
+        beginEmulation()
     }
     
     @IBAction func reset(_: Any?) {

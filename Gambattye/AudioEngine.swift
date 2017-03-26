@@ -16,12 +16,18 @@ class AudioEngine {
     fileprivate var renderVars = RenderVars()
     
     class RenderVars {
+        fileprivate var lastSample: UInt32 = 0
         fileprivate var dataBuffer = [[UInt32]]()
         fileprivate var positionInDataBuffer = 0
         fileprivate var dataBufferToRead = 0
         fileprivate var dataBufferToWrite = 0
         fileprivate var dataBufferDifference = 0
         fileprivate let dataAccessQueue = DispatchQueue(label: "com.ben10do.Gambattye.AudioEngine.DataAccess")
+        fileprivate let sampleSkip = AudioEngine.sampleSkip
+    }
+    
+    class var sampleSkip: Int {
+        return UserDefaults.standard.integer(forKey: "AudioSampleSkip")
     }
     
     init() throws {
@@ -50,9 +56,10 @@ class AudioEngine {
                 renderVars.dataAccessQueue.sync {
                     while i < count && renderVars.dataBufferDifference > 0 {
                         buffer[i] = renderVars.dataBuffer[renderVars.dataBufferToRead][renderVars.positionInDataBuffer]
+                        renderVars.lastSample = buffer[i]
                         
                         i += 1
-                        renderVars.positionInDataBuffer += 45
+                        renderVars.positionInDataBuffer += renderVars.sampleSkip
                         
                         if renderVars.positionInDataBuffer >= renderVars.dataBuffer[renderVars.dataBufferToRead].count {
                             renderVars.positionInDataBuffer %= renderVars.dataBuffer[renderVars.dataBufferToRead].count
@@ -64,7 +71,7 @@ class AudioEngine {
                 }
                 
                 while i < count {
-                    buffer[i] = 0xE200E200
+                    buffer[i] = renderVars.lastSample
                     i += 1
                 }
             }
@@ -73,7 +80,7 @@ class AudioEngine {
         }
         
         let callback = AURenderCallbackStruct(inputProc: render, inputProcRefCon: &renderVars)
-        try startAudio(rate: (35112 * (262144.0 / 4389.0)) / 45.0, callback: callback)
+        try startAudio(rate: (35112 * (262144.0 / 4389.0)) / Double(AudioEngine.sampleSkip), callback: callback)
     }
     
     func startAudio(rate: Float64, callback inputCallback: AURenderCallbackStruct) throws {

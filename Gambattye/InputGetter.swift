@@ -17,9 +17,10 @@ class InputGetter: NSResponder, InputGetterProtocol {
                                           124 : .right,  // Right key
                                           1   : .A,      // S key
                                           0   : .B,      // A key
-                                          56  : .select, // Shift key
+                                          56  : .select, // Left shift key
+                                          60  : .select, // Right shift key
                                           36  : .start]  // Enter key
-    var modiferKeyToFlag: [UInt16: NSEventModifierFlags] = [56 : .shift]
+    var modiferKeyToFlag: [UInt16: NSEventModifierFlags] = [56 : .shift, 60 : .shift]
     
     public func getInput() -> Buttons {
         return keyboardPushedButtons.union(persistPushedButtons)

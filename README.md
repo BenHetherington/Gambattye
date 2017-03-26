@@ -9,10 +9,10 @@ To build Gambattye, open Xcode and build as you'd expect. `libgambatte` will be 
 ## Controls
 These aren't yet customisable, although this is something I'd like to add in the future. The controls are currently based on bgb's.
 
-| Game Boy | Keyboard     |
-| -------- | ------------ |
-| D-Pad    | Arrow keys   |
-| A        | S            |
-| B        | A            |
-| START    | Enter        |
-| SELECT   | (Left) Shift |
+| Game Boy | Keyboard   |
+| -------- | ---------- |
+| D-Pad    | Arrow keys |
+| A        | S          |
+| B        | A          |
+| START    | Enter      |
+| SELECT   | Shift      |
