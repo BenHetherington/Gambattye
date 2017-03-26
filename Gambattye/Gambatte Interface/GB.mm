@@ -55,6 +55,10 @@ const NSErrorDomain GBErrorDomain = @"com.Ben10do.Gambattye.Interface";
     _GB->reset();
 }
 
+- (void)resetWithFlags:(LoadFlags)flags {
+    _GB->resetWithFlags(flags);
+}
+
 - (void)setDMGPaletteColorForPaletteNo:(int)paletteNo colorNo:(int)colorNo to:(unsigned long)rgb32 {
     _GB->setDmgPaletteColor(paletteNo, colorNo, rgb32);
 }

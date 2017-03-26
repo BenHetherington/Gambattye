@@ -177,7 +177,10 @@ class Document: NSDocument {
                 didChangeValue(forKey: key)
             }
             
-            // TODO: Reset the emulator
+            emulationStateAccessQueue.sync {
+                emulator.reset(with: loadFlags)
+                audioEngine?.restartAudio()
+            }
         }
     }
     

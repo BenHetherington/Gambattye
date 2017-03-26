@@ -85,6 +85,14 @@ typedef NS_OPTIONS(int, LoadFlags) {
 - (void)reset;
 
 /**
+ * Reset to initial state, using the given LoadFlags.
+ * Equivalent to reloading a ROM image, or turning a Game Boy Color off and on again.
+ *
+ * @param flags    ORed combination of LoadFlags
+ */
+- (void)resetWithFlags:(LoadFlags)flags;
+
+/**
  * @param paletteNo 0 <= palNum < 3. One of BG_PALETTE, SP1_PALETTE and SP2_PALETTE.
  * @param colorNo 0 <= colorNum < 4
  */
