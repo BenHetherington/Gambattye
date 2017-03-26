@@ -24,6 +24,9 @@ class Document: NSDocument {
     var loadFlags: LoadFlags = []
     var keyToConsole = ["consoleIsGB" : Console.GB, "consoleIsGBC": .GBC, "consoleIsGBA" : .GBA]
     
+    let soundEnabledAttributeKey = "com.ben10do.Gambattye.SoundEnabled"
+    let consoleAttributeKey = "com.ben10do.Gambattye.SoundEnabled"
+    
     @IBOutlet var gbWindow: NSWindow? {
         didSet {
             gbWindow?.makeFirstResponder(inputGetter)
@@ -32,7 +35,6 @@ class Document: NSDocument {
     @IBOutlet var display: GBView?
 
     override init() {
-        // Add your subclass-specific initialization here.
         do {
             try audioEngine = AudioEngine()
         } catch {
@@ -59,7 +61,13 @@ class Document: NSDocument {
     
     func beginEmulation() {
         emulator.setInputGetter(inputGetter)
-        soundEnabled = true
+        
+        var shouldEnableSound: UInt8 = 1
+        if let filePath = fileURL?.path {
+            // Use the previously selected option for this ROM
+            getxattr(filePath, soundEnabledAttributeKey, &shouldEnableSound, 1, 0, 0)
+        }
+        soundEnabled = shouldEnableSound != 0
         
         let startTime = DispatchTime(uptimeNanoseconds: DispatchTime.now().uptimeNanoseconds + 100000000)
         let frameRate = 262144.0 / 4389.0
@@ -113,7 +121,16 @@ class Document: NSDocument {
     
     override func read(from url: URL, ofType typeName: String) throws {
         try romData = Data(contentsOf: url) // Just in case someone tries to save the ROM
-        try emulator.load(from: url, flags: [])
+        
+        
+        if let filePath = fileURL?.path {
+            // Use the console type that was previously used for this ROM
+            var preferredConsole = Console.GBC.rawValue
+            getxattr(filePath, consoleAttributeKey, &preferredConsole, 1, 0, 0)
+            console = Console(rawValue: preferredConsole) ?? Console.GBC
+        }
+        
+        try emulator.load(from: url, flags: loadFlags)
         beginEmulation()
     }
     
@@ -130,17 +147,24 @@ class Document: NSDocument {
         }
         set {
             if canEnableSound {
-                if newValue {
-                    do {
+                do {
+                    if newValue {
                         try audioEngine?.startAudio()
-                        internalSoundEnabled = newValue
-                    } catch {
-                        NSAlert(error: error).runModal()
-                        internalSoundEnabled = false
+                    } else {
+                        audioEngine?.stopAudio()
                     }
-                } else {
-                    audioEngine?.stopAudio()
+                    
                     internalSoundEnabled = newValue
+                    
+                    if let filePath = fileURL?.path {
+                        // Save this in the ROM's extended file attributes
+                        var value = newValue
+                        setxattr(filePath, soundEnabledAttributeKey, &value, 1, 0, 0)
+                    }
+                    
+                } catch {
+                    NSAlert(error: error).runModal()
+                    internalSoundEnabled = false
                 }
             }
         }
@@ -152,7 +176,7 @@ class Document: NSDocument {
         }
     }
     
-    enum Console {
+    enum Console: Int8 {
         case GB, GBC, GBA
     }
     
@@ -180,6 +204,12 @@ class Document: NSDocument {
             emulationStateAccessQueue.sync {
                 emulator.reset(with: loadFlags)
                 audioEngine?.restartAudio()
+            }
+            
+            if let filePath = fileURL?.path {
+                // Save this in the ROM's extended file attributes
+                var value = console.rawValue
+                setxattr(filePath, consoleAttributeKey, &value, 1, 0, 0)
             }
         }
     }
