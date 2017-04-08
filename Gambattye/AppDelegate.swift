@@ -10,6 +10,8 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    
+    lazy var preferences = PreferencesWindowController()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         if let defaultsURL = Bundle.main.url(forResource: "Defaults", withExtension: "plist"),
@@ -30,5 +32,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSDocumentController.shared().openDocument(nil)
         return false
     }
+    
+    @IBAction func showPreferences(_ sender: NSView) {
+        preferences.showWindow(nil)
+    }
+    
 }
 

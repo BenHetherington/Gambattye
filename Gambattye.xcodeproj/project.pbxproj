@@ -19,12 +19,18 @@
 		B577D3381E3D56CD00B5A99F /* GBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577D3371E3D56CD00B5A99F /* GBView.swift */; };
 		B577D33A1E3D5A7300B5A99F /* VibrantDarkWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577D3391E3D5A7300B5A99F /* VibrantDarkWindow.swift */; };
 		B5A7DB391E80635500404A5E /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5A7DB381E80635500404A5E /* Defaults.plist */; };
+		B5D669EF1E9979140050EE2A /* GeneralPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5D669EE1E9979140050EE2A /* GeneralPreferencesView.xib */; };
+		B5D669F11E997A390050EE2A /* GeneralPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D669F01E997A390050EE2A /* GeneralPreferencesViewController.swift */; };
+		B5D669F31E997DC50050EE2A /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D669F21E997DC50050EE2A /* PreferencesWindowController.swift */; };
 		B5FFE1641E3E47130014F99C /* GB.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5FFE1631E3E47130014F99C /* GB.mm */; };
 		B5FFE1721E3E653A0014F99C /* InterfacePakInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5FFE1711E3E653A0014F99C /* InterfacePakInfo.mm */; };
 		B5FFE1751E3E6AF90014F99C /* InterfaceInputGetter.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5FFE1741E3E6AF90014F99C /* InterfaceInputGetter.mm */; };
+		C01DD15607A0CF40DAF8A073 /* Pods_Gambattye.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECA82825FA40434915B48D98 /* Pods_Gambattye.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A1EC7966B4E98646FCDA5965 /* Pods-Gambattye.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gambattye.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gambattye/Pods-Gambattye.debug.xcconfig"; sourceTree = "<group>"; };
+		A6C0BB4EFC63F7C721439FFB /* Pods-Gambattye.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gambattye.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gambattye/Pods-Gambattye.release.xcconfig"; sourceTree = "<group>"; };
 		B51C47CB1E40EB3F001C6BF4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B52C8FB91E3F7DD80027CC0E /* InputGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputGetter.swift; sourceTree = "<group>"; };
 		B52C8FBB1E3FF8A10027CC0E /* AudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
@@ -44,6 +50,9 @@
 		B577D3371E3D56CD00B5A99F /* GBView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBView.swift; sourceTree = "<group>"; };
 		B577D3391E3D5A7300B5A99F /* VibrantDarkWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VibrantDarkWindow.swift; sourceTree = "<group>"; };
 		B5A7DB381E80635500404A5E /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
+		B5D669EE1E9979140050EE2A /* GeneralPreferencesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralPreferencesView.xib; sourceTree = "<group>"; };
+		B5D669F01E997A390050EE2A /* GeneralPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralPreferencesViewController.swift; sourceTree = "<group>"; };
+		B5D669F21E997DC50050EE2A /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		B5FFE1611E3E47130014F99C /* Gambattye-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gambattye-Bridging-Header.h"; sourceTree = "<group>"; };
 		B5FFE1621E3E47130014F99C /* GB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GB.h; sourceTree = "<group>"; };
 		B5FFE1631E3E47130014F99C /* GB.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GB.mm; sourceTree = "<group>"; };
@@ -51,6 +60,7 @@
 		B5FFE1711E3E653A0014F99C /* InterfacePakInfo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = InterfacePakInfo.mm; sourceTree = "<group>"; };
 		B5FFE1731E3E6AF90014F99C /* InterfaceInputGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterfaceInputGetter.h; sourceTree = "<group>"; };
 		B5FFE1741E3E6AF90014F99C /* InterfaceInputGetter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = InterfaceInputGetter.mm; sourceTree = "<group>"; };
+		ECA82825FA40434915B48D98 /* Pods_Gambattye.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gambattye.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,16 +70,27 @@
 			files = (
 				B57102AD1E433D30008A11CD /* libgambatte.a in Frameworks */,
 				B51C47CC1E40EB3F001C6BF4 /* AudioToolbox.framework in Frameworks */,
+				C01DD15607A0CF40DAF8A073 /* Pods_Gambattye.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A5AA39B2C67D589CB672657 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A1EC7966B4E98646FCDA5965 /* Pods-Gambattye.debug.xcconfig */,
+				A6C0BB4EFC63F7C721439FFB /* Pods-Gambattye.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B51C47CA1E40EB3F001C6BF4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				B51C47CB1E40EB3F001C6BF4 /* AudioToolbox.framework */,
+				ECA82825FA40434915B48D98 /* Pods_Gambattye.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -102,6 +123,7 @@
 				B577D3241E3D53F100B5A99F /* Gambattye */,
 				B577D3231E3D53F100B5A99F /* Products */,
 				B51C47CA1E40EB3F001C6BF4 /* Frameworks */,
+				1A5AA39B2C67D589CB672657 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -124,6 +146,7 @@
 				B577D3391E3D5A7300B5A99F /* VibrantDarkWindow.swift */,
 				B577D3291E3D53F100B5A99F /* Document.xib */,
 				B577D3371E3D56CD00B5A99F /* GBView.swift */,
+				B5D669ED1E99786D0050EE2A /* Preferences */,
 				B577D32C1E3D53F100B5A99F /* Assets.xcassets */,
 				B577D32E1E3D53F100B5A99F /* MainMenu.xib */,
 				B577D3311E3D53F100B5A99F /* Info.plist */,
@@ -131,6 +154,16 @@
 				B5FFE1611E3E47130014F99C /* Gambattye-Bridging-Header.h */,
 			);
 			path = Gambattye;
+			sourceTree = "<group>";
+		};
+		B5D669ED1E99786D0050EE2A /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				B5D669F21E997DC50050EE2A /* PreferencesWindowController.swift */,
+				B5D669F01E997A390050EE2A /* GeneralPreferencesViewController.swift */,
+				B5D669EE1E9979140050EE2A /* GeneralPreferencesView.xib */,
+			);
+			path = Preferences;
 			sourceTree = "<group>";
 		};
 		B5FFE16B1E3E58FE0014F99C /* Gambatte Interface */ = {
@@ -154,12 +187,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B577D3341E3D53F100B5A99F /* Build configuration list for PBXNativeTarget "Gambattye" */;
 			buildPhases = (
+				0F456DD372D8C3A37889CE93 /* [CP] Check Pods Manifest.lock */,
 				B5C376891E4341250009A9B0 /* ShellScript */,
 				B5A1899F1E7F45750011FE10 /* ShellScript */,
 				B577D31E1E3D53F100B5A99F /* Sources */,
 				B577D31F1E3D53F100B5A99F /* Frameworks */,
 				B577D3201E3D53F100B5A99F /* Resources */,
 				B5A189A01E7F45840011FE10 /* ShellScript */,
+				FB5AFB4EC76EFB60532F373B /* [CP] Embed Pods Frameworks */,
+				405C147B4CF35DEF3B56D567 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -212,6 +248,7 @@
 			files = (
 				B5A7DB391E80635500404A5E /* Defaults.plist in Resources */,
 				B577D32D1E3D53F100B5A99F /* Assets.xcassets in Resources */,
+				B5D669EF1E9979140050EE2A /* GeneralPreferencesView.xib in Resources */,
 				B577D32B1E3D53F100B5A99F /* Document.xib in Resources */,
 				B577D3301E3D53F100B5A99F /* MainMenu.xib in Resources */,
 			);
@@ -220,6 +257,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0F456DD372D8C3A37889CE93 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		405C147B4CF35DEF3B56D567 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gambattye/Pods-Gambattye-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B5A1899F1E7F45750011FE10 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -259,6 +326,21 @@
 			shellPath = /bin/sh;
 			shellScript = "cd gambatte\nmake libgambatte";
 		};
+		FB5AFB4EC76EFB60532F373B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gambattye/Pods-Gambattye-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -267,6 +349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5FFE1721E3E653A0014F99C /* InterfacePakInfo.mm in Sources */,
+				B5D669F31E997DC50050EE2A /* PreferencesWindowController.swift in Sources */,
 				B577D3281E3D53F100B5A99F /* Document.swift in Sources */,
 				B5FFE1751E3E6AF90014F99C /* InterfaceInputGetter.mm in Sources */,
 				B52C8FBC1E3FF8A10027CC0E /* AudioEngine.swift in Sources */,
@@ -274,6 +357,7 @@
 				B5FFE1641E3E47130014F99C /* GB.mm in Sources */,
 				B577D3381E3D56CD00B5A99F /* GBView.swift in Sources */,
 				B577D33A1E3D5A7300B5A99F /* VibrantDarkWindow.swift in Sources */,
+				B5D669F11E997A390050EE2A /* GeneralPreferencesViewController.swift in Sources */,
 				B577D3261E3D53F100B5A99F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,6 +476,7 @@
 		};
 		B577D3351E3D53F100B5A99F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1EC7966B4E98646FCDA5965 /* Pods-Gambattye.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -419,6 +504,7 @@
 		};
 		B577D3361E3D53F100B5A99F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A6C0BB4EFC63F7C721439FFB /* Pods-Gambattye.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
