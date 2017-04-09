@@ -12,7 +12,9 @@ import MASPreferences
 class PreferencesWindowController: MASPreferencesWindowController {
 
     init() {
-        super.init(viewControllers: [GeneralPreferencesViewController()], title: "Preferences")
+        super.init(viewControllers: [GeneralPreferencesViewController(),
+                                     ControlPreferencesViewController()],
+                   title: "Preferences")
     }
     
     override func windowDidLoad() {

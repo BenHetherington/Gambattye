@@ -10,6 +10,10 @@
 		B51C47CC1E40EB3F001C6BF4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B51C47CB1E40EB3F001C6BF4 /* AudioToolbox.framework */; };
 		B52C8FBA1E3F7DD80027CC0E /* InputGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C8FB91E3F7DD80027CC0E /* InputGetter.swift */; };
 		B52C8FBC1E3FF8A10027CC0E /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C8FBB1E3FF8A10027CC0E /* AudioEngine.swift */; };
+		B53432871E9AB57C0065A1F4 /* KeyRecorderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53432861E9AB57C0065A1F4 /* KeyRecorderDelegate.swift */; };
+		B552C8B41E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552C8B21E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift */; };
+		B552C8B51E9A6A9C0020A4D2 /* ControlPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B552C8B31E9A6A9C0020A4D2 /* ControlPreferencesView.xib */; };
+		B552C8B71E9A74DD0020A4D2 /* KeyRecorderControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552C8B61E9A74DD0020A4D2 /* KeyRecorderControl.swift */; };
 		B57102AD1E433D30008A11CD /* libgambatte.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B57102AC1E433D30008A11CD /* libgambatte.a */; };
 		B577D3261E3D53F100B5A99F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577D3251E3D53F100B5A99F /* AppDelegate.swift */; };
 		B577D3281E3D53F100B5A99F /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577D3271E3D53F100B5A99F /* Document.swift */; };
@@ -35,6 +39,10 @@
 		B51C47CB1E40EB3F001C6BF4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B52C8FB91E3F7DD80027CC0E /* InputGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputGetter.swift; sourceTree = "<group>"; };
 		B52C8FBB1E3FF8A10027CC0E /* AudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
+		B53432861E9AB57C0065A1F4 /* KeyRecorderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyRecorderDelegate.swift; sourceTree = "<group>"; };
+		B552C8B21E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPreferencesViewController.swift; sourceTree = "<group>"; };
+		B552C8B31E9A6A9C0020A4D2 /* ControlPreferencesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ControlPreferencesView.xib; sourceTree = "<group>"; };
+		B552C8B61E9A74DD0020A4D2 /* KeyRecorderControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyRecorderControl.swift; sourceTree = "<group>"; };
 		B57101F31E433807008A11CD /* gambatte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gambatte.h; sourceTree = "<group>"; };
 		B57101F41E433807008A11CD /* gbint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gbint.h; sourceTree = "<group>"; };
 		B57101F51E433807008A11CD /* inputgetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inputgetter.h; sourceTree = "<group>"; };
@@ -163,6 +171,10 @@
 				B5D669F21E997DC50050EE2A /* PreferencesWindowController.swift */,
 				B5D669F01E997A390050EE2A /* GeneralPreferencesViewController.swift */,
 				B5D669EE1E9979140050EE2A /* GeneralPreferencesView.xib */,
+				B552C8B21E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift */,
+				B552C8B31E9A6A9C0020A4D2 /* ControlPreferencesView.xib */,
+				B552C8B61E9A74DD0020A4D2 /* KeyRecorderControl.swift */,
+				B53432861E9AB57C0065A1F4 /* KeyRecorderDelegate.swift */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -257,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B552C8B51E9A6A9C0020A4D2 /* ControlPreferencesView.xib in Resources */,
 				B5A7DB391E80635500404A5E /* Defaults.plist in Resources */,
 				B5D669F61E9992650050EE2A /* dsa_pub.pem in Resources */,
 				B577D32D1E3D53F100B5A99F /* Assets.xcassets in Resources */,
@@ -362,8 +375,10 @@
 			files = (
 				B5FFE1721E3E653A0014F99C /* InterfacePakInfo.mm in Sources */,
 				B5D669F31E997DC50050EE2A /* PreferencesWindowController.swift in Sources */,
+				B53432871E9AB57C0065A1F4 /* KeyRecorderDelegate.swift in Sources */,
 				B577D3281E3D53F100B5A99F /* Document.swift in Sources */,
 				B5FFE1751E3E6AF90014F99C /* InterfaceInputGetter.mm in Sources */,
+				B552C8B71E9A74DD0020A4D2 /* KeyRecorderControl.swift in Sources */,
 				B52C8FBC1E3FF8A10027CC0E /* AudioEngine.swift in Sources */,
 				B52C8FBA1E3F7DD80027CC0E /* InputGetter.swift in Sources */,
 				B5FFE1641E3E47130014F99C /* GB.mm in Sources */,
@@ -371,6 +386,7 @@
 				B577D33A1E3D5A7300B5A99F /* VibrantDarkWindow.swift in Sources */,
 				B5D669F11E997A390050EE2A /* GeneralPreferencesViewController.swift in Sources */,
 				B577D3261E3D53F100B5A99F /* AppDelegate.swift in Sources */,
+				B552C8B41E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

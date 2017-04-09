@@ -7,7 +7,7 @@ At present, the core emulation works just fine. Additional features and customis
 Run [`pod install`](https://cocoapods.org), then open Xcode and build as you'd expect. `libgambatte` will be automatically built if necessary – just make sure that you clone the submodules when cloning Gambattye!
 
 ## Controls
-These aren't yet customisable, although this is something I'd like to add in the future. The controls are currently based on bgb's.
+The controls can be customised in the Preferences. By default, they are currently based on bgb's, and are:
 
 | Game Boy | Keyboard   |
 | -------- | ---------- |

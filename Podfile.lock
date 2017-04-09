@@ -1,15 +1,28 @@
 PODS:
   - MASPreferences (1.1.4)
+  - ShortcutRecorder/Core (2.17)
   - Sparkle (1.17.0)
 
 DEPENDENCIES:
   - MASPreferences
+  - ShortcutRecorder/Core (from `https://github.com/Kentzo/ShortcutRecorder`, branch `master`)
   - Sparkle
+
+EXTERNAL SOURCES:
+  ShortcutRecorder:
+    :branch: master
+    :git: https://github.com/Kentzo/ShortcutRecorder
+
+CHECKOUT OPTIONS:
+  ShortcutRecorder:
+    :commit: d8aab0e3534f4321b7f7f9fc4df4185a2c89ca6a
+    :git: https://github.com/Kentzo/ShortcutRecorder
 
 SPEC CHECKSUMS:
   MASPreferences: 7bdcfe891d7840453cf48f95fa866c3e152ace7a
+  ShortcutRecorder: c0e1ae0e97917925feab04e8817d2be6ef1b0548
   Sparkle: ccfb47699feea7b40b51cf3176f69404e5b1da6c
 
-PODFILE CHECKSUM: 353ed2ef8ecf3e7e93da32caa8ac5de1687fbdfd
+PODFILE CHECKSUM: 30530d1852ed207372b7e168a132a1cadfa4691a
 
 COCOAPODS: 1.2.0

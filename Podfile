@@ -6,4 +6,5 @@ target 'Gambattye' do
     use_frameworks!
     pod 'MASPreferences'
     pod 'Sparkle'
+    pod 'ShortcutRecorder/Core', :git => 'https://github.com/Kentzo/ShortcutRecorder', :branch => 'master'
 end

@@ -8,28 +8,57 @@
 
 import Cocoa
 
+let defaultKeyToButton = ["Up": Buttons.up, "Down": .down, "Left": .left, "Right": .right, "A": .A, "B": .B, "Select": .select, "Start": .start]
+
+let modiferKeyToFlag: [UInt16: NSEventModifierFlags] = [54: .command, 55: .command, 56: .shift, 58: .option, 59: .control, 60: .shift, 61: .option, 62: .control]
+
 class InputGetter: NSResponder, InputGetterProtocol {
     var keyboardPushedButtons = Buttons()
     var persistPushedButtons = Buttons()
-    var keyToButton: [UInt16: Buttons] = [126 : .up,     // Up key
-                                          125 : .down,   // Down key
-                                          123 : .left,   // Left key
-                                          124 : .right,  // Right key
-                                          1   : .A,      // S key
-                                          0   : .B,      // A key
-                                          56  : .select, // Left shift key
-                                          60  : .select, // Right shift key
-                                          36  : .start]  // Enter key
-    var modiferKeyToFlag: [UInt16: NSEventModifierFlags] = [56 : .shift, 60 : .shift]
+    
+    var keyToButton = [UInt16: Buttons]()
+    var modifierFlagToButton = [UInt: Buttons]()
+    
+    override init() {
+        super.init()
+        setKeys()
+        
+        NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil) { [weak self] (notification) in
+            self?.setKeys()
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setKeys()
+        
+        NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil) { [weak self] (notification) in
+            self?.setKeys()
+        }
+    }
+    
+    private func setKeys() {
+        keyToButton.removeAll()
+        modifierFlagToButton.removeAll()
+        
+        for (key, button) in defaultKeyToButton {
+            let shortcut = UserDefaults.standard.dictionary(forKey: key + "ButtonKey")!
+            
+            if let keyCode = shortcut["keyCode"] as? UInt16 {
+                keyToButton[keyCode] = button
+            }
+            if let modifierKey = shortcut["modifierFlags"] as? UInt {
+                modifierFlagToButton[modifierKey] = button
+            }
+        }
+    }
     
     public func getInput() -> Buttons {
         return keyboardPushedButtons.union(persistPushedButtons)
     }
     
     override var acceptsFirstResponder: Bool {
-        get {
-            return true
-        }
+        return true
     }
     
     override func keyDown(with event: NSEvent) {
@@ -51,7 +80,7 @@ class InputGetter: NSResponder, InputGetterProtocol {
     }
     
     override func flagsChanged(with event: NSEvent) {
-        if let button = keyToButton[event.keyCode], let flag = modiferKeyToFlag[event.keyCode] {
+        if let flag = modiferKeyToFlag[event.keyCode], let button = modifierFlagToButton[flag.rawValue] {
             if event.modifierFlags.contains(flag) {
                 keyboardPushedButtons.insert(button)
             } else {
@@ -60,6 +89,10 @@ class InputGetter: NSResponder, InputGetterProtocol {
         } else {
             super.flagsChanged(with: event)
         }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
 }
