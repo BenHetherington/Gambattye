@@ -1,0 +1,9 @@
+<?xml version="1.0" standalone="yes"?><rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0"><channel><title>Gambattye</title>
+<item>
+<title>Initial Release (0.1)</title>
+<sparkle:releaseNotesLink>release-notes/0.1.html</sparkle:releaseNotesLink>
+<pubDate>Sat, 18 Mar 2017 17:17:17 +0000</pubDate>
+<sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
+<enclosure url="https://github.com/Ben10do/Gambattye/releases/download/v0.1/Gambattye-0.1.zip" sparkle:version="1" sparkle:shortVersionString="0.1" length="2591523" type="application/octet-stream" sparkle:dsaSignature="MC0CFAH7lC4RaaHSIoQDki9IZFtEf0qZAhUAv9LHHKD63iC9UfeJZCqYuLYX+fo="/>
+</item>
+</channel></rss>
