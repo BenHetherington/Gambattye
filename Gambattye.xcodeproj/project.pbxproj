@@ -22,6 +22,7 @@
 		B5D669EF1E9979140050EE2A /* GeneralPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5D669EE1E9979140050EE2A /* GeneralPreferencesView.xib */; };
 		B5D669F11E997A390050EE2A /* GeneralPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D669F01E997A390050EE2A /* GeneralPreferencesViewController.swift */; };
 		B5D669F31E997DC50050EE2A /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D669F21E997DC50050EE2A /* PreferencesWindowController.swift */; };
+		B5D669F61E9992650050EE2A /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = B5D669F51E9992650050EE2A /* dsa_pub.pem */; };
 		B5FFE1641E3E47130014F99C /* GB.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5FFE1631E3E47130014F99C /* GB.mm */; };
 		B5FFE1721E3E653A0014F99C /* InterfacePakInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5FFE1711E3E653A0014F99C /* InterfacePakInfo.mm */; };
 		B5FFE1751E3E6AF90014F99C /* InterfaceInputGetter.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5FFE1741E3E6AF90014F99C /* InterfaceInputGetter.mm */; };
@@ -53,6 +54,7 @@
 		B5D669EE1E9979140050EE2A /* GeneralPreferencesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralPreferencesView.xib; sourceTree = "<group>"; };
 		B5D669F01E997A390050EE2A /* GeneralPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralPreferencesViewController.swift; sourceTree = "<group>"; };
 		B5D669F21E997DC50050EE2A /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
+		B5D669F51E9992650050EE2A /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		B5FFE1611E3E47130014F99C /* Gambattye-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gambattye-Bridging-Header.h"; sourceTree = "<group>"; };
 		B5FFE1621E3E47130014F99C /* GB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GB.h; sourceTree = "<group>"; };
 		B5FFE1631E3E47130014F99C /* GB.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GB.mm; sourceTree = "<group>"; };
@@ -149,8 +151,7 @@
 				B5D669ED1E99786D0050EE2A /* Preferences */,
 				B577D32C1E3D53F100B5A99F /* Assets.xcassets */,
 				B577D32E1E3D53F100B5A99F /* MainMenu.xib */,
-				B577D3311E3D53F100B5A99F /* Info.plist */,
-				B5A7DB381E80635500404A5E /* Defaults.plist */,
+				B5D669F41E9992580050EE2A /* Resources */,
 				B5FFE1611E3E47130014F99C /* Gambattye-Bridging-Header.h */,
 			);
 			path = Gambattye;
@@ -164,6 +165,16 @@
 				B5D669EE1E9979140050EE2A /* GeneralPreferencesView.xib */,
 			);
 			path = Preferences;
+			sourceTree = "<group>";
+		};
+		B5D669F41E9992580050EE2A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B5D669F51E9992650050EE2A /* dsa_pub.pem */,
+				B577D3311E3D53F100B5A99F /* Info.plist */,
+				B5A7DB381E80635500404A5E /* Defaults.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		B5FFE16B1E3E58FE0014F99C /* Gambatte Interface */ = {
@@ -247,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5A7DB391E80635500404A5E /* Defaults.plist in Resources */,
+				B5D669F61E9992650050EE2A /* dsa_pub.pem in Resources */,
 				B577D32D1E3D53F100B5A99F /* Assets.xcassets in Resources */,
 				B5D669EF1E9979140050EE2A /* GeneralPreferencesView.xib in Resources */,
 				B577D32B1E3D53F100B5A99F /* Document.xib in Resources */,
@@ -487,7 +499,7 @@
 					HAVE_STDINT_H,
 				);
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/gambatte/";
-				INFOPLIST_FILE = Gambattye/Info.plist;
+				INFOPLIST_FILE = Gambattye/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -511,7 +523,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = HAVE_STDINT_H;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/gambatte/";
-				INFOPLIST_FILE = Gambattye/Info.plist;
+				INFOPLIST_FILE = Gambattye/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

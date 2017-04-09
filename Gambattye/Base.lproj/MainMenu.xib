@@ -32,6 +32,12 @@
                                     <action selector="showPreferences:" target="-1" id="AkH-w4-893"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Check for Updates…" id="haI-9Z-fmn">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="checkForUpdates:" target="OHg-07-tUT" id="RdP-3m-gY0"/>
+                                </connections>
+                            </menuItem>
                             <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
                             <menuItem title="Services" id="NMo-om-nkz">
                                 <modifierMask key="keyEquivalentModifierMask"/>
@@ -722,5 +728,6 @@
             </items>
         </menu>
         <userDefaultsController representsSharedInstance="YES" id="kSC-ny-cOR"/>
+        <customObject id="OHg-07-tUT" customClass="SUUpdater"/>
     </objects>
 </document>
