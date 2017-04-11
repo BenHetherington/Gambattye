@@ -58,14 +58,19 @@ import Cocoa
     
 }
 
-@available(OSX 10.12.2, *)
+@available(macOS 10.12.2, *)
 extension VibrantDarkWindow {
-    @IBOutlet var ibTouchBar: NSTouchBar? {
-        get {
-            return super.touchBar
+    override func makeTouchBar() -> NSTouchBar? {
+        var objects = NSArray()
+        NSNib(nibNamed: "Touch Bar", bundle: nil)?.instantiate(withOwner: self, topLevelObjects: &objects)
+        
+        for object in objects {
+            if let object = object as? NSTouchBar {
+                return object
+            }
         }
-        set {
-            super.touchBar = newValue
-        }
+        
+        return nil
     }
+
 }
