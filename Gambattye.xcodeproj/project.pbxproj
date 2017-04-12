@@ -526,6 +526,7 @@
 					"$(PROJECT_DIR)/Gambattye",
 					"$(PROJECT_DIR)/gambatte/libgambatte",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ben10do.Gambattye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Gambattye/Gambattye-Bridging-Header.h";
@@ -550,6 +551,7 @@
 					"$(PROJECT_DIR)/Gambattye",
 					"$(PROJECT_DIR)/gambatte/libgambatte",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ben10do.Gambattye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Gambattye/Gambattye-Bridging-Header.h";
