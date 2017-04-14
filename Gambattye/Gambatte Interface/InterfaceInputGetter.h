@@ -28,7 +28,7 @@ typedef NS_OPTIONS(unsigned, Buttons) {
 
 #ifdef __cplusplus
 
-#include "libgambatte/include/inputgetter.h"
+#import "libgambatte/include/inputgetter.h"
 
 class InputGetterBridge : public gambatte::InputGetter {
 private:

@@ -11,7 +11,6 @@
 
 @interface PakInfo ()
 
-- (instancetype)initWithCppObject:(gambatte::PakInfo *)pakInfo;
 @property (assign) gambatte::PakInfo *info;
 
 @end

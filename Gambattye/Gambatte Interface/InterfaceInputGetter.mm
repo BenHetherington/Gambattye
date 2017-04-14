@@ -7,12 +7,11 @@
 //
 
 #import "InterfaceInputGetter.h"
-#import "libgambatte/include/inputgetter.h"
 
 InputGetterBridge::InputGetterBridge(id<InputGetterProtocol>input) {
     this->input = input;
 }
 
 unsigned InputGetterBridge::operator ()() {
-   return [input getInput];
+    return [input getInput];
 }

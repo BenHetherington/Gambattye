@@ -15,6 +15,7 @@ const NSErrorDomain GBErrorDomain = @"com.Ben10do.Gambattye.Interface";
 @interface GB ()
 
 @property (assign) gambatte::GB *GB;
+@property (assign) gambatte::InputGetter *internalInputGetter;
 
 @end
 
@@ -30,6 +31,7 @@ const NSErrorDomain GBErrorDomain = @"com.Ben10do.Gambattye.Interface";
 
 - (void)dealloc {
     delete _GB;
+    delete _internalInputGetter;
 }
 
 - (BOOL)loadFrom:(NSURL *)ROMURL flags:(LoadFlags)flags error:(NSError **)error {
@@ -64,8 +66,10 @@ const NSErrorDomain GBErrorDomain = @"com.Ben10do.Gambattye.Interface";
 }
 
 - (void)setInputGetter:(id<InputGetterProtocol>)getInput {
-    // TODO: Make a property?
-     _GB->setInputGetter(new InputGetterBridge(getInput));
+    delete _internalInputGetter;
+    _internalInputGetter = new InputGetterBridge(getInput);
+    
+    _GB->setInputGetter(_internalInputGetter);
 }
 
 - (BOOL)supportsGBC {
