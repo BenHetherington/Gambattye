@@ -2,11 +2,13 @@ PODS:
   - MASPreferences (1.1.4)
   - ShortcutRecorder/Core (2.17)
   - Sparkle (1.17.0)
+  - SwiftLint (0.18.1)
 
 DEPENDENCIES:
   - MASPreferences
   - ShortcutRecorder/Core (from `https://github.com/Kentzo/ShortcutRecorder`, branch `master`)
   - Sparkle
+  - SwiftLint
 
 EXTERNAL SOURCES:
   ShortcutRecorder:
@@ -22,7 +24,8 @@ SPEC CHECKSUMS:
   MASPreferences: 7bdcfe891d7840453cf48f95fa866c3e152ace7a
   ShortcutRecorder: c0e1ae0e97917925feab04e8817d2be6ef1b0548
   Sparkle: ccfb47699feea7b40b51cf3176f69404e5b1da6c
+  SwiftLint: b467d08f5b25dc3b3cfed243d8e1b74b91714c67
 
-PODFILE CHECKSUM: 30530d1852ed207372b7e168a132a1cadfa4691a
+PODFILE CHECKSUM: 1ba649103bf0f7b3d20e00c81c1cbc2c054d54ab
 
 COCOAPODS: 1.2.0

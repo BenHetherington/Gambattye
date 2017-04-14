@@ -13,7 +13,7 @@ class ControlPreferencesViewController: NSViewController, MASPreferencesViewCont
 
     init() {
         super.init(nibName: "ControlPreferencesView", bundle: nil)!
-        identifier = "ControlPreferences";
+        identifier = "ControlPreferences"
     }
     
     required init?(coder: NSCoder) {

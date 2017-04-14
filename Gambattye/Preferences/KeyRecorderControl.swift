@@ -62,8 +62,8 @@ class KeyRecorderControl: SRRecorderControl {
     }
     
     override func clearButtonRect() -> NSRect {
-        return NSRect(x: NSMaxX(bounds) - 4.0 - 1.0,
-                      y: NSMinY(bounds),
+        return NSRect(x: bounds.maxX - 4.0 - 1.0,
+                      y: bounds.minY,
                       width: 0.0,
                       height: 25.0)
     }

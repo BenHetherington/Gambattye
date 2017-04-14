@@ -22,7 +22,7 @@ class Document: NSDocument {
     var dataProvider: CGDataProvider?
     
     var loadFlags: LoadFlags = []
-    var keyToConsole = ["consoleIsGB" : Console.GB, "consoleIsGBC": .GBC, "consoleIsGBA" : .GBA]
+    var keyToConsole = ["consoleIsGB": Console.GB, "consoleIsGBC": .GBC, "consoleIsGBA": .GBA]
     
     let soundEnabledAttributeKey = "com.ben10do.Gambattye.SoundEnabled"
     let consoleAttributeKey = "com.ben10do.Gambattye.Console"
@@ -76,7 +76,7 @@ class Document: NSDocument {
         dataProvider = CGDataProvider(data: Data(bytesNoCopy: &videoBuffer, count: 4 * videoBuffer.count, deallocator: .none) as CFData)!
         
         
-        let dispatchHandler = DispatchWorkItem() { [weak self] in
+        let dispatchHandler = DispatchWorkItem { [weak self] in
             self?.emulate()
         }
         
@@ -171,9 +171,7 @@ class Document: NSDocument {
     }
     
     dynamic var canEnableSound: Bool {
-        get {
-            return audioEngine != nil
-        }
+        return audioEngine != nil
     }
     
     enum Console: Int8 {
@@ -248,4 +246,3 @@ class Document: NSDocument {
     }
 
 }
-

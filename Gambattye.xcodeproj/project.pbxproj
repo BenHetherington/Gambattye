@@ -22,6 +22,7 @@
 		B577D3301E3D53F100B5A99F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B577D32E1E3D53F100B5A99F /* MainMenu.xib */; };
 		B577D3381E3D56CD00B5A99F /* GBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577D3371E3D56CD00B5A99F /* GBView.swift */; };
 		B577D33A1E3D5A7300B5A99F /* VibrantDarkWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577D3391E3D5A7300B5A99F /* VibrantDarkWindow.swift */; };
+		B58CD9211EA0E898006B0F50 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = B58CD9201EA0E898006B0F50 /* .swiftlint.yml */; };
 		B5A7DB391E80635500404A5E /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5A7DB381E80635500404A5E /* Defaults.plist */; };
 		B5AD0DEF1E9D7D1A009B449B /* Touch Bar.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5AD0DEE1E9D7D1A009B449B /* Touch Bar.xib */; };
 		B5D669EF1E9979140050EE2A /* GeneralPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5D669EE1E9979140050EE2A /* GeneralPreferencesView.xib */; };
@@ -59,6 +60,7 @@
 		B577D3311E3D53F100B5A99F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B577D3371E3D56CD00B5A99F /* GBView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBView.swift; sourceTree = "<group>"; };
 		B577D3391E3D5A7300B5A99F /* VibrantDarkWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VibrantDarkWindow.swift; sourceTree = "<group>"; };
+		B58CD9201EA0E898006B0F50 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		B5A7DB381E80635500404A5E /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
 		B5AD0DEE1E9D7D1A009B449B /* Touch Bar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Touch Bar.xib"; sourceTree = "<group>"; };
 		B5D669EE1E9979140050EE2A /* GeneralPreferencesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeneralPreferencesView.xib; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				B577D3231E3D53F100B5A99F /* Products */,
 				B51C47CA1E40EB3F001C6BF4 /* Frameworks */,
 				1A5AA39B2C67D589CB672657 /* Pods */,
+				B58CD9201EA0E898006B0F50 /* .swiftlint.yml */,
 			);
 			sourceTree = "<group>";
 		};
@@ -215,6 +218,7 @@
 			buildPhases = (
 				0F456DD372D8C3A37889CE93 /* [CP] Check Pods Manifest.lock */,
 				B5C376891E4341250009A9B0 /* Build libgambatte */,
+				B58CD91F1EA0E73F006B0F50 /* Run SwiftLint */,
 				B5A1899F1E7F45750011FE10 /* Set Build Number to No. of Git Commits */,
 				B577D31E1E3D53F100B5A99F /* Sources */,
 				B577D31F1E3D53F100B5A99F /* Frameworks */,
@@ -272,6 +276,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B58CD9211EA0E898006B0F50 /* .swiftlint.yml in Resources */,
 				B552C8B51E9A6A9C0020A4D2 /* ControlPreferencesView.xib in Resources */,
 				B5A7DB391E80635500404A5E /* Defaults.plist in Resources */,
 				B5D669F61E9992650050EE2A /* dsa_pub.pem in Resources */,
@@ -314,6 +319,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gambattye/Pods-Gambattye-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B58CD91F1EA0E73F006B0F50 /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
 			showEnvVarsInLog = 0;
 		};
 		B5A1899F1E7F45750011FE10 /* Set Build Number to No. of Git Commits */ = {

@@ -13,7 +13,7 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
     
     init() {
         super.init(nibName: "GeneralPreferencesView", bundle: nil)!
-        identifier = "GeneralPreferences";
+        identifier = "GeneralPreferences"
     }
     
     required init?(coder: NSCoder) {

@@ -1,0 +1,15 @@
+disabled_rules:
+- line_length
+- todo
+- vertical_whitespace
+- identifier_name
+
+opt_in_rules:
+- empty_count
+
+excluded:
+- Pods
+
+trailing_whitespace:
+    ignores_empty_lines: true
+    ignores_comments: true

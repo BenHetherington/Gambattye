@@ -18,9 +18,7 @@ class GBView: NSView {
     }
     
     override var mouseDownCanMoveWindow: Bool {
-        get {
-            return true
-        }
+        return true
     }
     
     var image: CGImage? = nil {
@@ -30,9 +28,7 @@ class GBView: NSView {
     }
     
     override var acceptsFirstResponder: Bool {
-        get {
-            return false
-        }
+        return false
     }
     
 }
