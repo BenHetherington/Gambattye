@@ -25,7 +25,7 @@ class Document: NSDocument {
     var keyToConsole = ["consoleIsGB" : Console.GB, "consoleIsGBC": .GBC, "consoleIsGBA" : .GBA]
     
     let soundEnabledAttributeKey = "com.ben10do.Gambattye.SoundEnabled"
-    let consoleAttributeKey = "com.ben10do.Gambattye.SoundEnabled"
+    let consoleAttributeKey = "com.ben10do.Gambattye.Console"
     
     @IBOutlet var gbWindow: NSWindow? {
         didSet {
