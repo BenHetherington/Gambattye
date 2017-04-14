@@ -19,11 +19,13 @@ class InputGetter: NSResponder, InputGetterProtocol {
     var keyToButton = [UInt16: Buttons]()
     var modifierFlagToButton = [UInt: Buttons]()
     
+    private var prefsChangedObserver: NSObjectProtocol?
+    
     override init() {
         super.init()
         setKeys()
         
-        NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil) { [weak self] (notification) in
+        prefsChangedObserver = NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil) { [weak self] (_) in
             self?.setKeys()
         }
     }
@@ -32,7 +34,7 @@ class InputGetter: NSResponder, InputGetterProtocol {
         super.init(coder: coder)
         setKeys()
         
-        NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil) { [weak self] (notification) in
+        prefsChangedObserver = NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil) { [weak self] (_) in
             self?.setKeys()
         }
     }
@@ -92,7 +94,9 @@ class InputGetter: NSResponder, InputGetterProtocol {
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self)
+        if let prefsChangedObserver = prefsChangedObserver {
+            NotificationCenter.default.removeObserver(prefsChangedObserver)
+        }
     }
 
 }
