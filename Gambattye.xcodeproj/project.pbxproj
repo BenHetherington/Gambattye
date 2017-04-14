@@ -214,12 +214,12 @@
 			buildConfigurationList = B577D3341E3D53F100B5A99F /* Build configuration list for PBXNativeTarget "Gambattye" */;
 			buildPhases = (
 				0F456DD372D8C3A37889CE93 /* [CP] Check Pods Manifest.lock */,
-				B5C376891E4341250009A9B0 /* ShellScript */,
-				B5A1899F1E7F45750011FE10 /* ShellScript */,
+				B5C376891E4341250009A9B0 /* Build libgambatte */,
+				B5A1899F1E7F45750011FE10 /* Set Build Number to No. of Git Commits */,
 				B577D31E1E3D53F100B5A99F /* Sources */,
 				B577D31F1E3D53F100B5A99F /* Frameworks */,
 				B577D3201E3D53F100B5A99F /* Resources */,
-				B5A189A01E7F45840011FE10 /* ShellScript */,
+				B5A189A01E7F45840011FE10 /* Set Build Number to "dev" */,
 				FB5AFB4EC76EFB60532F373B /* [CP] Embed Pods Frameworks */,
 				405C147B4CF35DEF3B56D567 /* [CP] Copy Pods Resources */,
 			);
@@ -316,44 +316,50 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gambattye/Pods-Gambattye-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B5A1899F1E7F45750011FE10 /* ShellScript */ = {
+		B5A1899F1E7F45750011FE10 /* Set Build Number to No. of Git Commits */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Set Build Number to No. of Git Commits";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Set the build number to the count of Git commits\nbuildNumber=$(git rev-list HEAD | wc -l | tr -d ' ')\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+			shellScript = "buildNumber=$(git rev-list HEAD | wc -l | tr -d ' ')\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+			showEnvVarsInLog = 0;
 		};
-		B5A189A01E7F45840011FE10 /* ShellScript */ = {
+		B5A189A01E7F45840011FE10 /* Set Build Number to "dev" */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Set Build Number to \"dev\"";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Set the build number to \"DEVELOPMENT\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion dev\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+			shellScript = "/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion dev\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+			showEnvVarsInLog = 0;
 		};
-		B5C376891E4341250009A9B0 /* ShellScript */ = {
+		B5C376891E4341250009A9B0 /* Build libgambatte */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Build libgambatte";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "cd gambatte\nmake libgambatte";
+			showEnvVarsInLog = 0;
 		};
 		FB5AFB4EC76EFB60532F373B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
