@@ -1,0 +1,10 @@
+language: objective-c
+
+xcode_workspace: Gambattye.xcworkspace
+xcode_scheme: Gambattye
+
+osx_image: xcode8.3
+
+install: travis_wait pod repo update --silent && pod install
+
+script: xcodebuild -workspace Gambattye.xcworkspace -scheme Gambattye
