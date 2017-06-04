@@ -38,7 +38,7 @@ class Document: NSDocument {
         do {
             try audioEngine = AudioEngine()
         } catch {
-            Swift.print("Failed to initialise audio engine: \(error.localizedDescription)")
+            Swift.print(error.localizedDescription)
             audioEngine = nil
             internalSoundEnabled = false
         }

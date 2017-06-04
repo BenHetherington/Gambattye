@@ -9,6 +9,10 @@
 import CoreAudio
 import AudioToolbox
 
+private let initError = NSError(domain: "GambattyeSoundErrorDomain", code: 0, userInfo:
+    [NSLocalizedDescriptionKey: NSLocalizedString("Falied to enable sound.", comment: ""),
+     NSLocalizedRecoverySuggestionErrorKey: NSLocalizedString("Please ensure that your computer's audio is working.", comment: "")])
+
 class AudioEngine {
     private var audioComponent: AudioComponent
     private var audioComponentInstance: AudioComponentInstance
@@ -35,14 +39,14 @@ class AudioEngine {
         if let audioComponent = AudioComponentFindNext(nil, &desc) {
             self.audioComponent = audioComponent
         } else {
-            throw NSError() // TODO: Throw a more specific error
+            throw initError
         }
         
         var audioComponentInstance: AudioComponentInstance?
         if AudioComponentInstanceNew(audioComponent, &audioComponentInstance) == noErr, let audioComponentInstance = audioComponentInstance {
             self.audioComponentInstance = audioComponentInstance
         } else {
-            throw NSError() // TODO: Throw a more specific error
+            throw initError
         }
     }
     
@@ -88,26 +92,26 @@ class AudioEngine {
         
         error = AudioUnitInitialize(audioComponentInstance)
         guard error == noErr else {
-            throw NSError() // TODO: Throw a more specific error
+            throw initError
         }
         
         var streamFormat = AudioStreamBasicDescription(mSampleRate: rate, mFormatID: kAudioFormatLinearPCM, mFormatFlags: kAudioFormatFlagIsSignedInteger, mBytesPerPacket: 4, mFramesPerPacket: 1, mBytesPerFrame: 4, mChannelsPerFrame: 2, mBitsPerChannel: 16, mReserved: 0)
         
         error = AudioUnitSetProperty(audioComponentInstance, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Input, 0, &streamFormat, UInt32(MemoryLayout.size(ofValue: streamFormat)))
         guard error == noErr else {
-            throw NSError() // TODO: Throw a more specific error
+            throw initError
         }
         
         error = AudioUnitSetProperty(audioComponentInstance, kAudioUnitProperty_SetRenderCallback, kAudioUnitScope_Input, 0, &callback, UInt32(MemoryLayout.size(ofValue: callback)))
         guard error == noErr else {
-            throw NSError() // TODO: Throw a more specific error
+            throw initError
         }
         
         restartAudio()
         
         error = AudioOutputUnitStart(audioComponentInstance)
         guard error == noErr else {
-            throw NSError() // TODO: Throw a more specific error
+            throw initError
         }
     }
     
