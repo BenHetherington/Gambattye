@@ -15,6 +15,7 @@
 		B552C8B41E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552C8B21E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift */; };
 		B552C8B51E9A6A9C0020A4D2 /* ControlPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B552C8B31E9A6A9C0020A4D2 /* ControlPreferencesView.xib */; };
 		B552C8B71E9A74DD0020A4D2 /* KeyRecorderControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552C8B61E9A74DD0020A4D2 /* KeyRecorderControl.swift */; };
+		B56ED5771EE1C7E50088DBBE /* URL+ExtendedAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ED5761EE1C7E50088DBBE /* URL+ExtendedAttributes.swift */; };
 		B57102AD1E433D30008A11CD /* libgambatte.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B57102AC1E433D30008A11CD /* libgambatte.a */; };
 		B577D3261E3D53F100B5A99F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577D3251E3D53F100B5A99F /* AppDelegate.swift */; };
 		B577D3281E3D53F100B5A99F /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577D3271E3D53F100B5A99F /* Document.swift */; };
@@ -46,6 +47,7 @@
 		B552C8B21E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPreferencesViewController.swift; sourceTree = "<group>"; };
 		B552C8B31E9A6A9C0020A4D2 /* ControlPreferencesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ControlPreferencesView.xib; sourceTree = "<group>"; };
 		B552C8B61E9A74DD0020A4D2 /* KeyRecorderControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyRecorderControl.swift; sourceTree = "<group>"; };
+		B56ED5761EE1C7E50088DBBE /* URL+ExtendedAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+ExtendedAttributes.swift"; sourceTree = "<group>"; };
 		B57101F31E433807008A11CD /* gambatte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gambatte.h; sourceTree = "<group>"; };
 		B57101F41E433807008A11CD /* gbint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gbint.h; sourceTree = "<group>"; };
 		B57101F51E433807008A11CD /* inputgetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inputgetter.h; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				B577D32E1E3D53F100B5A99F /* MainMenu.xib */,
 				B5D669F41E9992580050EE2A /* Resources */,
 				B5FFE1611E3E47130014F99C /* Gambattye-Bridging-Header.h */,
+				B56ED5761EE1C7E50088DBBE /* URL+ExtendedAttributes.swift */,
 			);
 			path = Gambattye;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				B52C8FBC1E3FF8A10027CC0E /* AudioEngine.swift in Sources */,
 				B52C8FBA1E3F7DD80027CC0E /* InputGetter.swift in Sources */,
 				B5FFE1641E3E47130014F99C /* GB.mm in Sources */,
+				B56ED5771EE1C7E50088DBBE /* URL+ExtendedAttributes.swift in Sources */,
 				B577D3381E3D56CD00B5A99F /* GBView.swift in Sources */,
 				B577D33A1E3D5A7300B5A99F /* VibrantDarkWindow.swift in Sources */,
 				B5D669F11E997A390050EE2A /* GeneralPreferencesViewController.swift in Sources */,

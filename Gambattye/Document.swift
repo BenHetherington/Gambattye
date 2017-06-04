@@ -62,12 +62,7 @@ class Document: NSDocument {
     func beginEmulation() {
         emulator.setInputGetter(inputGetter)
         
-        var shouldEnableSound: UInt8 = 1
-        if let filePath = fileURL?.path {
-            // Use the previously selected option for this ROM
-            getxattr(filePath, soundEnabledAttributeKey, &shouldEnableSound, 1, 0, 0)
-        }
-        soundEnabled = shouldEnableSound != 0
+        soundEnabled = fileURL?.getExtendedAttribute(name: soundEnabledAttributeKey) ?? true
         
         let startTime = DispatchTime(uptimeNanoseconds: DispatchTime.now().uptimeNanoseconds + 100000000)
         let frameRate = 262144.0 / 4389.0
@@ -122,13 +117,8 @@ class Document: NSDocument {
     override func read(from url: URL, ofType typeName: String) throws {
         try romData = Data(contentsOf: url) // Just in case someone tries to save the ROM
         
+        console = fileURL?.getExtendedAttribute(name: consoleAttributeKey) ?? .GBC
         
-        if let filePath = fileURL?.path {
-            // Use the console type that was previously used for this ROM
-            var preferredConsole = Console.GBC.rawValue
-            getxattr(filePath, consoleAttributeKey, &preferredConsole, 1, 0, 0)
-            console = Console(rawValue: preferredConsole) ?? Console.GBC
-        }
         
         try emulator.load(from: url, flags: loadFlags)
         beginEmulation()
@@ -155,12 +145,7 @@ class Document: NSDocument {
                     }
                     
                     internalSoundEnabled = newValue
-                    
-                    if let filePath = fileURL?.path {
-                        // Save this in the ROM's extended file attributes
-                        var value = newValue
-                        setxattr(filePath, soundEnabledAttributeKey, &value, 1, 0, 0)
-                    }
+                    fileURL?.setExtendedAttribute(name: soundEnabledAttributeKey, value: newValue)
                     
                 } catch {
                     NSAlert(error: error).runModal()
@@ -174,7 +159,7 @@ class Document: NSDocument {
         return audioEngine != nil
     }
     
-    enum Console: Int8 {
+    enum Console: UInt8 {
         case GB, GBC, GBA
     }
     
@@ -204,11 +189,7 @@ class Document: NSDocument {
                 audioEngine?.restartAudio()
             }
             
-            if let filePath = fileURL?.path {
-                // Save this in the ROM's extended file attributes
-                var value = console.rawValue
-                setxattr(filePath, consoleAttributeKey, &value, 1, 0, 0)
-            }
+            fileURL?.setExtendedAttribute(name: consoleAttributeKey, value: console)
         }
     }
     
