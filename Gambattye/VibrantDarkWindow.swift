@@ -10,8 +10,8 @@ import Cocoa
 
 @IBDesignable class VibrantDarkWindow: NSWindow {
     
-    var timer: Timer?
-    var isFullScreen = false
+    private var timer: Timer?
+    private(set) var isFullScreen = false
     
 //    override init(contentRect: NSRect, styleMask style: NSWindowStyleMask, backing bufferingType: NSBackingStoreType, defer flag: Bool) {
 //        super.init(contentRect: contentRect, styleMask: style, backing: bufferingType, defer: flag)

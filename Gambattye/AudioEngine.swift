@@ -6,27 +6,26 @@
 //  Copyright © 2017 Ben10do. All rights reserved.
 //
 
-import Cocoa
 import CoreAudio
 import AudioToolbox
 
 class AudioEngine {
-    fileprivate var audioComponent: AudioComponent
-    fileprivate var audioComponentInstance: AudioComponentInstance
-    fileprivate var renderVars = RenderVars()
+    private var audioComponent: AudioComponent
+    private var audioComponentInstance: AudioComponentInstance
+    private var renderVars = RenderVars()
     
-    class RenderVars {
-        fileprivate var lastSample: UInt32 = 0
-        fileprivate var dataBuffer = [[UInt32]]()
-        fileprivate var positionInDataBuffer = 0
-        fileprivate var dataBufferToRead = 0
-        fileprivate var dataBufferToWrite = 0
-        fileprivate var dataBufferDifference = 0
-        fileprivate let dataAccessQueue = DispatchQueue(label: "com.ben10do.Gambattye.AudioEngine.DataAccess")
-        fileprivate let sampleSkip = AudioEngine.sampleSkip
+    private class RenderVars {
+        var lastSample: UInt32 = 0
+        var dataBuffer = [[UInt32]]()
+        var positionInDataBuffer = 0
+        var dataBufferToRead = 0
+        var dataBufferToWrite = 0
+        var dataBufferDifference = 0
+        let dataAccessQueue = DispatchQueue(label: "com.ben10do.Gambattye.AudioEngine.DataAccess")
+        let sampleSkip = AudioEngine.sampleSkip
     }
     
-    class var sampleSkip: Int {
+    private class var sampleSkip: Int {
         return UserDefaults.standard.integer(forKey: "AudioSampleSkip")
     }
     

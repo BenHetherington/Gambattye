@@ -8,16 +8,16 @@
 
 import Cocoa
 
-let defaultKeyToButton = ["Up": Buttons.up, "Down": .down, "Left": .left, "Right": .right, "A": .A, "B": .B, "Select": .select, "Start": .start]
+private let defaultKeyToButton = ["Up": Buttons.up, "Down": .down, "Left": .left, "Right": .right, "A": .A, "B": .B, "Select": .select, "Start": .start]
 
-let modiferKeyToFlag: [UInt16: NSEventModifierFlags] = [54: .command, 55: .command, 56: .shift, 58: .option, 59: .control, 60: .shift, 61: .option, 62: .control]
+private let modiferKeyToFlag: [UInt16: NSEventModifierFlags] = [54: .command, 55: .command, 56: .shift, 58: .option, 59: .control, 60: .shift, 61: .option, 62: .control]
 
 class InputGetter: NSResponder, InputGetterProtocol {
-    var keyboardPushedButtons = Buttons()
     var persistPushedButtons = Buttons()
+    private(set) var keyboardPushedButtons = Buttons()
     
-    var keyToButton = [UInt16: Buttons]()
-    var modifierFlagToButton = [UInt: Buttons]()
+    private var keyToButton = [UInt16: Buttons]()
+    private var modifierFlagToButton = [UInt: Buttons]()
     
     private var prefsChangedObserver: NSObjectProtocol?
     
