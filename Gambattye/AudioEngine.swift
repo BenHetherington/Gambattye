@@ -22,12 +22,7 @@ class AudioEngine {
     
     private class RenderVars {
         var lastSample: UInt32 = 0
-        var circularBuffer = TPCircularBuffer()
-        let sampleSkip = AudioEngine.sampleSkip
-    }
-    
-    private class var sampleSkip: Int {
-        return UserDefaults.standard.integer(forKey: "AudioSampleSkip")
+        var circularBuffer = TPCircularBuffer(length: 1024 * 1024)
     }
     
     init() throws {
@@ -45,21 +40,18 @@ class AudioEngine {
         } else {
             throw initError
         }
-        
-        _TPCircularBufferInit(&renderVars.circularBuffer, 1024 * 1024, MemoryLayout<TPCircularBuffer>.size)
     }
     
     func startAudio() throws {
         let render: AURenderCallback = {(dataQueuePointer, _, _, _, inNumberFrames, ioData) -> OSStatus in
             let renderVars = dataQueuePointer.load(as: RenderVars.self)
             if let buffer = UnsafeMutablePointer<UInt32>(OpaquePointer(ioData?[0].mBuffers.mData)) {
-                var bytes: Int32 = 0
-                let data = TPCircularBufferTail(&renderVars.circularBuffer, &bytes)
+                let (data, bytes) = renderVars.circularBuffer.tail()
                 
                 let framesToCopy = min(Int(bytes) / MemoryLayout<UInt32>.size, Int(inNumberFrames))
                 let bytesToCopy = framesToCopy * MemoryLayout<UInt32>.size
                 memcpy(buffer, data, bytesToCopy)
-                TPCircularBufferConsume(&renderVars.circularBuffer, Int32(bytesToCopy))
+                renderVars.circularBuffer.consume(bytes: Int32(bytesToCopy))
                 
                 if framesToCopy > 0 {
                     renderVars.lastSample = buffer[framesToCopy - 1]
@@ -74,7 +66,7 @@ class AudioEngine {
         }
         
         let callback = AURenderCallbackStruct(inputProc: render, inputProcRefCon: &renderVars)
-        try startAudio(rate: (35112 * (262144.0 / 4389.0)) / Double(AudioEngine.sampleSkip), callback: callback)
+        try startAudio(rate: 35112 * (262144.0 / 4389.0), callback: callback)
     }
     
     func startAudio(rate: Float64, callback inputCallback: AURenderCallbackStruct) throws {
@@ -111,16 +103,17 @@ class AudioEngine {
     }
     
     func restartAudio() {
-        TPCircularBufferClear(&renderVars.circularBuffer)
+        renderVars.circularBuffer.clear()
     }
     
     func pushData(newData: [UInt32], count: Int) {
-        TPCircularBufferProduceBytes(&renderVars.circularBuffer, newData, Int32(MemoryLayout<UInt32>.size * count))
+        renderVars.circularBuffer.produceBytes(from: newData, count: Int32(count))
     }
     
     deinit {
         AudioOutputUnitStop(audioComponentInstance)
         AudioComponentInstanceDispose(audioComponentInstance)
+        renderVars.circularBuffer.cleanup()
     }
     
 }
