@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>AudioSampleSkip</key>
-	<integer>45</integer>
+	<integer>1</integer>
 	<key>UpButtonKey</key>
 	<dict>
 		<key>characters</key>

@@ -8,4 +8,5 @@ target 'Gambattye' do
     pod 'Sparkle'
     pod 'ShortcutRecorder/Core', :git => 'https://github.com/Kentzo/ShortcutRecorder', :branch => 'master'
     pod 'SwiftLint'
+    pod 'TPCircularBuffer'
 end

@@ -8,10 +8,12 @@
 
 import CoreAudio
 import AudioToolbox
+import TPCircularBuffer
 
 private let initError = NSError(domain: "GambattyeSoundErrorDomain", code: 0, userInfo:
     [NSLocalizedDescriptionKey: NSLocalizedString("Falied to enable sound.", comment: ""),
      NSLocalizedRecoverySuggestionErrorKey: NSLocalizedString("Please ensure that your computer's audio is working.", comment: "")])
+private let bufferLength = 1024 * 1024
 
 class AudioEngine {
     private var audioComponent: AudioComponent
@@ -20,12 +22,7 @@ class AudioEngine {
     
     private class RenderVars {
         var lastSample: UInt32 = 0
-        var dataBuffer = [[UInt32]]()
-        var positionInDataBuffer = 0
-        var dataBufferToRead = 0
-        var dataBufferToWrite = 0
-        var dataBufferDifference = 0
-        let dataAccessQueue = DispatchQueue(label: "com.ben10do.Gambattye.AudioEngine.DataAccess")
+        var circularBuffer = TPCircularBuffer()
         let sampleSkip = AudioEngine.sampleSkip
     }
     
@@ -48,34 +45,28 @@ class AudioEngine {
         } else {
             throw initError
         }
+        
+        _TPCircularBufferInit(&renderVars.circularBuffer, 1024 * 1024, MemoryLayout<TPCircularBuffer>.size)
     }
     
     func startAudio() throws {
-        let render: AURenderCallback = {(dataQueuePointer, _, inTimeStamp, _, inNumberFrames, ioData) -> OSStatus in
+        let render: AURenderCallback = {(dataQueuePointer, _, _, _, inNumberFrames, ioData) -> OSStatus in
             let renderVars = dataQueuePointer.load(as: RenderVars.self)
             if let buffer = UnsafeMutablePointer<UInt32>(OpaquePointer(ioData?[0].mBuffers.mData)) {
-                var i = 0
-                let count = Int(inNumberFrames)
-                renderVars.dataAccessQueue.sync {
-                    while i < count && renderVars.dataBufferDifference > 0 {
-                        buffer[i] = renderVars.dataBuffer[renderVars.dataBufferToRead][renderVars.positionInDataBuffer]
-                        renderVars.lastSample = buffer[i]
-                        
-                        i += 1
-                        renderVars.positionInDataBuffer += renderVars.sampleSkip
-                        
-                        if renderVars.positionInDataBuffer >= renderVars.dataBuffer[renderVars.dataBufferToRead].count {
-                            renderVars.positionInDataBuffer %= renderVars.dataBuffer[renderVars.dataBufferToRead].count
-                            renderVars.dataBufferToRead += 1
-                            renderVars.dataBufferToRead %= renderVars.dataBuffer.count
-                            renderVars.dataBufferDifference -= 1
-                        }
-                    }
+                var bytes: Int32 = 0
+                let data = TPCircularBufferTail(&renderVars.circularBuffer, &bytes)
+                
+                let framesToCopy = min(Int(bytes) / MemoryLayout<UInt32>.size, Int(inNumberFrames))
+                let bytesToCopy = framesToCopy * MemoryLayout<UInt32>.size
+                memcpy(buffer, data, bytesToCopy)
+                TPCircularBufferConsume(&renderVars.circularBuffer, Int32(bytesToCopy))
+                
+                if framesToCopy > 0 {
+                    renderVars.lastSample = buffer[framesToCopy - 1]
                 }
                 
-                while i < count {
+                for i in framesToCopy..<Int(inNumberFrames) {
                     buffer[i] = renderVars.lastSample
-                    i += 1
                 }
             }
             
@@ -120,23 +111,11 @@ class AudioEngine {
     }
     
     func restartAudio() {
-        renderVars.dataAccessQueue.sync {
-            self.renderVars.dataBuffer = [[UInt32]](repeatElement([], count: 8))
-            self.renderVars.positionInDataBuffer = 0
-            self.renderVars.dataBufferToRead = 0
-            self.renderVars.dataBufferToWrite = 0
-            self.renderVars.dataBufferDifference = 0
-        }
+        TPCircularBufferClear(&renderVars.circularBuffer)
     }
     
-    func pushData(newData: [UInt32]) {
-        renderVars.dataAccessQueue.async {
-            self.renderVars.dataBuffer[self.renderVars.dataBufferToWrite] = newData
-            self.renderVars.dataBufferToWrite += 1
-            self.renderVars.dataBufferToWrite %= self.renderVars.dataBuffer.count
-            self.renderVars.dataBufferDifference += 1
-            self.renderVars.dataBufferDifference %= self.renderVars.dataBuffer.count
-        }
+    func pushData(newData: [UInt32], count: Int) {
+        TPCircularBufferProduceBytes(&renderVars.circularBuffer, newData, Int32(MemoryLayout<UInt32>.size * count))
     }
     
     deinit {

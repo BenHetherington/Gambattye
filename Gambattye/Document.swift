@@ -8,6 +8,8 @@
 
 import Cocoa
 
+private let expectedSamples = 35112 / 4
+
 class Document: NSDocument {
     
     var romData = Data()
@@ -20,6 +22,8 @@ class Document: NSDocument {
     
     var videoBuffer = [UInt32](repeating: 0xF8F8F8, count: 160 * 144)
     var dataProvider: CGDataProvider?
+    
+    var audioBuffer = [UInt32](repeating: 0, count: expectedSamples + 2064)
     
     var loadFlags: LoadFlags = []
     var keyToConsole = ["consoleIsGB": Console.GB, "consoleIsGBC": .GBC, "consoleIsGBA": .GBA]
@@ -86,16 +90,14 @@ class Document: NSDocument {
     }
     
     func emulate() {
-        var samples = 35112 / 4
-        var audioBuffer = [UInt32](repeating: 0, count: samples + 2064)
+        var samples = expectedSamples
         
         var result = 0
         emulationStateAccessQueue.sync {
             result = emulator.run(withVideoBuffer: &videoBuffer, pitch: 160, audioBuffer: &audioBuffer, samples: &samples)
             
             if internalSoundEnabled, let audioEngine = audioEngine {
-                audioBuffer.removeLast(audioBuffer.count - samples)
-                audioEngine.pushData(newData: audioBuffer)
+                audioEngine.pushData(newData: audioBuffer, count: samples)
             }
         }
             

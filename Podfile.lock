@@ -3,12 +3,14 @@ PODS:
   - ShortcutRecorder/Core (2.17)
   - Sparkle (1.17.0)
   - SwiftLint (0.18.1)
+  - TPCircularBuffer (1.4)
 
 DEPENDENCIES:
   - MASPreferences
   - ShortcutRecorder/Core (from `https://github.com/Kentzo/ShortcutRecorder`, branch `master`)
   - Sparkle
   - SwiftLint
+  - TPCircularBuffer
 
 EXTERNAL SOURCES:
   ShortcutRecorder:
@@ -25,7 +27,8 @@ SPEC CHECKSUMS:
   ShortcutRecorder: c0e1ae0e97917925feab04e8817d2be6ef1b0548
   Sparkle: ccfb47699feea7b40b51cf3176f69404e5b1da6c
   SwiftLint: b467d08f5b25dc3b3cfed243d8e1b74b91714c67
+  TPCircularBuffer: c0160545b63019adf85231e3de543bbc97cb9041
 
-PODFILE CHECKSUM: 1ba649103bf0f7b3d20e00c81c1cbc2c054d54ab
+PODFILE CHECKSUM: f1a5ad5ef0a99984336152432b9138f4f148790a
 
 COCOAPODS: 1.2.0
