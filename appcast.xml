@@ -6,4 +6,13 @@
 <sparkle:minimumSystemVersion>10.12</sparkle:minimumSystemVersion>
 <enclosure url="https://github.com/Ben10do/Gambattye/releases/download/v0.1/Gambattye-0.1.zip" sparkle:version="1" sparkle:shortVersionString="0.1" length="2591523" type="application/octet-stream" sparkle:dsaSignature="MC0CFAH7lC4RaaHSIoQDki9IZFtEf0qZAhUAv9LHHKD63iC9UfeJZCqYuLYX+fo="/>
 </item>
+
+<item>
+<title>Gambattye 0.2</title>
+<sparkle:releaseNotesLink>https://ben10do.github.io/Gambattye/release-notes/0.2.html</sparkle:releaseNotesLink>
+<pubDate>Fri, 16 Jun 2017 15:24:43 +0100</pubDate>
+<sparkle:minimumSystemVersion>10.11</sparkle:minimumSystemVersion>
+<enclosure url="https://github.com/Ben10do/Gambattye/releases/download/v0.2/Gambattye-0.2.zip" sparkle:version="44" sparkle:shortVersionString="0.2" length="4169200" type="application/octet-stream" sparkle:dsaSignature="MCwCFCs1WRge0fOEaFtDaJPbdfyAr16HAhR+y3KtBoxPpKAEUZccEebmgpBVeQ=="/>
+</item>
+
 </channel></rss>
