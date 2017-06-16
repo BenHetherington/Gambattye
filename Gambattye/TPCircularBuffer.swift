@@ -3,7 +3,7 @@
 //  Gambattye
 //
 //  Created by Ben10do on 15/06/2017.
-//  Copyright © 2017 Ben10do. All rights reserved.
+//  Copyright © 2017 Ben10do. Licenced under the GPL v2 (see LICENCE).
 //
 
 import Foundation

@@ -31,6 +31,7 @@
 		B5D669F11E997A390050EE2A /* GeneralPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D669F01E997A390050EE2A /* GeneralPreferencesViewController.swift */; };
 		B5D669F31E997DC50050EE2A /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D669F21E997DC50050EE2A /* PreferencesWindowController.swift */; };
 		B5D669F61E9992650050EE2A /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = B5D669F51E9992650050EE2A /* dsa_pub.pem */; };
+		B5EB200D1EF3EE9B003500E2 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B5EB200C1EF3EE9B003500E2 /* Credits.rtf */; };
 		B5FFE1641E3E47130014F99C /* GB.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5FFE1631E3E47130014F99C /* GB.mm */; };
 		B5FFE1721E3E653A0014F99C /* InterfacePakInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5FFE1711E3E653A0014F99C /* InterfacePakInfo.mm */; };
 		B5FFE1751E3E6AF90014F99C /* InterfaceInputGetter.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5FFE1741E3E6AF90014F99C /* InterfaceInputGetter.mm */; };
@@ -72,6 +73,7 @@
 		B5D669F01E997A390050EE2A /* GeneralPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralPreferencesViewController.swift; sourceTree = "<group>"; };
 		B5D669F21E997DC50050EE2A /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		B5D669F51E9992650050EE2A /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		B5EB200C1EF3EE9B003500E2 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		B5FFE1611E3E47130014F99C /* Gambattye-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gambattye-Bridging-Header.h"; sourceTree = "<group>"; };
 		B5FFE1621E3E47130014F99C /* GB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GB.h; sourceTree = "<group>"; };
 		B5FFE1631E3E47130014F99C /* GB.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GB.mm; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				B5D669F51E9992650050EE2A /* dsa_pub.pem */,
 				B577D3311E3D53F100B5A99F /* Info.plist */,
 				B5A7DB381E80635500404A5E /* Defaults.plist */,
+				B5EB200C1EF3EE9B003500E2 /* Credits.rtf */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				B5D669F61E9992650050EE2A /* dsa_pub.pem in Resources */,
 				B523C6861EA4B501007F42CD /* .travis.yml in Resources */,
 				B577D32D1E3D53F100B5A99F /* Assets.xcassets in Resources */,
+				B5EB200D1EF3EE9B003500E2 /* Credits.rtf in Resources */,
 				B5D669EF1E9979140050EE2A /* GeneralPreferencesView.xib in Resources */,
 				B577D32B1E3D53F100B5A99F /* Document.xib in Resources */,
 				B5AD0DEF1E9D7D1A009B449B /* Touch Bar.xib in Resources */,
