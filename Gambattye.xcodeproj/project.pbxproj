@@ -14,6 +14,7 @@
 		B53432871E9AB57C0065A1F4 /* KeyRecorderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53432861E9AB57C0065A1F4 /* KeyRecorderDelegate.swift */; };
 		B53E8D921EF41324000D8800 /* Touch Bar.xib in Resources */ = {isa = PBXBuildFile; fileRef = B53E8D941EF41324000D8800 /* Touch Bar.xib */; };
 		B53E8D951EF4139C000D8800 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B53E8D971EF4139C000D8800 /* Credits.rtf */; };
+		B5502B441EF5D311002AE301 /* Timer+Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5502B431EF5D311002AE301 /* Timer+Closures.swift */; };
 		B552C8B41E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552C8B21E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift */; };
 		B552C8B51E9A6A9C0020A4D2 /* ControlPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B552C8B31E9A6A9C0020A4D2 /* ControlPreferencesView.xib */; };
 		B552C8B71E9A74DD0020A4D2 /* KeyRecorderControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552C8B61E9A74DD0020A4D2 /* KeyRecorderControl.swift */; };
@@ -48,6 +49,7 @@
 		B53432861E9AB57C0065A1F4 /* KeyRecorderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyRecorderDelegate.swift; sourceTree = "<group>"; };
 		B53E8D931EF41324000D8800 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/Touch Bar.xib"; sourceTree = "<group>"; };
 		B53E8D961EF4139C000D8800 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Base; path = Base.lproj/Credits.rtf; sourceTree = "<group>"; };
+		B5502B431EF5D311002AE301 /* Timer+Closures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Timer+Closures.swift"; sourceTree = "<group>"; };
 		B552C8B21E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPreferencesViewController.swift; sourceTree = "<group>"; };
 		B552C8B31E9A6A9C0020A4D2 /* ControlPreferencesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ControlPreferencesView.xib; sourceTree = "<group>"; };
 		B552C8B61E9A74DD0020A4D2 /* KeyRecorderControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyRecorderControl.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				B5FFE1611E3E47130014F99C /* Gambattye-Bridging-Header.h */,
 				B503DB541EF32A7800FB53FA /* TPCircularBuffer.swift */,
 				B56ED5761EE1C7E50088DBBE /* URL+ExtendedAttributes.swift */,
+				B5502B431EF5D311002AE301 /* Timer+Closures.swift */,
 			);
 			path = Gambattye;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5502B441EF5D311002AE301 /* Timer+Closures.swift in Sources */,
 				B5FFE1721E3E653A0014F99C /* InterfacePakInfo.mm in Sources */,
 				B5D669F31E997DC50050EE2A /* PreferencesWindowController.swift in Sources */,
 				B53432871E9AB57C0065A1F4 /* KeyRecorderDelegate.swift in Sources */,
