@@ -20,7 +20,7 @@ import Cocoa
     override init(contentRect: NSRect, styleMask style: NSWindowStyleMask, backing bufferingType: NSBackingStoreType, defer flag: Bool) {
         super.init(contentRect: contentRect, styleMask: style, backing: bufferingType, defer: flag)
         
-        trackingArea = NSTrackingArea(rect: NSRect(), options: [.inVisibleRect, .mouseMoved, .activeInKeyWindow], owner: self, userInfo: nil)
+        trackingArea = NSTrackingArea(rect: NSRect(), options: [.inVisibleRect, .mouseEnteredAndExited, .mouseMoved, .activeInKeyWindow], owner: self, userInfo: nil)
         
         enterFullScreenObserver = NotificationCenter.default.addObserver(forName: .NSWindowDidEnterFullScreen, object: self, queue: nil) {[weak self] (_) in
             self?.isFullScreen = true
@@ -60,8 +60,16 @@ import Cocoa
         NSCursor.setHiddenUntilMouseMoves(false)
     }
     
+    override func mouseEntered(with event: NSEvent) {
+        hideMouseAfterDelay()
+    }
+    
     override func mouseMoved(with event: NSEvent) {
         hideMouseAfterDelay()
+    }
+    
+    override func mouseExited(with event: NSEvent) {
+        disableHiddenMouse()
     }
     
     deinit {
