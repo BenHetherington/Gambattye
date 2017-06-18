@@ -28,16 +28,10 @@ class KeyRecorderControl: SRRecorderControl {
         }
     }
     
-    override func accessibilityLabel() -> String! {
-        let ret = super.accessibilityLabel()
-        Swift.print(ret ?? "nil")
-        return ret
-    }
-    
     override func view(_ view: NSView, stringForToolTip tag: NSToolTipTag, point: NSPoint, userData data: UnsafeMutableRawPointer?) -> String {
         let returnValue = super.view(view, stringForToolTip: tag, point: point, userData: data)
         if returnValue == SRLoc("Use old shortcut") {
-            return "Use previous key"
+            return NSLocalizedString("Use previous key", comment: "Controls Preferences")
         } else {
             return returnValue
         }

@@ -25,7 +25,7 @@ class ControlPreferencesViewController: NSViewController, MASPreferencesViewCont
     }
     
     var toolbarItemLabel: String! {
-        return "Controls"
+        return NSLocalizedString("Controls", comment: "Preferences Label")
     }
     
 }

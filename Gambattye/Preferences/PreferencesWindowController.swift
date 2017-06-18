@@ -14,7 +14,7 @@ class PreferencesWindowController: MASPreferencesWindowController {
     init() {
         super.init(viewControllers: [GeneralPreferencesViewController(),
                                      ControlPreferencesViewController()],
-                   title: "Preferences")
+                   title: NSLocalizedString("Preferences", comment: "Preferences Title"))
     }
     
     override func windowDidLoad() {

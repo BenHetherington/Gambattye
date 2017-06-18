@@ -11,8 +11,8 @@ import AudioToolbox
 import TPCircularBuffer
 
 private let initError = NSError(domain: "GambattyeSoundErrorDomain", code: 0, userInfo:
-    [NSLocalizedDescriptionKey: NSLocalizedString("Falied to enable sound.", comment: ""),
-     NSLocalizedRecoverySuggestionErrorKey: NSLocalizedString("Please ensure that your computer's audio is working.", comment: "")])
+    [NSLocalizedDescriptionKey: NSLocalizedString("Falied to enable sound.", comment: "Sound Error Description"),
+     NSLocalizedRecoverySuggestionErrorKey: NSLocalizedString("Please ensure that your computer's audio is working.", comment: "Sound Error Recovery Suggestion")])
 private let bufferLength = 1024 * 1024
 
 class AudioEngine {
