@@ -126,6 +126,16 @@
 			name = Configuration;
 			sourceTree = "<group>";
 		};
+		B53EB5EB1EF69D6E00546059 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B503DB541EF32A7800FB53FA /* TPCircularBuffer.swift */,
+				B56ED5761EE1C7E50088DBBE /* URL+ExtendedAttributes.swift */,
+				B5502B431EF5D311002AE301 /* Timer+Closures.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		B57101F11E433807008A11CD /* libgambatte */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,20 +185,25 @@
 				B577D3271E3D53F100B5A99F /* Document.swift */,
 				B52C8FB91E3F7DD80027CC0E /* InputGetter.swift */,
 				B5FFE16B1E3E58FE0014F99C /* Gambatte Interface */,
-				B577D3391E3D5A7300B5A99F /* VibrantDarkWindow.swift */,
-				B577D3291E3D53F100B5A99F /* Document.xib */,
-				B53E8D941EF41324000D8800 /* Touch Bar.xib */,
-				B577D3371E3D56CD00B5A99F /* GBView.swift */,
+				B5A6DA731EF69CE8006F0D05 /* User Interface */,
 				B5D669ED1E99786D0050EE2A /* Preferences */,
-				B577D32C1E3D53F100B5A99F /* Assets.xcassets */,
-				B577D32E1E3D53F100B5A99F /* MainMenu.xib */,
 				B5D669F41E9992580050EE2A /* Resources */,
+				B53EB5EB1EF69D6E00546059 /* Extensions */,
 				B5FFE1611E3E47130014F99C /* Gambattye-Bridging-Header.h */,
-				B503DB541EF32A7800FB53FA /* TPCircularBuffer.swift */,
-				B56ED5761EE1C7E50088DBBE /* URL+ExtendedAttributes.swift */,
-				B5502B431EF5D311002AE301 /* Timer+Closures.swift */,
 			);
 			path = Gambattye;
+			sourceTree = "<group>";
+		};
+		B5A6DA731EF69CE8006F0D05 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				B577D32E1E3D53F100B5A99F /* MainMenu.xib */,
+				B577D3291E3D53F100B5A99F /* Document.xib */,
+				B577D3371E3D56CD00B5A99F /* GBView.swift */,
+				B577D3391E3D5A7300B5A99F /* VibrantDarkWindow.swift */,
+				B53E8D941EF41324000D8800 /* Touch Bar.xib */,
+			);
+			path = "User Interface";
 			sourceTree = "<group>";
 		};
 		B5D669ED1E99786D0050EE2A /* Preferences */ = {
@@ -208,6 +223,7 @@
 		B5D669F41E9992580050EE2A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B577D32C1E3D53F100B5A99F /* Assets.xcassets */,
 				B5D669F51E9992650050EE2A /* dsa_pub.pem */,
 				B577D3311E3D53F100B5A99F /* Info.plist */,
 				B5A7DB381E80635500404A5E /* Defaults.plist */,
