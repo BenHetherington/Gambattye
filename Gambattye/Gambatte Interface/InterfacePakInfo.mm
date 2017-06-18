@@ -24,15 +24,15 @@
     }
     return self;
 }
-//
-//- (instancetype)init
-//{
-//    return [self initWithCppObject:new gambatte::PakInfo()];
-//}
-//
-//- (instancetype)initWithMultiPak:(BOOL)multiPak ROMBanks:(unsigned int)ROMBanks ROMHeader:(unsigned char [])ROMHeader {
-//    return [self initWithCppObject:new gambatte::PakInfo(multiPak, ROMBanks, ROMHeader)];
-//}
+
+- (instancetype)init
+{
+    return [self initWithCppObject:new gambatte::PakInfo()];
+}
+
+- (instancetype)initWithMultiPak:(BOOL)multiPak ROMBanks:(unsigned int)ROMBanks ROMHeader:(unsigned char [])ROMHeader {
+    return [self initWithCppObject:new gambatte::PakInfo(multiPak, ROMBanks, ROMHeader)];
+}
 
 - (BOOL)isHeaderChecksumValid {
     return _info->headerChecksumOk();
@@ -50,8 +50,8 @@
     return _info->rombanks();
 }
 
-//- (void)dealloc {
-//    delete _info;
-//}
+- (void)dealloc {
+    delete _info;
+}
 
 @end
