@@ -10,7 +10,7 @@ import Cocoa
 
 private let expectedSamples = 35112 / 4
 
-class Document: NSDocument {
+class Document: NSDocument, NSWindowDelegate {
     
     var romData = Data()
     let emulator = GB()
@@ -32,8 +32,12 @@ class Document: NSDocument {
     let consoleAttributeKey = "com.ben10do.Gambattye.Console"
     
     @IBOutlet var gbWindow: NSWindow? {
+        willSet {
+            gbWindow?.delegate = nil
+        }
         didSet {
             gbWindow?.makeFirstResponder(inputGetter)
+            gbWindow?.delegate = self
         }
     }
     @IBOutlet var display: GBView?
@@ -113,7 +117,9 @@ class Document: NSDocument {
     }
     
     func saveSaveData() {
-        emulator.saveSaveData()
+        emulationStateAccessQueue.sync {
+            emulator.saveSaveData()
+        }
     }
     
     override func read(from url: URL, ofType typeName: String) throws {
@@ -220,6 +226,12 @@ class Document: NSDocument {
         }
         set {
             super.displayName = newValue
+        }
+    }
+    
+    func windowDidResignMain(_ notification: Notification) {
+        if UserDefaults.standard.bool(forKey: "Autosave") {
+            saveSaveData()
         }
     }
     
