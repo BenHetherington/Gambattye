@@ -8,7 +8,8 @@
 
 import Cocoa
 
-private let expectedSamples = 35112 / 4
+private let expectedSamples = 35112
+private let frameRate = 262144.0 / 4389.0
 
 class Document: NSDocument, NSWindowDelegate {
     
@@ -24,6 +25,9 @@ class Document: NSDocument, NSWindowDelegate {
     var dataProvider: CGDataProvider?
     
     var audioBuffer = [UInt32](repeating: 0, count: expectedSamples + 2064)
+    
+    var shouldReschedule = false
+    var frameDivisor = 4
     
     var loadFlags: LoadFlags = []
     var keyToConsole = ["consoleIsGB": Console.GB, "consoleIsGBC": .GBC, "consoleIsGBA": .GBA]
@@ -72,9 +76,7 @@ class Document: NSDocument, NSWindowDelegate {
         
         soundEnabled = fileURL?.getExtendedAttribute(name: soundEnabledAttributeKey) ?? true
         
-        let startTime = DispatchTime(uptimeNanoseconds: DispatchTime.now().uptimeNanoseconds + 100000000)
-        let frameRate = 262144.0 / 4389.0
-        timer.scheduleRepeating(deadline: startTime, interval: 1 / (frameRate * 4.0))
+        rescheduleTimer(forStart: true)
         
         dataProvider = CGDataProvider(data: Data(bytesNoCopy: &videoBuffer, count: 4 * videoBuffer.count, deallocator: .none) as CFData)!
         
@@ -94,7 +96,7 @@ class Document: NSDocument, NSWindowDelegate {
     }
     
     func emulate() {
-        var samples = expectedSamples
+        var samples = expectedSamples / frameDivisor
         
         var result = 0
         emulationStateAccessQueue.sync {
@@ -105,7 +107,21 @@ class Document: NSDocument, NSWindowDelegate {
             }
         }
             
-        if result != -1, let dataProvider = dataProvider {
+        if result != -1 {
+            if shouldReschedule {
+                shouldReschedule = false
+                rescheduleTimer(forStart: false)
+            }
+            
+            if gbWindow?.occlusionState.contains(.visible) == true {
+                // Don't bother rendering if the window isn't visible
+                render()
+            }
+        }
+    }
+    
+    func render() {
+        if let dataProvider = dataProvider {
             let image = CGImage(width: 160, height: 144, bitsPerComponent: 8, bitsPerPixel: 32, bytesPerRow: 4 * 160, space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: [], provider: dataProvider, decode: nil, shouldInterpolate: false, intent: .defaultIntent)
             
             DispatchQueue.main.async { [weak self] in
@@ -114,6 +130,14 @@ class Document: NSDocument, NSWindowDelegate {
                 }
             }
         }
+    }
+    
+    func rescheduleTimer(forStart: Bool) {
+        frameDivisor = (gbWindow?.isMainWindow ?? false) ? 4 : 1
+        let leeway = DispatchTimeInterval.milliseconds((gbWindow?.isMainWindow ?? false) ? 1 : 5)
+        let interval = 1 / (frameRate * Double(frameDivisor))
+        let startTime = DispatchTime.now().uptimeNanoseconds + (forStart ? 100000000 : UInt64(interval * 1e9))
+        timer.scheduleRepeating(deadline: DispatchTime(uptimeNanoseconds: startTime), interval: interval, leeway: leeway)
     }
     
     func saveSaveData() {
@@ -233,6 +257,11 @@ class Document: NSDocument, NSWindowDelegate {
         if UserDefaults.standard.bool(forKey: "Autosave") {
             saveSaveData()
         }
+        shouldReschedule = true
+    }
+    
+    func windowDidBecomeMain(_ notification: Notification) {
+        shouldReschedule = true
     }
     
     deinit {
