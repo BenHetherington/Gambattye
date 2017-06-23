@@ -12,13 +12,9 @@
 				<string>gb</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
-			<string></string>
+			<string>GB Icon</string>
 			<key>CFBundleTypeName</key>
 			<string>Game Boy ROM</string>
-			<key>CFBundleTypeOSTypes</key>
-			<array>
-				<string>????</string>
-			</array>
 			<key>CFBundleTypeRole</key>
 			<string>Viewer</string>
 			<key>LSTypeIsPackage</key>
@@ -31,6 +27,8 @@
 			<array>
 				<string>gbc</string>
 			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>GBC Icon</string>
 			<key>CFBundleTypeName</key>
 			<string>Game Boy Color ROM</string>
 			<key>CFBundleTypeRole</key>
@@ -45,6 +43,8 @@
 			<array>
 				<string>sav</string>
 			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>SAV Icon</string>
 			<key>CFBundleTypeName</key>
 			<string>Game Boy Save Data</string>
 			<key>CFBundleTypeRole</key>
@@ -57,6 +57,8 @@
 			<array>
 				<string>rtc</string>
 			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>RTC Icon</string>
 			<key>CFBundleTypeName</key>
 			<string>Game Boy Realtime Clock Data</string>
 			<key>CFBundleTypeRole</key>
