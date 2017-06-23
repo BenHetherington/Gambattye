@@ -12,6 +12,8 @@ To download Gambattye, head to the [releases page](https://github.com/Ben10do/Ga
 
 Download the top zip file, decompress it if necessary, and then drag Gambattye to your Applications folder.
 
+To start Gambattye for the first time, you may need to right-click it, choose 'Open', then click 'Open' in the resulting dialog box. This won't be required on subsequent launches. See [Apple Support](https://support.apple.com/en-us/HT202491) for more information.
+
 To upgrade to subsequent versions, you can use Gambattye's built-in updater.
 
 ## Building
