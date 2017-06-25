@@ -11,29 +11,29 @@ import Cocoa
 private let expectedSamples = 35112
 private let frameRate = 262144.0 / 4389.0
 
+private let soundEnabledAttributeKey = "com.ben10do.Gambattye.SoundEnabled"
+private let consoleAttributeKey = "com.ben10do.Gambattye.Console"
+
 class Document: NSDocument, NSWindowDelegate {
     
-    var romData = Data()
-    let emulator = GB()
-    var timer = DispatchSource.makeTimerSource()
-    let inputGetter = InputGetter()
-    let audioEngine: AudioEngine?
-    var internalSoundEnabled = true
-    let emulationStateAccessQueue = DispatchQueue(label: "com.ben10do.Gambattye.EmulationStateAccess")
+    private var romData = Data()
+    private let emulator = GB()
+    private var timer = DispatchSource.makeTimerSource()
+    private let inputGetter = InputGetter()
+    private let audioEngine: AudioEngine?
+    private var internalSoundEnabled = true
+    private let emulationStateAccessQueue = DispatchQueue(label: "com.ben10do.Gambattye.EmulationStateAccess")
     
-    var videoBuffer = [UInt32](repeating: 0xF8F8F8, count: 160 * 144)
-    var dataProvider: CGDataProvider?
+    private var videoBuffer = [UInt32](repeating: 0xF8F8F8, count: 160 * 144)
+    private var dataProvider: CGDataProvider?
     
-    var audioBuffer = [UInt32](repeating: 0, count: expectedSamples + 2064)
+    private var audioBuffer = [UInt32](repeating: 0, count: expectedSamples + 2064)
     
-    var shouldReschedule = false
-    var frameDivisor = 4
+    private var shouldReschedule = false
+    private var frameDivisor = 4
     
-    var loadFlags: LoadFlags = []
-    var keyToConsole = ["consoleIsGB": Console.GB, "consoleIsGBC": .GBC, "consoleIsGBA": .GBA]
-    
-    let soundEnabledAttributeKey = "com.ben10do.Gambattye.SoundEnabled"
-    let consoleAttributeKey = "com.ben10do.Gambattye.Console"
+    private var loadFlags: LoadFlags = []
+    private var keyToConsole = ["consoleIsGB": Console.GB, "consoleIsGBC": .GBC, "consoleIsGBA": .GBA]
     
     @IBOutlet var gbWindow: NSWindow? {
         willSet {
@@ -73,13 +73,10 @@ class Document: NSDocument, NSWindowDelegate {
     
     func beginEmulation() {
         emulator.setInputGetter(inputGetter)
-        
         soundEnabled = fileURL?.getExtendedAttribute(name: soundEnabledAttributeKey) ?? true
-        
         rescheduleTimer(forStart: true)
         
         dataProvider = CGDataProvider(data: Data(bytesNoCopy: &videoBuffer, count: 4 * videoBuffer.count, deallocator: .none) as CFData)!
-        
         
         let dispatchHandler = DispatchWorkItem { [weak self] in
             self?.emulate()
@@ -132,7 +129,7 @@ class Document: NSDocument, NSWindowDelegate {
         }
     }
     
-    func rescheduleTimer(forStart: Bool) {
+    private func rescheduleTimer(forStart: Bool) {
         frameDivisor = (gbWindow?.isMainWindow ?? false) ? 4 : 1
         let leeway = DispatchTimeInterval.milliseconds((gbWindow?.isMainWindow ?? false) ? 1 : 5)
         let interval = 1 / (frameRate * Double(frameDivisor))
@@ -148,9 +145,7 @@ class Document: NSDocument, NSWindowDelegate {
     
     override func read(from url: URL, ofType typeName: String) throws {
         try romData = Data(contentsOf: url) // Just in case someone tries to save the ROM
-        
         console = fileURL?.getExtendedAttribute(name: consoleAttributeKey) ?? .GBC
-        
         
         try emulator.load(from: url, flags: loadFlags)
         beginEmulation()
