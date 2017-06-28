@@ -21,7 +21,7 @@
 #ifdef __cplusplus
 - (instancetype)initWithCppObject:(gambatte::PakInfo *)pakInfo;
 #endif
-//- (instancetype)init;
-//- (instancetype)initWithMultiPak:(BOOL)multiPak ROMBanks:(unsigned)ROMBanks ROMHeader:(unsigned char[])ROMHeader;
+- (instancetype)init;
+- (instancetype)initWithMultiPak:(BOOL)multiPak ROMBanks:(unsigned)ROMBanks ROMHeader:(unsigned char[])ROMHeader;
 
 @end

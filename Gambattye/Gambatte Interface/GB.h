@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Selects which state slot to save state to or load state from, and returns the currently selected slot.
  * There are 10 such slots, numbered from 0 to 9 (periodically extended for all n).
  */
-@property (getter=currentState, setter=setCurrentState:) int currentState;
+@property (getter=currentState, setter=setCurrentState:) NSInteger currentState;
 
 /** ROM header title of currently loaded ROM image. */
 @property (readonly, getter=ROMTitle) NSString *ROMTitle;
@@ -105,11 +105,11 @@ typedef NS_OPTIONS(int, LoadFlags) {
 - (void)saveSaveData;
 
 /**
- * Saves emulator state to the state slot selected with selectState().
+ * Saves emulator state to the state slot selected with currentState.
  * The data will be stored in the directory given by setSaveDir().
  *
  * @param  videoBuffer 160x144 RGB32 (native endian) video frame buffer or 0. Used for
- *                  saving a thumbnail.
+ *                     saving a thumbnail.
  * @param  pitch distance in number of pixels (not bytes) from the start of one line
  *               to the next in videoBuf.
  * @return success
@@ -117,7 +117,7 @@ typedef NS_OPTIONS(int, LoadFlags) {
 - (BOOL)saveStateWithVideoBuffer:(uint_least32_t *)videoBuffer pitch:(ptrdiff_t)pitch error:(NSError **)error;
 
 /**
- * Loads emulator state from the state slot selected with selectState().
+ * Loads emulator state from the state slot selected with currentState.
  * @return success
  */
 - (BOOL)loadStateWithError:(NSError **)error;
@@ -126,7 +126,7 @@ typedef NS_OPTIONS(int, LoadFlags) {
  * Saves emulator state to the file given by 'filepath'.
  *
  * @param  videoBuffer 160x144 RGB32 (native endian) video frame buffer or 0. Used for
- *                  saving a thumbnail.
+ *                     saving a thumbnail.
  * @param  pitch distance in number of pixels (not bytes) from the start of one line
  *               to the next in videoBuf.
  * @return success
@@ -150,7 +150,7 @@ typedef NS_OPTIONS(int, LoadFlags) {
  * Set Game Shark codes to apply to currently loaded ROM image. Cleared on ROM load.
  * @param codes Game Shark codes in format 01HHHHHH;01HHHHHH;... where H is [0-9]|[A-F]
  */
-- (void)setGameShark:(nonnull NSString *)codes;
+- (void)setGameShark:(NSString *)codes;
 
 @end
 

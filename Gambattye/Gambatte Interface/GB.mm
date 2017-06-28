@@ -126,15 +126,15 @@ const NSErrorDomain GBErrorDomain = @"com.Ben10do.Gambattye.Interface";
     return result;
 }
 
-- (int)currentState {
+- (NSInteger)currentState {
     return _GB->currentState();
 }
 
-- (void)setCurrentState:(int)newState {
-    return _GB->selectState(newState);
+- (void)setCurrentState:(NSInteger)newState {
+    return _GB->selectState((int)newState);
 }
 
-- (nonnull NSString *)ROMTitle {
+- (NSString *)ROMTitle {
     std::string title = _GB->romTitle();
     return [NSString stringWithCString:title.c_str() encoding:NSASCIIStringEncoding];
 }
