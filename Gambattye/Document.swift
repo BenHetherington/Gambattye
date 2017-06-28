@@ -56,6 +56,12 @@ class Document: NSDocument, NSWindowDelegate {
         }
         
         super.init()
+        inputGetter.saveState = { [weak self] (id) in
+            self?.saveState(id: id)
+        }
+        inputGetter.loadState = { [weak self] (id) in
+            self?.loadState(id: id)
+        }
     }
 
     override class func autosavesInPlace() -> Bool {
@@ -257,6 +263,67 @@ class Document: NSDocument, NSWindowDelegate {
     
     func windowDidBecomeMain(_ notification: Notification) {
         shouldReschedule = true
+    }
+    
+    @IBAction func goToSaveState(_ sender: NSMenuItem) {
+        let controller = SaveState()
+        controller.romURL = fileURL
+        gbWindow?.beginSheet(controller.window!) { [weak self] response in
+            if response == NSModalResponseOK, let state = controller.stateView?.selectedState {
+                self?.saveState(id: state)
+            }
+        }
+    }
+    
+    @IBAction func goToLoadState(_ sender: NSMenuItem) {
+        let controller = LoadState()
+        controller.romURL = fileURL
+        gbWindow?.beginSheet(controller.window!) { [weak self] response in
+            if response == NSModalResponseOK, let state = controller.stateView?.selectedState {
+                self?.loadState(id: state)
+            }
+        }
+    }
+    
+    func saveState(id: Int) {
+        emulationStateAccessQueue.async {
+            self.emulator.currentState = id
+            let notification = NSUserNotification()
+            
+            do {
+                try self.emulator.saveState(withVideoBuffer: &self.videoBuffer, pitch: 160)
+                
+                notification.title = NSLocalizedString("State Saved", comment: "Notification Title")
+                notification.informativeText = String(format: NSLocalizedString("State %d has been saved.", comment: "Notification Body"), id + 1)
+                
+            } catch {
+                notification.title = NSLocalizedString("Failed to Save State", comment: "Notification Title")
+                notification.informativeText = NSLocalizedString("Please check that the states directory is writable.", comment: "Notification Body")
+            }
+            
+            NSUserNotificationCenter.default.removeAllDeliveredNotifications()
+            NSUserNotificationCenter.default.deliver(notification)
+        }
+    }
+    
+    func loadState(id: Int) {
+        emulationStateAccessQueue.async {
+            self.emulator.currentState = id
+            let notification = NSUserNotification()
+            
+            do {
+                try self.emulator.loadState()
+                notification.title = NSLocalizedString("State Loaded", comment: "Notification Title")
+                notification.informativeText = String(format: NSLocalizedString("State %d has been loaded.", comment: "Notification Body"), id + 1)
+                
+            } catch {
+                notification.title = NSLocalizedString("Failed to Load State", comment: "Notification Title")
+                notification.informativeText = String(format: NSLocalizedString("Save a state beforehand using ⌥%d.", comment: "Notification Body"), (id + 1) % 10)
+            }
+            
+            NSUserNotificationCenter.default.removeAllDeliveredNotifications()
+            NSUserNotificationCenter.default.deliver(notification)
+        }
     }
     
     deinit {

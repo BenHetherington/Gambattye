@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="LoadState" customModule="Gambattye" customModuleProvider="target">
+            <connections>
+                <outlet property="okButton" destination="2ox-AZ-XTr" id="7D9-kS-lvo"/>
+                <outlet property="stateView" destination="4x5-X2-AeE" id="MsK-R6-Q5t"/>
+                <outlet property="window" destination="dvt-3X-qpE" id="WgY-d2-To8"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Save States" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="dvt-3X-qpE" customClass="VibrantDarkWindow" customModule="Gambattye" customModuleProvider="target">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="163" y="199" width="489" height="267"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+            <view key="contentView" id="utP-Pj-P0l">
+                <rect key="frame" x="0.0" y="0.0" width="489" height="267"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="2ox-AZ-XTr">
+                        <rect key="frame" x="353" y="13" width="122" height="32"/>
+                        <buttonCell key="cell" type="push" title="Restore State" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="aYP-4Y-FXl">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="ok:" target="-2" id="MMp-5L-Vnl"/>
+                            <binding destination="-2" name="enabled" keyPath="stateView.isStateSelected" id="tIZ-T5-bBI"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TAp-1n-dhV">
+                        <rect key="frame" x="272" y="13" width="82" height="32"/>
+                        <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IEj-PU-6yu">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                        </buttonCell>
+                        <connections>
+                            <action selector="cancel:" target="-2" id="igC-wh-Gli"/>
+                        </connections>
+                    </button>
+                    <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4x5-X2-AeE" customClass="StateView" customModule="Gambattye" customModuleProvider="target">
+                        <rect key="frame" x="23" y="58" width="442" height="189"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </customView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="2ox-AZ-XTr" secondAttribute="trailing" constant="20" id="4k6-uf-VeK"/>
+                    <constraint firstAttribute="bottom" secondItem="TAp-1n-dhV" secondAttribute="bottom" constant="20" id="HSd-U8-P9d"/>
+                    <constraint firstAttribute="bottom" secondItem="2ox-AZ-XTr" secondAttribute="bottom" constant="20" id="PPX-qN-wv9"/>
+                    <constraint firstItem="2ox-AZ-XTr" firstAttribute="leading" secondItem="TAp-1n-dhV" secondAttribute="trailing" constant="11" id="znf-as-BGb"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="-177.5" y="-359.5"/>
+        </window>
+        <userDefaultsController representsSharedInstance="YES" id="P0z-4X-StO"/>
+    </objects>
+</document>

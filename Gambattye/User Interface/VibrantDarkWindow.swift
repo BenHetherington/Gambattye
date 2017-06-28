@@ -45,7 +45,6 @@ import Cocoa
         super.layoutIfNeeded()
         
         appearance = appearance ?? NSAppearance(named: NSAppearanceNameVibrantDark)
-        backgroundColor = NSColor.black
     }
     
     func hideMouseAfterDelay() {

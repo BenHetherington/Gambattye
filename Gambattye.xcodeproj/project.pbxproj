@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		B503DB551EF32A7800FB53FA /* TPCircularBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B503DB541EF32A7800FB53FA /* TPCircularBuffer.swift */; };
+		B51BA4F71F03E65E00847745 /* StateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51BA4F61F03E65E00847745 /* StateImage.swift */; };
+		B51BA4F91F04005200847745 /* SaveState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51BA4F81F04005200847745 /* SaveState.swift */; };
 		B51C47CC1E40EB3F001C6BF4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B51C47CB1E40EB3F001C6BF4 /* AudioToolbox.framework */; };
 		B52C8FBA1E3F7DD80027CC0E /* InputGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C8FB91E3F7DD80027CC0E /* InputGetter.swift */; };
 		B52C8FBC1E3FF8A10027CC0E /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C8FBB1E3FF8A10027CC0E /* AudioEngine.swift */; };
 		B53432871E9AB57C0065A1F4 /* KeyRecorderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53432861E9AB57C0065A1F4 /* KeyRecorderDelegate.swift */; };
 		B53E8D921EF41324000D8800 /* Touch Bar.xib in Resources */ = {isa = PBXBuildFile; fileRef = B53E8D941EF41324000D8800 /* Touch Bar.xib */; };
 		B53E8D951EF4139C000D8800 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B53E8D971EF4139C000D8800 /* Credits.rtf */; };
+		B54FA4A41F01B5150062E470 /* StateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54FA4A61F01B5150062E470 /* StateView.xib */; };
+		B54FA4A91F01B5650062E470 /* LoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54FA4A71F01B5650062E470 /* LoadState.swift */; };
+		B54FA4AA1F01B5650062E470 /* LoadState.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54FA4A81F01B5650062E470 /* LoadState.xib */; };
 		B5502B441EF5D311002AE301 /* Timer+Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5502B431EF5D311002AE301 /* Timer+Closures.swift */; };
 		B552C8B41E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552C8B21E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift */; };
 		B552C8B71E9A74DD0020A4D2 /* KeyRecorderControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552C8B61E9A74DD0020A4D2 /* KeyRecorderControl.swift */; };
@@ -26,12 +31,16 @@
 		B577D3301E3D53F100B5A99F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B577D32E1E3D53F100B5A99F /* MainMenu.xib */; };
 		B577D3381E3D56CD00B5A99F /* GBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577D3371E3D56CD00B5A99F /* GBView.swift */; };
 		B577D33A1E3D5A7300B5A99F /* VibrantDarkWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577D3391E3D5A7300B5A99F /* VibrantDarkWindow.swift */; };
+		B57B3BAC1F04071F00DD66EF /* NotificationsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57B3BAB1F04071F00DD66EF /* NotificationsDelegate.swift */; };
+		B57B3BAE1F04134200DD66EF /* DoubleClickButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57B3BAD1F04134200DD66EF /* DoubleClickButton.swift */; };
+		B58CE5D81F018C8200E5A57C /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CE5D61F018C8200E5A57C /* StateView.swift */; };
 		B5A6DA6B1EF69B3C006F0D05 /* GeneralPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5A6DA6D1EF69B3C006F0D05 /* GeneralPreferencesView.xib */; };
 		B5A6DA6E1EF69B40006F0D05 /* ControlPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5A6DA701EF69B40006F0D05 /* ControlPreferencesView.xib */; };
 		B5A7DB391E80635500404A5E /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5A7DB381E80635500404A5E /* Defaults.plist */; };
 		B5D669F11E997A390050EE2A /* GeneralPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D669F01E997A390050EE2A /* GeneralPreferencesViewController.swift */; };
 		B5D669F31E997DC50050EE2A /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D669F21E997DC50050EE2A /* PreferencesWindowController.swift */; };
 		B5D669F61E9992650050EE2A /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = B5D669F51E9992650050EE2A /* dsa_pub.pem */; };
+		B5EEAE331F0024B3004FCF33 /* No State.png in Resources */ = {isa = PBXBuildFile; fileRef = B5EEAE321F0024B3004FCF33 /* No State.png */; };
 		B5FFE1641E3E47130014F99C /* GB.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5FFE1631E3E47130014F99C /* GB.mm */; };
 		B5FFE1721E3E653A0014F99C /* InterfacePakInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5FFE1711E3E653A0014F99C /* InterfacePakInfo.mm */; };
 		B5FFE1751E3E6AF90014F99C /* InterfaceInputGetter.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5FFE1741E3E6AF90014F99C /* InterfaceInputGetter.mm */; };
@@ -42,6 +51,8 @@
 		A1EC7966B4E98646FCDA5965 /* Pods-Gambattye.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gambattye.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gambattye/Pods-Gambattye.debug.xcconfig"; sourceTree = "<group>"; };
 		A6C0BB4EFC63F7C721439FFB /* Pods-Gambattye.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gambattye.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gambattye/Pods-Gambattye.release.xcconfig"; sourceTree = "<group>"; };
 		B503DB541EF32A7800FB53FA /* TPCircularBuffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TPCircularBuffer.swift; sourceTree = "<group>"; };
+		B51BA4F61F03E65E00847745 /* StateImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateImage.swift; sourceTree = "<group>"; };
+		B51BA4F81F04005200847745 /* SaveState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveState.swift; sourceTree = "<group>"; };
 		B51C47CB1E40EB3F001C6BF4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B523C6851EA4B501007F42CD /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		B52C8FB91E3F7DD80027CC0E /* InputGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputGetter.swift; sourceTree = "<group>"; };
@@ -49,6 +60,9 @@
 		B53432861E9AB57C0065A1F4 /* KeyRecorderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyRecorderDelegate.swift; sourceTree = "<group>"; };
 		B53E8D931EF41324000D8800 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = "Base.lproj/Touch Bar.xib"; sourceTree = "<group>"; };
 		B53E8D961EF4139C000D8800 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Base; path = Base.lproj/Credits.rtf; sourceTree = "<group>"; };
+		B54FA4A51F01B5150062E470 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/StateView.xib; sourceTree = "<group>"; };
+		B54FA4A71F01B5650062E470 /* LoadState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadState.swift; sourceTree = "<group>"; };
+		B54FA4A81F01B5650062E470 /* LoadState.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadState.xib; sourceTree = "<group>"; };
 		B5502B431EF5D311002AE301 /* Timer+Closures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Timer+Closures.swift"; sourceTree = "<group>"; };
 		B552C8B21E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPreferencesViewController.swift; sourceTree = "<group>"; };
 		B552C8B61E9A74DD0020A4D2 /* KeyRecorderControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyRecorderControl.swift; sourceTree = "<group>"; };
@@ -68,13 +82,17 @@
 		B577D3311E3D53F100B5A99F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B577D3371E3D56CD00B5A99F /* GBView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBView.swift; sourceTree = "<group>"; };
 		B577D3391E3D5A7300B5A99F /* VibrantDarkWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VibrantDarkWindow.swift; sourceTree = "<group>"; };
+		B57B3BAB1F04071F00DD66EF /* NotificationsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsDelegate.swift; sourceTree = "<group>"; };
+		B57B3BAD1F04134200DD66EF /* DoubleClickButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleClickButton.swift; sourceTree = "<group>"; };
 		B58CD9201EA0E898006B0F50 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		B58CE5D61F018C8200E5A57C /* StateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
 		B5A6DA6C1EF69B3C006F0D05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/GeneralPreferencesView.xib; sourceTree = "<group>"; };
 		B5A6DA6F1EF69B40006F0D05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ControlPreferencesView.xib; sourceTree = "<group>"; };
 		B5A7DB381E80635500404A5E /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
 		B5D669F01E997A390050EE2A /* GeneralPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralPreferencesViewController.swift; sourceTree = "<group>"; };
 		B5D669F21E997DC50050EE2A /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		B5D669F51E9992650050EE2A /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
+		B5EEAE321F0024B3004FCF33 /* No State.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "No State.png"; sourceTree = "<group>"; };
 		B5FFE1611E3E47130014F99C /* Gambattye-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gambattye-Bridging-Header.h"; sourceTree = "<group>"; };
 		B5FFE1621E3E47130014F99C /* GB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GB.h; sourceTree = "<group>"; };
 		B5FFE1631E3E47130014F99C /* GB.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GB.mm; sourceTree = "<group>"; };
@@ -124,6 +142,20 @@
 				B523C6851EA4B501007F42CD /* .travis.yml */,
 			);
 			name = Configuration;
+			sourceTree = "<group>";
+		};
+		B5275EA61F01B4B4002C414F /* Save States */ = {
+			isa = PBXGroup;
+			children = (
+				B58CE5D61F018C8200E5A57C /* StateView.swift */,
+				B54FA4A61F01B5150062E470 /* StateView.xib */,
+				B54FA4A71F01B5650062E470 /* LoadState.swift */,
+				B51BA4F81F04005200847745 /* SaveState.swift */,
+				B54FA4A81F01B5650062E470 /* LoadState.xib */,
+				B57B3BAD1F04134200DD66EF /* DoubleClickButton.swift */,
+				B51BA4F61F03E65E00847745 /* StateImage.swift */,
+			);
+			path = "Save States";
 			sourceTree = "<group>";
 		};
 		B53EB5EB1EF69D6E00546059 /* Extensions */ = {
@@ -184,6 +216,7 @@
 				B52C8FBB1E3FF8A10027CC0E /* AudioEngine.swift */,
 				B577D3271E3D53F100B5A99F /* Document.swift */,
 				B52C8FB91E3F7DD80027CC0E /* InputGetter.swift */,
+				B57B3BAB1F04071F00DD66EF /* NotificationsDelegate.swift */,
 				B5FFE16B1E3E58FE0014F99C /* Gambatte Interface */,
 				B5A6DA731EF69CE8006F0D05 /* User Interface */,
 				B5D669ED1E99786D0050EE2A /* Preferences */,
@@ -199,6 +232,7 @@
 			children = (
 				B577D32E1E3D53F100B5A99F /* MainMenu.xib */,
 				B577D3291E3D53F100B5A99F /* Document.xib */,
+				B5275EA61F01B4B4002C414F /* Save States */,
 				B577D3371E3D56CD00B5A99F /* GBView.swift */,
 				B577D3391E3D5A7300B5A99F /* VibrantDarkWindow.swift */,
 				B53E8D941EF41324000D8800 /* Touch Bar.xib */,
@@ -224,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				B577D32C1E3D53F100B5A99F /* Assets.xcassets */,
+				B5EEAE321F0024B3004FCF33 /* No State.png */,
 				B5D669F51E9992650050EE2A /* dsa_pub.pem */,
 				B577D3311E3D53F100B5A99F /* Info.plist */,
 				B5A7DB381E80635500404A5E /* Defaults.plist */,
@@ -317,10 +352,13 @@
 				B5A7DB391E80635500404A5E /* Defaults.plist in Resources */,
 				B5D669F61E9992650050EE2A /* dsa_pub.pem in Resources */,
 				B577D32D1E3D53F100B5A99F /* Assets.xcassets in Resources */,
+				B5EEAE331F0024B3004FCF33 /* No State.png in Resources */,
 				B53E8D951EF4139C000D8800 /* Credits.rtf in Resources */,
+				B54FA4A41F01B5150062E470 /* StateView.xib in Resources */,
 				B5A6DA6B1EF69B3C006F0D05 /* GeneralPreferencesView.xib in Resources */,
 				B577D32B1E3D53F100B5A99F /* Document.xib in Resources */,
 				B53E8D921EF41324000D8800 /* Touch Bar.xib in Resources */,
+				B54FA4AA1F01B5650062E470 /* LoadState.xib in Resources */,
 				B577D3301E3D53F100B5A99F /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,20 +481,26 @@
 				B5502B441EF5D311002AE301 /* Timer+Closures.swift in Sources */,
 				B5FFE1721E3E653A0014F99C /* InterfacePakInfo.mm in Sources */,
 				B5D669F31E997DC50050EE2A /* PreferencesWindowController.swift in Sources */,
+				B51BA4F71F03E65E00847745 /* StateImage.swift in Sources */,
 				B53432871E9AB57C0065A1F4 /* KeyRecorderDelegate.swift in Sources */,
+				B57B3BAC1F04071F00DD66EF /* NotificationsDelegate.swift in Sources */,
 				B577D3281E3D53F100B5A99F /* Document.swift in Sources */,
 				B5FFE1751E3E6AF90014F99C /* InterfaceInputGetter.mm in Sources */,
+				B58CE5D81F018C8200E5A57C /* StateView.swift in Sources */,
 				B552C8B71E9A74DD0020A4D2 /* KeyRecorderControl.swift in Sources */,
 				B52C8FBC1E3FF8A10027CC0E /* AudioEngine.swift in Sources */,
 				B52C8FBA1E3F7DD80027CC0E /* InputGetter.swift in Sources */,
 				B5FFE1641E3E47130014F99C /* GB.mm in Sources */,
+				B51BA4F91F04005200847745 /* SaveState.swift in Sources */,
 				B56ED5771EE1C7E50088DBBE /* URL+ExtendedAttributes.swift in Sources */,
 				B577D3381E3D56CD00B5A99F /* GBView.swift in Sources */,
 				B577D33A1E3D5A7300B5A99F /* VibrantDarkWindow.swift in Sources */,
 				B5D669F11E997A390050EE2A /* GeneralPreferencesViewController.swift in Sources */,
 				B577D3261E3D53F100B5A99F /* AppDelegate.swift in Sources */,
+				B54FA4A91F01B5650062E470 /* LoadState.swift in Sources */,
 				B503DB551EF32A7800FB53FA /* TPCircularBuffer.swift in Sources */,
 				B552C8B41E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift in Sources */,
+				B57B3BAE1F04134200DD66EF /* DoubleClickButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +521,14 @@
 				B53E8D961EF4139C000D8800 /* Base */,
 			);
 			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		B54FA4A61F01B5150062E470 /* StateView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B54FA4A51F01B5150062E470 /* Base */,
+			);
+			name = StateView.xib;
 			sourceTree = "<group>";
 		};
 		B577D3291E3D53F100B5A99F /* Document.xib */ = {

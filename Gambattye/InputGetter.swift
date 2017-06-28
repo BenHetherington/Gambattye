@@ -19,6 +19,9 @@ class InputGetter: NSResponder, InputGetterProtocol {
     private var keyToButton = [UInt16: Buttons]()
     private var modifierFlagToButton = [UInt: Buttons]()
     
+    var saveState: ((Int) -> Void)?
+    var loadState: ((Int) -> Void)?
+    
     private var prefsChangedObserver: NSObjectProtocol?
     
     override init() {
@@ -68,6 +71,17 @@ class InputGetter: NSResponder, InputGetterProtocol {
             if !event.isARepeat {
                 keyboardPushedButtons.insert(button)
             }
+        } else if let char = event.charactersIgnoringModifiers, let number = Int(char) {
+            if !event.isARepeat {
+                let id = number > 0 ? number - 1 : 9
+                
+                if event.modifierFlags.contains(.option), event.modifierFlags.isDisjoint(with: [.shift, .command, .control]) {
+                    saveState?(id)
+                } else {
+                    loadState?(id)
+                }
+            }
+            
         } else {
             super.keyDown(with: event)
         }

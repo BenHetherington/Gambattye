@@ -11,6 +11,7 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
+    let notificationsDelegate = NotificationsDelegate()
     lazy var preferences = PreferencesWindowController()
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -18,6 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let defaults = NSDictionary(contentsOf: defaultsURL) as? [String : Any] {
             UserDefaults.standard.register(defaults: defaults)
         }
+        NSUserNotificationCenter.default.delegate = notificationsDelegate
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -26,6 +28,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 document.saveSaveData()
             }
         }
+        
+        NSUserNotificationCenter.default.removeAllDeliveredNotifications()
     }
     
     func applicationShouldOpenUntitledFile(_ sender: NSApplication) -> Bool {

@@ -66,6 +66,20 @@
 			<key>LSTypeIsPackage</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>gqs</string>
+			</array>
+			<key>CFBundleTypeIconFile</key>
+			<string>GQS Icon</string>
+			<key>CFBundleTypeName</key>
+			<string>Gambattye Save State</string>
+			<key>CFBundleTypeRole</key>
+			<string>None</string>
+			<key>LSTypeIsPackage</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>

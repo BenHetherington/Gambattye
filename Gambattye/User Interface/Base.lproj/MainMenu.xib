@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12120"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -380,6 +380,19 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="Y66-Uw-kBv"/>
+                            <menuItem title="Save State…" id="wGy-R5-XwF">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="goToSaveState:" target="-1" id="5ly-mp-fQZ"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Load State…" id="i3q-Bz-xUx">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="goToLoadState:" target="-1" id="D7e-Kl-CgC"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="YKP-Xm-CEy"/>
                             <menuItem title="Emulate Sound" state="on" id="UWM-vF-feo">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
