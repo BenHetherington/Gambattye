@@ -12,7 +12,7 @@ private let callback = TimerCallback()
 
 extension Timer {
     
-    class func scheduled(withTimeInterval time: TimeInterval, repeats: Bool, block: @escaping (Timer) -> Void) -> Timer {
+    @discardableResult class func scheduled(withTimeInterval time: TimeInterval, repeats: Bool, block: @escaping (Timer) -> Void) -> Timer {
         if #available(macOS 10.12, *) {
             return scheduledTimer(withTimeInterval: time, repeats: repeats, block: block)
         } else {

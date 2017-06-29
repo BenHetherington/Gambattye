@@ -18,7 +18,6 @@
 		B53E8D951EF4139C000D8800 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = B53E8D971EF4139C000D8800 /* Credits.rtf */; };
 		B54FA4A41F01B5150062E470 /* StateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54FA4A61F01B5150062E470 /* StateView.xib */; };
 		B54FA4A91F01B5650062E470 /* LoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54FA4A71F01B5650062E470 /* LoadState.swift */; };
-		B54FA4AA1F01B5650062E470 /* LoadState.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54FA4A81F01B5650062E470 /* LoadState.xib */; };
 		B5502B441EF5D311002AE301 /* Timer+Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5502B431EF5D311002AE301 /* Timer+Closures.swift */; };
 		B552C8B41E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552C8B21E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift */; };
 		B552C8B71E9A74DD0020A4D2 /* KeyRecorderControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552C8B61E9A74DD0020A4D2 /* KeyRecorderControl.swift */; };
@@ -36,6 +35,7 @@
 		B58CE5D81F018C8200E5A57C /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CE5D61F018C8200E5A57C /* StateView.swift */; };
 		B5A6DA6B1EF69B3C006F0D05 /* GeneralPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5A6DA6D1EF69B3C006F0D05 /* GeneralPreferencesView.xib */; };
 		B5A6DA6E1EF69B40006F0D05 /* ControlPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5A6DA701EF69B40006F0D05 /* ControlPreferencesView.xib */; };
+		B5A7C9131F0457720019D877 /* LoadState.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5A7C9151F0457720019D877 /* LoadState.xib */; };
 		B5A7DB391E80635500404A5E /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5A7DB381E80635500404A5E /* Defaults.plist */; };
 		B5D669F11E997A390050EE2A /* GeneralPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D669F01E997A390050EE2A /* GeneralPreferencesViewController.swift */; };
 		B5D669F31E997DC50050EE2A /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D669F21E997DC50050EE2A /* PreferencesWindowController.swift */; };
@@ -62,7 +62,6 @@
 		B53E8D961EF4139C000D8800 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = Base; path = Base.lproj/Credits.rtf; sourceTree = "<group>"; };
 		B54FA4A51F01B5150062E470 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/StateView.xib; sourceTree = "<group>"; };
 		B54FA4A71F01B5650062E470 /* LoadState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadState.swift; sourceTree = "<group>"; };
-		B54FA4A81F01B5650062E470 /* LoadState.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadState.xib; sourceTree = "<group>"; };
 		B5502B431EF5D311002AE301 /* Timer+Closures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Timer+Closures.swift"; sourceTree = "<group>"; };
 		B552C8B21E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPreferencesViewController.swift; sourceTree = "<group>"; };
 		B552C8B61E9A74DD0020A4D2 /* KeyRecorderControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyRecorderControl.swift; sourceTree = "<group>"; };
@@ -88,6 +87,7 @@
 		B58CE5D61F018C8200E5A57C /* StateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
 		B5A6DA6C1EF69B3C006F0D05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/GeneralPreferencesView.xib; sourceTree = "<group>"; };
 		B5A6DA6F1EF69B40006F0D05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ControlPreferencesView.xib; sourceTree = "<group>"; };
+		B5A7C9141F0457720019D877 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LoadState.xib; sourceTree = "<group>"; };
 		B5A7DB381E80635500404A5E /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
 		B5D669F01E997A390050EE2A /* GeneralPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralPreferencesViewController.swift; sourceTree = "<group>"; };
 		B5D669F21E997DC50050EE2A /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 				B54FA4A61F01B5150062E470 /* StateView.xib */,
 				B54FA4A71F01B5650062E470 /* LoadState.swift */,
 				B51BA4F81F04005200847745 /* SaveState.swift */,
-				B54FA4A81F01B5650062E470 /* LoadState.xib */,
+				B5A7C9151F0457720019D877 /* LoadState.xib */,
 				B57B3BAD1F04134200DD66EF /* DoubleClickButton.swift */,
 				B51BA4F61F03E65E00847745 /* StateImage.swift */,
 			);
@@ -358,7 +358,7 @@
 				B5A6DA6B1EF69B3C006F0D05 /* GeneralPreferencesView.xib in Resources */,
 				B577D32B1E3D53F100B5A99F /* Document.xib in Resources */,
 				B53E8D921EF41324000D8800 /* Touch Bar.xib in Resources */,
-				B54FA4AA1F01B5650062E470 /* LoadState.xib in Resources */,
+				B5A7C9131F0457720019D877 /* LoadState.xib in Resources */,
 				B577D3301E3D53F100B5A99F /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,7 +453,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd gambatte\nmake libgambatte";
+			shellScript = "cd gambatte\nmake -j libgambatte";
 			showEnvVarsInLog = 0;
 		};
 		FB5AFB4EC76EFB60532F373B /* [CP] Embed Pods Frameworks */ = {
@@ -561,6 +561,14 @@
 				B5A6DA6F1EF69B40006F0D05 /* Base */,
 			);
 			name = ControlPreferencesView.xib;
+			sourceTree = "<group>";
+		};
+		B5A7C9151F0457720019D877 /* LoadState.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5A7C9141F0457720019D877 /* Base */,
+			);
+			name = LoadState.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

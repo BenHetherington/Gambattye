@@ -23,6 +23,7 @@ class Document: NSDocument, NSWindowDelegate {
     private let audioEngine: AudioEngine?
     private var internalSoundEnabled = true
     private let emulationStateAccessQueue = DispatchQueue(label: "com.ben10do.Gambattye.EmulationStateAccess")
+    private var notificationTimer: Timer?
     
     private var videoBuffer = [UInt32](repeating: 0xF8F8F8, count: 160 * 144)
     private var dataProvider: CGDataProvider?
@@ -136,8 +137,8 @@ class Document: NSDocument, NSWindowDelegate {
     }
     
     private func rescheduleTimer(forStart: Bool) {
-        frameDivisor = (gbWindow?.isMainWindow ?? false) ? 4 : 1
-        let leeway = DispatchTimeInterval.milliseconds((gbWindow?.isMainWindow ?? false) ? 1 : 5)
+        frameDivisor = (gbWindow?.isKeyWindow ?? false) ? 4 : 1
+        let leeway = DispatchTimeInterval.milliseconds((gbWindow?.isKeyWindow ?? false) ? 1 : 5)
         let interval = 1 / (frameRate * Double(frameDivisor))
         let startTime = DispatchTime.now().uptimeNanoseconds + (forStart ? 100000000 : UInt64(interval * 1e9))
         timer.scheduleRepeating(deadline: DispatchTime(uptimeNanoseconds: startTime), interval: interval, leeway: leeway)
@@ -258,10 +259,13 @@ class Document: NSDocument, NSWindowDelegate {
         if UserDefaults.standard.bool(forKey: "Autosave") {
             saveSaveData()
         }
+    }
+    
+    func windowDidResignKey(_ notification: Notification) {
         shouldReschedule = true
     }
     
-    func windowDidBecomeMain(_ notification: Notification) {
+    func windowDidBecomeKey(_ notification: Notification) {
         shouldReschedule = true
     }
     
@@ -289,41 +293,62 @@ class Document: NSDocument, NSWindowDelegate {
         emulationStateAccessQueue.async {
             self.emulator.currentState = id
             let notification = NSUserNotification()
+            let notificationTime: TimeInterval
             
             do {
                 try self.emulator.saveState(withVideoBuffer: &self.videoBuffer, pitch: 160)
                 
                 notification.title = NSLocalizedString("State Saved", comment: "Notification Title")
                 notification.informativeText = String(format: NSLocalizedString("State %d has been saved.", comment: "Notification Body"), id + 1)
+                notificationTime = 1.5
                 
             } catch {
                 notification.title = NSLocalizedString("Failed to Save State", comment: "Notification Title")
                 notification.informativeText = NSLocalizedString("Please check that the states directory is writable.", comment: "Notification Body")
+                notificationTime = 2.5
             }
             
-            NSUserNotificationCenter.default.removeAllDeliveredNotifications()
-            NSUserNotificationCenter.default.deliver(notification)
+            self.deliverTimedNotification(notification, time: notificationTime)
         }
     }
     
     func loadState(id: Int) {
+        if let notificationTimer = notificationTimer, notificationTimer.isValid {
+            notificationTimer.fire()
+        }
+        
         emulationStateAccessQueue.async {
             self.emulator.currentState = id
             let notification = NSUserNotification()
+            let notificationTime: TimeInterval
             
             do {
                 try self.emulator.loadState()
                 notification.title = NSLocalizedString("State Loaded", comment: "Notification Title")
                 notification.informativeText = String(format: NSLocalizedString("State %d has been loaded.", comment: "Notification Body"), id + 1)
+                notificationTime = 1.5
                 
             } catch {
                 notification.title = NSLocalizedString("Failed to Load State", comment: "Notification Title")
                 notification.informativeText = String(format: NSLocalizedString("Save a state beforehand using ⌥%d.", comment: "Notification Body"), (id + 1) % 10)
+                notificationTime = 2.5
             }
             
-            NSUserNotificationCenter.default.removeAllDeliveredNotifications()
-            NSUserNotificationCenter.default.deliver(notification)
+            self.deliverTimedNotification(notification, time: notificationTime)
         }
+    }
+    
+    private func deliverTimedNotification(_ notification: NSUserNotification, time: TimeInterval) {
+        DispatchQueue.main.async {
+            self.notificationTimer = Timer.scheduled(withTimeInterval: time, repeats: false) { [weak self] _ in
+                self?.notificationTimer = nil
+                NSUserNotificationCenter.default.removeDeliveredNotification(notification)
+            }
+            self.notificationTimer?.tolerance = TimeInterval.infinity
+        }
+        
+        notification.soundName = nil
+        NSUserNotificationCenter.default.deliver(notification)
     }
     
     deinit {

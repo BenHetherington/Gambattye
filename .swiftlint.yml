@@ -3,6 +3,7 @@ disabled_rules:
 - todo
 - vertical_whitespace
 - identifier_name
+- weak_delegate
 
 opt_in_rules:
 - empty_count
