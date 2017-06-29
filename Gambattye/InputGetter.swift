@@ -19,8 +19,7 @@ class InputGetter: NSResponder, InputGetterProtocol {
     private var keyToButton = [UInt16: Buttons]()
     private var modifierFlagToButton = [UInt: Buttons]()
     
-    var saveState: ((Int) -> Void)?
-    var loadState: ((Int) -> Void)?
+    var optionHeld = false
     
     private var prefsChangedObserver: NSObjectProtocol?
     
@@ -76,9 +75,9 @@ class InputGetter: NSResponder, InputGetterProtocol {
                 let id = number > 0 ? number - 1 : 9
                 
                 if event.modifierFlags.contains(.option), event.modifierFlags.isDisjoint(with: [.shift, .command, .control]) {
-                    saveState?(id)
+                    NotificationCenter.default.post(name: .SaveState, object: self, userInfo: ["id": id])
                 } else {
-                    loadState?(id)
+                    NotificationCenter.default.post(name: .LoadState, object: self, userInfo: ["id": id])
                 }
             }
             
@@ -96,6 +95,15 @@ class InputGetter: NSResponder, InputGetterProtocol {
     }
     
     override func flagsChanged(with event: NSEvent) {
+        if !optionHeld, event.modifierFlags.contains(.option), event.modifierFlags.isDisjoint(with: [.shift, .command, .control]) {
+            NotificationCenter.default.post(name: .OptionPressed, object: self)
+            optionHeld = true
+            
+        } else if optionHeld {
+            NotificationCenter.default.post(name: .OptionReleased, object: self)
+            optionHeld = false
+        }
+        
         if let flag = modiferKeyToFlag[event.keyCode], let button = modifierFlagToButton[flag.rawValue] {
             if event.modifierFlags.contains(flag) {
                 keyboardPushedButtons.insert(button)
@@ -113,4 +121,11 @@ class InputGetter: NSResponder, InputGetterProtocol {
         }
     }
 
+}
+
+extension NSNotification.Name {
+    static let SaveState = NSNotification.Name("GBSaveState")
+    static let LoadState = NSNotification.Name("GBLoadState")
+    static let OptionPressed = NSNotification.Name("GBOptionPressed")
+    static let OptionReleased = NSNotification.Name("GBOptionReleased")
 }

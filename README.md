@@ -33,10 +33,10 @@ The controls can be customised in the Preferences. By default, they are currentl
 | SELECT   | Shift      |
 
 ### Save States
-Unlike some other emulators, Gambatte included, there's no concept of a 'selected state.' Instead, each state (1-10) corresponds to a number key on your keyboard (1-0):
+Unlike some other emulators, Gambatte included, there's no concept of a 'selected state.' Instead, each state (1-10) corresponds to a number key (1-0) on your keyboard (or, if you have one, an icon on your Touch Bar):
 
-- To load a state, simply press its number key.
-- To save a state, press the key while holding down Option (⌥).
+- To load a state, simply press its number key (or tap it).
+- To save a state, press the key (or tap it) while holding down Option (⌥).
 
 You can also go through the menus to glance at your save states, including a preview image for each. From the menu bar, go to the Emulation menu, and choose either 'Load State…' or 'Save State…'.
 

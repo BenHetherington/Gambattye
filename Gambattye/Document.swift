@@ -36,7 +36,10 @@ class Document: NSDocument, NSWindowDelegate {
     private var loadFlags: LoadFlags = []
     private var keyToConsole = ["consoleIsGB": Console.GB, "consoleIsGBC": .GBC, "consoleIsGBA": .GBA]
     
-    @IBOutlet var gbWindow: NSWindow? {
+    private var saveStateObserver: NSObjectProtocol?
+    private var loadStateObserver: NSObjectProtocol?
+    
+    @IBOutlet var gbWindow: GBWindow? {
         willSet {
             gbWindow?.delegate = nil
         }
@@ -57,11 +60,17 @@ class Document: NSDocument, NSWindowDelegate {
         }
         
         super.init()
-        inputGetter.saveState = { [weak self] (id) in
-            self?.saveState(id: id)
+        
+        saveStateObserver = NotificationCenter.default.addObserver(forName: .SaveState, object: nil, queue: nil) { [weak self] notification in
+            if let id = notification.userInfo?["id"] as? Int {
+                self?.saveState(id: id)
+            }
         }
-        inputGetter.loadState = { [weak self] (id) in
-            self?.loadState(id: id)
+        
+        loadStateObserver = NotificationCenter.default.addObserver(forName: .LoadState, object: nil, queue: nil) { [weak self] notification in
+            if let id = notification.userInfo?["id"] as? Int {
+                self?.loadState(id: id)
+            }
         }
     }
 
@@ -267,6 +276,10 @@ class Document: NSDocument, NSWindowDelegate {
     
     func windowDidBecomeKey(_ notification: Notification) {
         shouldReschedule = true
+        
+        if #available(macOS 10.12.2, *) {
+            gbWindow?.touchBarController?.setUpDisplay()
+        }
     }
     
     @IBAction func goToSaveState(_ sender: NSMenuItem) {
@@ -356,6 +369,11 @@ class Document: NSDocument, NSWindowDelegate {
     deinit {
         audioEngine?.stopAudio()
         timer.cancel()
+        
+        if let saveStateObserver = saveStateObserver, let loadStateObserver = loadStateObserver {
+            NotificationCenter.default.removeObserver(saveStateObserver)
+            NotificationCenter.default.removeObserver(loadStateObserver)
+        }
     }
 
 }
