@@ -339,16 +339,18 @@ class Document: NSDocument, NSWindowDelegate {
     }
     
     private func deliverTimedNotification(_ notification: NSUserNotification, time: TimeInterval) {
-        DispatchQueue.main.async {
-            self.notificationTimer = Timer.scheduled(withTimeInterval: time, repeats: false) { [weak self] _ in
-                self?.notificationTimer = nil
-                NSUserNotificationCenter.default.removeDeliveredNotification(notification)
+        if UserDefaults.standard.bool(forKey: "StateNotifications") {
+            DispatchQueue.main.async {
+                self.notificationTimer = Timer.scheduled(withTimeInterval: time, repeats: false) { [weak self] _ in
+                    self?.notificationTimer = nil
+                    NSUserNotificationCenter.default.removeDeliveredNotification(notification)
+                }
+                self.notificationTimer?.tolerance = TimeInterval.infinity
             }
-            self.notificationTimer?.tolerance = TimeInterval.infinity
+            
+            notification.soundName = nil
+            NSUserNotificationCenter.default.deliver(notification)
         }
-        
-        notification.soundName = nil
-        NSUserNotificationCenter.default.deliver(notification)
     }
     
     deinit {
