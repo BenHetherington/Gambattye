@@ -62,13 +62,13 @@ class Document: NSDocument, NSWindowDelegate {
         super.init()
         
         saveStateObserver = NotificationCenter.default.addObserver(forName: .SaveState, object: nil, queue: nil) { [weak self] notification in
-            if let id = notification.userInfo?["id"] as? Int {
+            if self?.gbWindow?.isMainWindow ?? false, let id = notification.userInfo?["id"] as? Int {
                 self?.saveState(id: id)
             }
         }
         
         loadStateObserver = NotificationCenter.default.addObserver(forName: .LoadState, object: nil, queue: nil) { [weak self] notification in
-            if let id = notification.userInfo?["id"] as? Int {
+            if self?.gbWindow?.isMainWindow ?? false, let id = notification.userInfo?["id"] as? Int {
                 self?.loadState(id: id)
             }
         }
