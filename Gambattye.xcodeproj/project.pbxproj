@@ -12,6 +12,7 @@
 		B51BA4F91F04005200847745 /* SaveState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51BA4F81F04005200847745 /* SaveState.swift */; };
 		B51C47CC1E40EB3F001C6BF4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B51C47CB1E40EB3F001C6BF4 /* AudioToolbox.framework */; };
 		B51C8F571F05308300DD810C /* TouchBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51C8F561F05308300DD810C /* TouchBarController.swift */; };
+		B51F8D0A1F533F22005D8341 /* libgambatte.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B51F8D091F533F22005D8341 /* libgambatte.a */; };
 		B52C8FBA1E3F7DD80027CC0E /* InputGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C8FB91E3F7DD80027CC0E /* InputGetter.swift */; };
 		B52C8FBC1E3FF8A10027CC0E /* AudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C8FBB1E3FF8A10027CC0E /* AudioEngine.swift */; };
 		B53432871E9AB57C0065A1F4 /* KeyRecorderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53432861E9AB57C0065A1F4 /* KeyRecorderDelegate.swift */; };
@@ -23,7 +24,6 @@
 		B552C8B41E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552C8B21E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift */; };
 		B552C8B71E9A74DD0020A4D2 /* KeyRecorderControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552C8B61E9A74DD0020A4D2 /* KeyRecorderControl.swift */; };
 		B56ED5771EE1C7E50088DBBE /* URL+ExtendedAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ED5761EE1C7E50088DBBE /* URL+ExtendedAttributes.swift */; };
-		B57102AD1E433D30008A11CD /* libgambatte.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B57102AC1E433D30008A11CD /* libgambatte.a */; };
 		B577D3261E3D53F100B5A99F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577D3251E3D53F100B5A99F /* AppDelegate.swift */; };
 		B577D3281E3D53F100B5A99F /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577D3271E3D53F100B5A99F /* Document.swift */; };
 		B577D32B1E3D53F100B5A99F /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = B577D3291E3D53F100B5A99F /* Document.xib */; };
@@ -57,6 +57,7 @@
 		B51BA4F81F04005200847745 /* SaveState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveState.swift; sourceTree = "<group>"; };
 		B51C47CB1E40EB3F001C6BF4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		B51C8F561F05308300DD810C /* TouchBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchBarController.swift; sourceTree = "<group>"; };
+		B51F8D091F533F22005D8341 /* libgambatte.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgambatte.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B523C6851EA4B501007F42CD /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		B52C8FB91E3F7DD80027CC0E /* InputGetter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputGetter.swift; sourceTree = "<group>"; };
 		B52C8FBB1E3FF8A10027CC0E /* AudioEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioEngine.swift; sourceTree = "<group>"; };
@@ -112,7 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B57102AD1E433D30008A11CD /* libgambatte.a in Frameworks */,
+				B51F8D0A1F533F22005D8341 /* libgambatte.a in Frameworks */,
 				B51C47CC1E40EB3F001C6BF4 /* AudioToolbox.framework in Frameworks */,
 				C01DD15607A0CF40DAF8A073 /* Pods_Gambattye.framework in Frameworks */,
 			);
@@ -133,6 +134,7 @@
 		B51C47CA1E40EB3F001C6BF4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B51F8D091F533F22005D8341 /* libgambatte.a */,
 				B51C47CB1E40EB3F001C6BF4 /* AudioToolbox.framework */,
 				ECA82825FA40434915B48D98 /* Pods_Gambattye.framework */,
 			);
@@ -295,7 +297,6 @@
 			buildConfigurationList = B577D3341E3D53F100B5A99F /* Build configuration list for PBXNativeTarget "Gambattye" */;
 			buildPhases = (
 				0F456DD372D8C3A37889CE93 /* [CP] Check Pods Manifest.lock */,
-				B5C376891E4341250009A9B0 /* Build libgambatte */,
 				B58CD91F1EA0E73F006B0F50 /* Run SwiftLint */,
 				B5A1899F1E7F45750011FE10 /* Set Build Number to No. of Git Commits */,
 				B5F4882F1F0EEB96002FBF38 /* Set Copyright Year */,
@@ -447,21 +448,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion dev\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
-			showEnvVarsInLog = 0;
-		};
-		B5C376891E4341250009A9B0 /* Build libgambatte */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Build libgambatte";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cd gambatte\nmake -j libgambatte";
 			showEnvVarsInLog = 0;
 		};
 		B5C594431F52D006006ED438 /* Reset Copyright Message */ = {
@@ -719,11 +705,6 @@
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/gambatte/";
 				INFOPLIST_FILE = Gambattye/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Gambattye",
-					"$(PROJECT_DIR)/gambatte/libgambatte",
-				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ben10do.Gambattye;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -744,11 +725,6 @@
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/gambatte/";
 				INFOPLIST_FILE = Gambattye/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Gambattye",
-					"$(PROJECT_DIR)/gambatte/libgambatte",
-				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ben10do.Gambattye;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -5,6 +5,9 @@
       location = "group:Gambattye.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:libgambatte.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
