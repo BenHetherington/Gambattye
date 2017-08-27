@@ -1,4 +1,4 @@
-# Gambattye
+# [![Gambattye](https://ben10do.github.io/Gambattye/repo-images/banner-0.3.png)](https://github.com/Ben10do/Gambattye)
 [![Travis](https://img.shields.io/travis/Ben10do/Gambattye.svg?label=Gambattye)](https://travis-ci.org/Ben10do/Gambattye) [![Travis](https://img.shields.io/travis/Ben10do/gambatte.svg?label=libgambatte)](https://travis-ci.org/Ben10do/gambatte)
 
 Gambattye is a Game Boy Color emulator for macOS, powered by a [fork of Gambatte](https://github.com/Ben10do/gambatte).
