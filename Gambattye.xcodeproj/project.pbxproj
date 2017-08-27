@@ -298,10 +298,12 @@
 				B5C376891E4341250009A9B0 /* Build libgambatte */,
 				B58CD91F1EA0E73F006B0F50 /* Run SwiftLint */,
 				B5A1899F1E7F45750011FE10 /* Set Build Number to No. of Git Commits */,
+				B5F4882F1F0EEB96002FBF38 /* Set Copyright Year */,
 				B577D31E1E3D53F100B5A99F /* Sources */,
 				B577D31F1E3D53F100B5A99F /* Frameworks */,
 				B577D3201E3D53F100B5A99F /* Resources */,
 				B5A189A01E7F45840011FE10 /* Set Build Number to "dev" */,
+				B5C594431F52D006006ED438 /* Reset Copyright Message */,
 				FB5AFB4EC76EFB60532F373B /* [CP] Embed Pods Frameworks */,
 				405C147B4CF35DEF3B56D567 /* [CP] Copy Pods Resources */,
 			);
@@ -460,6 +462,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "cd gambatte\nmake -j libgambatte";
+			showEnvVarsInLog = 0;
+		};
+		B5C594431F52D006006ED438 /* Reset Copyright Message */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Reset Copyright Message";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "copyright=\"Copyright © Ben10do.\\nLicenced under the GNU General Public Licence v2.\"\n/usr/libexec/PlistBuddy -c \"Set :NSHumanReadableCopyright $copyright\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+			showEnvVarsInLog = 0;
+		};
+		B5F4882F1F0EEB96002FBF38 /* Set Copyright Year */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Set Copyright Year";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "year=$(git log -1 --date=format:%Y --format=%ad)\ncopyright=\"Copyright © $year Ben10do.\\nLicenced under the GNU General Public Licence v2.\"\n/usr/libexec/PlistBuddy -c \"Set :NSHumanReadableCopyright $copyright\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
 			showEnvVarsInLog = 0;
 		};
 		FB5AFB4EC76EFB60532F373B /* [CP] Embed Pods Frameworks */ = {
