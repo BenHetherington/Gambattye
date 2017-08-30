@@ -1,11 +1,11 @@
 <?xml version="1.0" standalone="yes"?><rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0"><channel><title>Gambattye</title>
 
 <item>
-<title>Gambattye 0.2</title>
-<sparkle:releaseNotesLink>https://ben10do.github.io/Gambattye/release-notes/0.2.html</sparkle:releaseNotesLink>
-<pubDate>Fri, 16 Jun 2017 15:24:43 +0100</pubDate>
+<title>Gambattye 0.3</title>
+<sparkle:releaseNotesLink>https://ben10do.github.io/Gambattye/release-notes/0.3.html</sparkle:releaseNotesLink>
+<pubDate>Wed, 30 Aug 2017 22:03:11 +0100</pubDate>
 <sparkle:minimumSystemVersion>10.11</sparkle:minimumSystemVersion>
-<enclosure url="https://github.com/Ben10do/Gambattye/releases/download/v0.2/Gambattye-0.2.zip" sparkle:version="44" sparkle:shortVersionString="0.2" length="4169200" type="application/octet-stream" sparkle:dsaSignature="MCwCFCs1WRge0fOEaFtDaJPbdfyAr16HAhR+y3KtBoxPpKAEUZccEebmgpBVeQ=="/>
+<enclosure url="https://github.com/Ben10do/Gambattye/releases/download/v0.3/Gambattye-0.3.zip" sparkle:version="67" sparkle:shortVersionString="0.3" length="5949418" type="application/octet-stream" sparkle:dsaSignature="MC0CFB2ng6Si6eSyNRE8Auou513ahaSrAhUAu8P4Hsot4jHK16por0F61d3qoFg="/>
 </item>
 
 </channel></rss>
