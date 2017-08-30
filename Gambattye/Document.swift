@@ -264,17 +264,17 @@ class Document: NSDocument, NSWindowDelegate {
         }
     }
     
-    func windowDidResignMain(_ notification: Notification) {
+    func windowDidResignMain(_: Notification) {
         if UserDefaults.standard.bool(forKey: "Autosave") {
             saveSaveData()
         }
     }
     
-    func windowDidResignKey(_ notification: Notification) {
+    func windowDidResignKey(_: Notification) {
         shouldReschedule = true
     }
     
-    func windowDidBecomeKey(_ notification: Notification) {
+    func windowDidBecomeKey(_: Notification) {
         shouldReschedule = true
         
         if #available(macOS 10.12.2, *) {
@@ -282,7 +282,7 @@ class Document: NSDocument, NSWindowDelegate {
         }
     }
     
-    @IBAction func goToSaveState(_ sender: NSMenuItem) {
+    @IBAction func goToSaveState(_: NSMenuItem) {
         let controller = SaveState()
         controller.romURL = fileURL
         gbWindow?.beginSheet(controller.window!) { [weak self] response in
@@ -292,7 +292,7 @@ class Document: NSDocument, NSWindowDelegate {
         }
     }
     
-    @IBAction func goToLoadState(_ sender: NSMenuItem) {
+    @IBAction func goToLoadState(_: NSMenuItem) {
         let controller = LoadState()
         controller.romURL = fileURL
         gbWindow?.beginSheet(controller.window!) { [weak self] response in
