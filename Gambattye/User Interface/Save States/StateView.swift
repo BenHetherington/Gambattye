@@ -8,13 +8,13 @@
 
 import Cocoa
 
-private let placeholderImage = NSImage(named: "No State")
+private let placeholderImage = NSImage(named: NSImage.Name("No State"))
 
 class StateView: NSView {
     
     @IBOutlet var contentView: NSView?
     private(set) var selectedState: Int?
-    dynamic private(set) var isStateSelected = false
+    @objc dynamic private(set) var isStateSelected = false
     
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
@@ -27,7 +27,7 @@ class StateView: NSView {
     }
     
     private func setUp() {
-        NSNib(nibNamed: "StateView", bundle: nil)?.instantiate(withOwner: self, topLevelObjects: nil)
+        NSNib(nibNamed: NSNib.Name("StateView"), bundle: nil)?.instantiate(withOwner: self, topLevelObjects: nil)
         addSubview(contentView!)
     }
     
@@ -69,14 +69,14 @@ class StateView: NSView {
     }
     
     @IBAction func buttonChanged(_ sender: NSButton) {
-        guard sender.state == NSOnState else {
-            sender.state = NSOnState
+        guard sender.state == .on else {
+            sender.state = .on
             return
         }
         
         for subview in contentView!.subviews {
             if let button = subview as? NSButton, button != sender {
-                button.state = NSOffState
+                button.state = .off
             }
         }
         

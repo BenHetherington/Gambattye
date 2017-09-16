@@ -10,7 +10,7 @@ import Cocoa
 
 private let defaultKeyToButton = ["Up": Buttons.up, "Down": .down, "Left": .left, "Right": .right, "A": .A, "B": .B, "Select": .select, "Start": .start]
 
-private let modiferKeyToFlag: [UInt16: NSEventModifierFlags] = [54: .command, 55: .command, 56: .shift, 58: .option, 59: .control, 60: .shift, 61: .option, 62: .control]
+private let modiferKeyToFlag: [UInt16: NSEvent.ModifierFlags] = [54: .command, 55: .command, 56: .shift, 58: .option, 59: .control, 60: .shift, 61: .option, 62: .control]
 
 class InputGetter: NSResponder, InputGetterProtocol {
     var persistPushedButtons = Buttons()

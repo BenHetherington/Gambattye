@@ -28,7 +28,7 @@ class KeyRecorderControl: SRRecorderControl {
         }
     }
     
-    override func view(_ view: NSView, stringForToolTip tag: NSToolTipTag, point: NSPoint, userData data: UnsafeMutableRawPointer?) -> String {
+    override func view(_ view: NSView, stringForToolTip tag: NSView.ToolTipTag, point: NSPoint, userData data: UnsafeMutableRawPointer?) -> String {
         let returnValue = super.view(view, stringForToolTip: tag, point: point, userData: data)
         if returnValue == SRLoc("Use old shortcut") {
             return NSLocalizedString("Use previous key", comment: "Controls Preferences")

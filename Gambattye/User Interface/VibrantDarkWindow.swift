@@ -13,7 +13,7 @@ import Cocoa
     override func layoutIfNeeded() {
         super.layoutIfNeeded()
         
-        appearance = appearance ?? NSAppearance(named: NSAppearanceNameVibrantDark)
+        appearance = appearance ?? NSAppearance(named: .vibrantDark)
     }
     
 }

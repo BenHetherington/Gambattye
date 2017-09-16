@@ -21,8 +21,8 @@ class LoadState: NSWindowController {
         }
     }
     
-    override var windowNibName: String {
-        return "LoadState"
+    override var windowNibName: NSNib.Name {
+        return NSNib.Name("LoadState")
     }
     
     override func windowDidLoad() {
@@ -42,11 +42,11 @@ class LoadState: NSWindowController {
     }
         
     @IBAction func cancel(_ sender: NSButton) {
-        window?.sheetParent?.endSheet(window!, returnCode: NSModalResponseCancel)
+        window?.sheetParent?.endSheet(window!, returnCode: .cancel)
     }
     
     @IBAction func ok(_ sender: NSButton) {
-        window?.sheetParent?.endSheet(window!, returnCode: NSModalResponseOK)
+        window?.sheetParent?.endSheet(window!, returnCode: .OK)
     }
     
 }

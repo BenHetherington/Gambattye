@@ -12,7 +12,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     let notificationsDelegate = NotificationsDelegate()
-    lazy var preferences = PreferencesWindowController()
+    lazy var preferences = PreferencesWindowController(())
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         if let defaultsURL = Bundle.main.url(forResource: "Defaults", withExtension: "plist"),
@@ -23,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        for document in NSDocumentController.shared().documents {
+        for document in NSDocumentController.shared.documents {
             if let document = document as? Document {
                 document.saveSaveData()
             }
@@ -33,7 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     func applicationShouldOpenUntitledFile(_ sender: NSApplication) -> Bool {
-        NSDocumentController.shared().openDocument(nil)
+        NSDocumentController.shared.openDocument(nil)
         return false
     }
     

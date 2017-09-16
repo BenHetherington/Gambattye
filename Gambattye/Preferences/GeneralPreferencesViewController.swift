@@ -12,19 +12,19 @@ import MASPreferences
 class GeneralPreferencesViewController: NSViewController, MASPreferencesViewController {
     
     init() {
-        super.init(nibName: "GeneralPreferencesView", bundle: nil)!
-        identifier = "GeneralPreferences"
+        super.init(nibName: NSNib.Name("GeneralPreferencesView"), bundle: nil)
+        identifier = NSUserInterfaceItemIdentifier("GeneralPreferences")
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
-    var toolbarItemImage: NSImage! {
-        return NSImage(named: NSImageNamePreferencesGeneral)
+    var toolbarItemImage: NSImage? {
+        return NSImage(named: .preferencesGeneral)
     }
     
-    var toolbarItemLabel: String! {
+    var toolbarItemLabel: String? {
         return NSLocalizedString("General", comment: "Preferences Label")
     }
     

@@ -17,12 +17,12 @@ import Cocoa
     private var enterFullScreenObserver: NSObjectProtocol?
     private var exitFullScreenObserver: NSObjectProtocol?
     
-    override init(contentRect: NSRect, styleMask style: NSWindowStyleMask, backing bufferingType: NSBackingStoreType, defer flag: Bool) {
+    override init(contentRect: NSRect, styleMask style: NSWindow.StyleMask, backing bufferingType: NSWindow.BackingStoreType, defer flag: Bool) {
         super.init(contentRect: contentRect, styleMask: style, backing: bufferingType, defer: flag)
         
         trackingArea = NSTrackingArea(rect: NSRect(), options: [.inVisibleRect, .mouseEnteredAndExited, .mouseMoved, .activeInKeyWindow], owner: self, userInfo: nil)
         
-        enterFullScreenObserver = NotificationCenter.default.addObserver(forName: .NSWindowDidEnterFullScreen, object: self, queue: nil) {[weak self] (_) in
+        enterFullScreenObserver = NotificationCenter.default.addObserver(forName: NSWindow.didEnterFullScreenNotification, object: self, queue: nil) {[weak self] (_) in
             self?.isFullScreen = true
             self?.hideMouseAfterDelay()
             
@@ -31,7 +31,7 @@ import Cocoa
             }
         }
         
-        exitFullScreenObserver = NotificationCenter.default.addObserver(forName: .NSWindowDidExitFullScreen, object: self, queue: nil) {[weak self] (_) in
+        exitFullScreenObserver = NotificationCenter.default.addObserver(forName: NSWindow.didExitFullScreenNotification, object: self, queue: nil) {[weak self] (_) in
             self?.isFullScreen = false
             self?.disableHiddenMouse()
             

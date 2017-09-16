@@ -74,13 +74,13 @@ class Document: NSDocument, NSWindowDelegate {
         }
     }
 
-    override class func autosavesInPlace() -> Bool {
+    override class var autosavesInPlace: Bool {
         return true
     }
 
-    override var windowNibName: String? {
+    override var windowNibName: NSNib.Name? {
         // Returns the nib file name of the document
-        return "Document"
+        return NSNib.Name("Document")
     }
 
     override func data(ofType typeName: String) throws -> Data {
@@ -150,7 +150,7 @@ class Document: NSDocument, NSWindowDelegate {
         let leeway = DispatchTimeInterval.milliseconds((gbWindow?.isKeyWindow ?? false) ? 1 : 5)
         let interval = 1 / (frameRate * Double(frameDivisor))
         let startTime = DispatchTime.now().uptimeNanoseconds + (forStart ? 100000000 : UInt64(interval * 1e9))
-        timer.scheduleRepeating(deadline: DispatchTime(uptimeNanoseconds: startTime), interval: interval, leeway: leeway)
+        timer.schedule(deadline: DispatchTime(uptimeNanoseconds: startTime), repeating: interval, leeway: leeway)
     }
     
     func saveSaveData() {
@@ -174,7 +174,7 @@ class Document: NSDocument, NSWindowDelegate {
         }
     }
     
-    dynamic var soundEnabled: Bool {
+    @objc dynamic var soundEnabled: Bool {
         get {
             return internalSoundEnabled && canEnableSound
         }
@@ -202,7 +202,7 @@ class Document: NSDocument, NSWindowDelegate {
         }
     }
     
-    dynamic var canEnableSound: Bool {
+    @objc dynamic var canEnableSound: Bool {
         return audioEngine != nil
     }
     
@@ -290,7 +290,7 @@ class Document: NSDocument, NSWindowDelegate {
         let controller = SaveState()
         controller.romURL = fileURL
         gbWindow?.beginSheet(controller.window!) { [weak self] response in
-            if response == NSModalResponseOK, let state = controller.stateView?.selectedState {
+            if response == .OK, let state = controller.stateView?.selectedState {
                 self?.saveState(id: state)
             }
         }
@@ -300,7 +300,7 @@ class Document: NSDocument, NSWindowDelegate {
         let controller = LoadState()
         controller.romURL = fileURL
         gbWindow?.beginSheet(controller.window!) { [weak self] response in
-            if response == NSModalResponseOK, let state = controller.stateView?.selectedState {
+            if response == .OK, let state = controller.stateView?.selectedState {
                 self?.loadState(id: state)
             }
         }

@@ -11,7 +11,7 @@ import MASPreferences
 
 class PreferencesWindowController: MASPreferencesWindowController {
 
-    init() {
+    init(_: ()) {
         super.init(viewControllers: [GeneralPreferencesViewController(),
                                      ControlPreferencesViewController()],
                    title: NSLocalizedString("Preferences", comment: "Preferences Title"))
@@ -19,7 +19,7 @@ class PreferencesWindowController: MASPreferencesWindowController {
     
     override func windowDidLoad() {
         super.windowDidLoad()
-        window?.appearance = NSAppearance(named: NSAppearanceNameVibrantDark)
+        window?.appearance = NSAppearance(named: .vibrantDark)
     }
     
     override init(window: NSWindow?) {

@@ -12,19 +12,19 @@ import MASPreferences
 class ControlPreferencesViewController: NSViewController, MASPreferencesViewController {
 
     init() {
-        super.init(nibName: "ControlPreferencesView", bundle: nil)!
-        identifier = "ControlPreferences"
+        super.init(nibName: NSNib.Name("ControlPreferencesView"), bundle: nil)
+        identifier = NSUserInterfaceItemIdentifier("ControlPreferences")
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
     
-    var toolbarItemImage: NSImage! {
-        return NSImage(named: NSImageNameAdvanced)
+    var toolbarItemImage: NSImage? {
+        return NSImage(named: .advanced)
     }
     
-    var toolbarItemLabel: String! {
+    var toolbarItemLabel: String? {
         return NSLocalizedString("Controls", comment: "Preferences Label")
     }
     

@@ -37,14 +37,14 @@ class TouchBarController: NSObject {
     var saveState: ((Int) -> Void)?
     var loadState: ((Int) -> Void)?
     
-    private let placeholderImage = NSImage(named: "No State")
+    private let placeholderImage = NSImage(named: NSImage.Name("No State"))
     private var optionPressedObserver: NSObjectProtocol?
     private var optionReleasedObserver: NSObjectProtocol?
     private var stateSavedObserver: NSObjectProtocol?
 
     override init() {
         super.init()
-        NSNib(nibNamed: "Touch Bar", bundle: nil)?.instantiate(withOwner: self, topLevelObjects: nil)
+        NSNib(nibNamed: NSNib.Name("Touch Bar"), bundle: nil)?.instantiate(withOwner: self, topLevelObjects: nil)
         buttons = [button0, button1, button2, button3, button4, button5, button6, button7, button8, button9]
         setUpDisplay()
         

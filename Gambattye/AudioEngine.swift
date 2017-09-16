@@ -30,7 +30,7 @@ class AudioEngine {
     func startAudio() throws {
         let sampleRate = 35112 * (262144.0 / 4389.0)
 
-        let format = AVAudioFormat(commonFormat: .pcmFormatInt16, sampleRate: sampleRate, channels: 2, interleaved: true)
+        let format = AVAudioFormat(commonFormat: .pcmFormatInt16, sampleRate: sampleRate, channels: 2, interleaved: true)!
         try audioUnit.inputBusses[0].setFormat(format)
 
         audioUnit.outputProvider = {[weak self] (_, _, frameCount, _, inputData) -> AUAudioUnitStatus in
