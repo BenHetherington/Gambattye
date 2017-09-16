@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B5C0AAAE1F53363100B41A3A /* bitmap_font.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5C595581F532949006ED438 /* bitmap_font.cpp */; };
 		B5C0AAB11F53363800B41A3A /* cpu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5C5955C1F532949006ED438 /* cpu.cpp */; };
 		B5C0AAB31F53364500B41A3A /* file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5C595601F532949006ED438 /* file.cpp */; };
 		B5C0AAB51F53364500B41A3A /* file_zip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5C595631F532949006ED438 /* file_zip.cpp */; };
@@ -100,8 +99,6 @@
 		B5C595521F532949006ED438 /* inputgetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inputgetter.h; sourceTree = "<group>"; };
 		B5C595531F532949006ED438 /* loadres.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loadres.h; sourceTree = "<group>"; };
 		B5C595541F532949006ED438 /* pakinfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pakinfo.h; sourceTree = "<group>"; };
-		B5C595581F532949006ED438 /* bitmap_font.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bitmap_font.cpp; sourceTree = "<group>"; };
-		B5C595591F532949006ED438 /* bitmap_font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bitmap_font.h; sourceTree = "<group>"; };
 		B5C5955B1F532949006ED438 /* counterdef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = counterdef.h; sourceTree = "<group>"; };
 		B5C5955C1F532949006ED438 /* cpu.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cpu.cpp; sourceTree = "<group>"; };
 		B5C5955D1F532949006ED438 /* cpu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpu.h; sourceTree = "<group>"; };
@@ -3056,8 +3053,6 @@
 		B5C595571F532949006ED438 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				B5C595581F532949006ED438 /* bitmap_font.cpp */,
-				B5C595591F532949006ED438 /* bitmap_font.h */,
 				B5C5955B1F532949006ED438 /* counterdef.h */,
 				B5C5955C1F532949006ED438 /* cpu.cpp */,
 				B5C5955D1F532949006ED438 /* cpu.h */,
@@ -6488,7 +6483,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5C0AAAE1F53363100B41A3A /* bitmap_font.cpp in Sources */,
 				B5C0AAB11F53363800B41A3A /* cpu.cpp in Sources */,
 				B5C0AAB31F53364500B41A3A /* file.cpp in Sources */,
 				B5C0AAB51F53364500B41A3A /* file_zip.cpp in Sources */,
