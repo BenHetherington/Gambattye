@@ -191,7 +191,11 @@ class Document: NSDocument, NSWindowDelegate {
                     fileURL?.setExtendedAttribute(name: soundEnabledAttributeKey, value: newValue)
                     
                 } catch {
-                    NSAlert(error: error).runModal()
+                    let errorAlert = NSAlert()
+                    errorAlert.messageText = NSLocalizedString("Failed to initialise audio.", comment: "Error title")
+                    errorAlert.informativeText = error.localizedDescription
+                    errorAlert.runModal()
+                    
                     internalSoundEnabled = false
                 }
             }

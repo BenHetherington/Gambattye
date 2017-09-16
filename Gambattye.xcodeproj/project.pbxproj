@@ -34,6 +34,7 @@
 		B57B3BAC1F04071F00DD66EF /* NotificationsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57B3BAB1F04071F00DD66EF /* NotificationsDelegate.swift */; };
 		B57B3BAE1F04134200DD66EF /* DoubleClickButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57B3BAD1F04134200DD66EF /* DoubleClickButton.swift */; };
 		B58CE5D81F018C8200E5A57C /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CE5D61F018C8200E5A57C /* StateView.swift */; };
+		B5A2966D1F633B020045F3D3 /* AudioComponentDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A2966C1F633B020045F3D3 /* AudioComponentDescription.swift */; };
 		B5A6DA6B1EF69B3C006F0D05 /* GeneralPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5A6DA6D1EF69B3C006F0D05 /* GeneralPreferencesView.xib */; };
 		B5A6DA6E1EF69B40006F0D05 /* ControlPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5A6DA701EF69B40006F0D05 /* ControlPreferencesView.xib */; };
 		B5A7C9131F0457720019D877 /* LoadState.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5A7C9151F0457720019D877 /* LoadState.xib */; };
@@ -89,6 +90,8 @@
 		B57B3BAD1F04134200DD66EF /* DoubleClickButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleClickButton.swift; sourceTree = "<group>"; };
 		B58CD9201EA0E898006B0F50 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		B58CE5D61F018C8200E5A57C /* StateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
+		B5A2966C1F633B020045F3D3 /* AudioComponentDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioComponentDescription.swift; sourceTree = "<group>"; };
+		B5A2966E1F633D790045F3D3 /* Enums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Enums.h; sourceTree = "<group>"; };
 		B5A6DA6C1EF69B3C006F0D05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/GeneralPreferencesView.xib; sourceTree = "<group>"; };
 		B5A6DA6F1EF69B40006F0D05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ControlPreferencesView.xib; sourceTree = "<group>"; };
 		B5A7C9141F0457720019D877 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LoadState.xib; sourceTree = "<group>"; };
@@ -167,6 +170,7 @@
 		B53EB5EB1EF69D6E00546059 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B5A2966F1F633D800045F3D3 /* Audio Unit Extensions */,
 				B503DB541EF32A7800FB53FA /* TPCircularBuffer.swift */,
 				B56ED5761EE1C7E50088DBBE /* URL+ExtendedAttributes.swift */,
 				B5502B431EF5D311002AE301 /* Timer+Closures.swift */,
@@ -231,6 +235,15 @@
 				B5FFE1611E3E47130014F99C /* Gambattye-Bridging-Header.h */,
 			);
 			path = Gambattye;
+			sourceTree = "<group>";
+		};
+		B5A2966F1F633D800045F3D3 /* Audio Unit Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B5A2966C1F633B020045F3D3 /* AudioComponentDescription.swift */,
+				B5A2966E1F633D790045F3D3 /* Enums.h */,
+			);
+			path = "Audio Unit Extensions";
 			sourceTree = "<group>";
 		};
 		B5A6DA731EF69CE8006F0D05 /* User Interface */ = {
@@ -519,6 +532,7 @@
 				B5FFE1641E3E47130014F99C /* GB.mm in Sources */,
 				B51BA4F91F04005200847745 /* SaveState.swift in Sources */,
 				B56ED5771EE1C7E50088DBBE /* URL+ExtendedAttributes.swift in Sources */,
+				B5A2966D1F633B020045F3D3 /* AudioComponentDescription.swift in Sources */,
 				B577D3381E3D56CD00B5A99F /* GBView.swift in Sources */,
 				B577D33A1E3D5A7300B5A99F /* VibrantDarkWindow.swift in Sources */,
 				B5D669F11E997A390050EE2A /* GeneralPreferencesViewController.swift in Sources */,

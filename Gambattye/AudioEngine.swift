@@ -8,16 +8,13 @@
 
 import CoreAudio
 import AudioToolbox
+import AVFoundation
 import TPCircularBuffer
 
-private let initError = NSError(domain: "GambattyeSoundErrorDomain", code: 0, userInfo:
-    [NSLocalizedDescriptionKey: NSLocalizedString("Falied to enable sound.", comment: "Sound Error Description"),
-     NSLocalizedRecoverySuggestionErrorKey: NSLocalizedString("Please ensure that your computer's audio is working.", comment: "Sound Error Recovery Suggestion")])
 private let bufferLength = 1024 * 1024
 
 class AudioEngine {
-    private var audioComponent: AudioComponent
-    private var audioComponentInstance: AudioComponentInstance
+    private var audioUnit: AUAudioUnit
     private var renderVars = RenderVars()
     
     private class RenderVars {
@@ -26,80 +23,48 @@ class AudioEngine {
     }
     
     init() throws {
-        var desc = AudioComponentDescription(componentType: kAudioUnitType_Output, componentSubType: kAudioUnitSubType_DefaultOutput, componentManufacturer: kAudioUnitManufacturer_Apple, componentFlags: 0, componentFlagsMask: 0)
-        
-        if let audioComponent = AudioComponentFindNext(nil, &desc) {
-            self.audioComponent = audioComponent
-        } else {
-            throw initError
-        }
-        
-        var audioComponentInstance: AudioComponentInstance?
-        if AudioComponentInstanceNew(audioComponent, &audioComponentInstance) == noErr, let audioComponentInstance = audioComponentInstance {
-            self.audioComponentInstance = audioComponentInstance
-        } else {
-            throw initError
-        }
+        let desc = AudioComponentDescription(type: .Output, subType: .DefaultOutput, manufacturer: .Apple)
+        audioUnit = try AUAudioUnit(componentDescription: desc)
     }
     
     func startAudio() throws {
-        let render: AURenderCallback = {(dataQueuePointer, _, _, _, inNumberFrames, ioData) -> OSStatus in
-            let renderVars = dataQueuePointer.load(as: RenderVars.self)
-            if let buffer = UnsafeMutablePointer<UInt32>(OpaquePointer(ioData?[0].mBuffers.mData)) {
-                let (data, bytes) = renderVars.circularBuffer.tail()
-                
-                let framesToCopy = min(Int(bytes) / MemoryLayout<UInt32>.size, Int(inNumberFrames))
-                let bytesToCopy = framesToCopy * MemoryLayout<UInt32>.size
-                memcpy(buffer, data, bytesToCopy)
-                renderVars.circularBuffer.consume(bytes: Int32(bytesToCopy))
-                
-                if framesToCopy > 0 {
-                    renderVars.lastSample = buffer[framesToCopy - 1]
-                }
-                
-                for i in framesToCopy..<Int(inNumberFrames) {
-                    buffer[i] = renderVars.lastSample
+        let sampleRate = 35112 * (262144.0 / 4389.0)
+
+        let format = AVAudioFormat(commonFormat: .pcmFormatInt16, sampleRate: sampleRate, channels: 2, interleaved: true)
+        try audioUnit.inputBusses[0].setFormat(format)
+
+        audioUnit.outputProvider = {[weak self] (_, _, frameCount, _, inputData) -> AUAudioUnitStatus in
+            if let renderVars = self?.renderVars {
+                if let buffer = UnsafeMutablePointer<UInt32>(OpaquePointer(inputData[0].mBuffers.mData)) {
+                    let (data, bytes) = renderVars.circularBuffer.tail()
+
+                    let framesToCopy = min(Int(bytes) / MemoryLayout<UInt32>.size, Int(frameCount))
+                    let bytesToCopy = framesToCopy * MemoryLayout<UInt32>.size
+                    memcpy(buffer, data, bytesToCopy)
+                    renderVars.circularBuffer.consume(bytes: Int32(bytesToCopy))
+
+                    if framesToCopy > 0 {
+                        renderVars.lastSample = buffer[framesToCopy - 1]
+                    }
+
+                    for i in framesToCopy ..< Int(frameCount) {
+                        buffer[i] = renderVars.lastSample
+                    }
+
+                    return noErr
                 }
             }
             
             return noErr
         }
-        
-        let callback = AURenderCallbackStruct(inputProc: render, inputProcRefCon: &renderVars)
-        try startAudio(rate: 35112 * (262144.0 / 4389.0), callback: callback)
-    }
-    
-    func startAudio(rate: Float64, callback inputCallback: AURenderCallbackStruct) throws {
-        var callback = inputCallback
-        var error = noErr
-        
-        error = AudioUnitInitialize(audioComponentInstance)
-        guard error == noErr else {
-            throw initError
-        }
-        
-        var streamFormat = AudioStreamBasicDescription(mSampleRate: rate, mFormatID: kAudioFormatLinearPCM, mFormatFlags: kAudioFormatFlagIsSignedInteger, mBytesPerPacket: 4, mFramesPerPacket: 1, mBytesPerFrame: 4, mChannelsPerFrame: 2, mBitsPerChannel: 16, mReserved: 0)
-        
-        error = AudioUnitSetProperty(audioComponentInstance, kAudioUnitProperty_StreamFormat, kAudioUnitScope_Input, 0, &streamFormat, UInt32(MemoryLayout.size(ofValue: streamFormat)))
-        guard error == noErr else {
-            throw initError
-        }
-        
-        error = AudioUnitSetProperty(audioComponentInstance, kAudioUnitProperty_SetRenderCallback, kAudioUnitScope_Input, 0, &callback, UInt32(MemoryLayout.size(ofValue: callback)))
-        guard error == noErr else {
-            throw initError
-        }
-        
+
         restartAudio()
-        
-        error = AudioOutputUnitStart(audioComponentInstance)
-        guard error == noErr else {
-            throw initError
-        }
+        try audioUnit.allocateRenderResources()
+        try audioUnit.startHardware()
     }
     
     func stopAudio() {
-        AudioOutputUnitStop(audioComponentInstance)
+        audioUnit.stopHardware()
     }
     
     func restartAudio() {
@@ -111,8 +76,7 @@ class AudioEngine {
     }
     
     deinit {
-        AudioOutputUnitStop(audioComponentInstance)
-        AudioComponentInstanceDispose(audioComponentInstance)
+        stopAudio()
         renderVars.circularBuffer.cleanup()
     }
     
