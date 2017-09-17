@@ -71,12 +71,6 @@
 		B552C8B21E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPreferencesViewController.swift; sourceTree = "<group>"; };
 		B552C8B61E9A74DD0020A4D2 /* KeyRecorderControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyRecorderControl.swift; sourceTree = "<group>"; };
 		B56ED5761EE1C7E50088DBBE /* URL+ExtendedAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+ExtendedAttributes.swift"; sourceTree = "<group>"; };
-		B57101F31E433807008A11CD /* gambatte.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gambatte.h; sourceTree = "<group>"; };
-		B57101F41E433807008A11CD /* gbint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gbint.h; sourceTree = "<group>"; };
-		B57101F51E433807008A11CD /* inputgetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inputgetter.h; sourceTree = "<group>"; };
-		B57101F61E433807008A11CD /* loadres.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loadres.h; sourceTree = "<group>"; };
-		B57101F71E433807008A11CD /* pakinfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pakinfo.h; sourceTree = "<group>"; };
-		B57102AC1E433D30008A11CD /* libgambatte.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgambatte.a; sourceTree = "<group>"; };
 		B577D3221E3D53F100B5A99F /* Gambattye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gambattye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B577D3251E3D53F100B5A99F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B577D3271E3D53F100B5A99F /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -178,28 +172,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		B57101F11E433807008A11CD /* libgambatte */ = {
-			isa = PBXGroup;
-			children = (
-				B57102AC1E433D30008A11CD /* libgambatte.a */,
-				B57101F21E433807008A11CD /* include */,
-			);
-			name = libgambatte;
-			path = ../../gambatte/libgambatte;
-			sourceTree = "<group>";
-		};
-		B57101F21E433807008A11CD /* include */ = {
-			isa = PBXGroup;
-			children = (
-				B57101F31E433807008A11CD /* gambatte.h */,
-				B57101F41E433807008A11CD /* gbint.h */,
-				B57101F51E433807008A11CD /* inputgetter.h */,
-				B57101F61E433807008A11CD /* loadres.h */,
-				B57101F71E433807008A11CD /* pakinfo.h */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
 		B577D3191E3D53F100B5A99F = {
 			isa = PBXGroup;
 			children = (
@@ -297,7 +269,6 @@
 				B5FFE1711E3E653A0014F99C /* InterfacePakInfo.mm */,
 				B5FFE1731E3E6AF90014F99C /* InterfaceInputGetter.h */,
 				B5FFE1741E3E6AF90014F99C /* InterfaceInputGetter.mm */,
-				B57101F11E433807008A11CD /* libgambatte */,
 			);
 			path = "Gambatte Interface";
 			sourceTree = "<group>";
