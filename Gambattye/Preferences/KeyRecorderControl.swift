@@ -13,7 +13,7 @@ class KeyRecorderControl: SRRecorderControl {
     
     // TODO: See if we can mitigate this mess
     
-    var name: String = "" {
+    @objc dynamic var name: String = "" {
         didSet {
             objectValue = UserDefaults.standard.dictionary(forKey: name + "ButtonKey")
         }
