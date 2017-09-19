@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -364,19 +364,19 @@
                             <menuItem title="Original Game Boy" id="GRz-8E-mhA">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <binding destination="-2" name="value" keyPath="mainWindow.document.consoleIsGB" id="IAd-EX-nYW"/>
+                                    <binding destination="-2" name="value" keyPath="mainWindow.document.emulator.consoleIsGB" id="b0m-gR-EZL"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Game Boy Color (Auto)" tag="1" id="XKd-hF-ime">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <binding destination="-2" name="value" keyPath="mainWindow.document.consoleIsGBC" id="6ni-XV-Ycw"/>
+                                    <binding destination="-2" name="value" keyPath="mainWindow.document.emulator.consoleIsGBC" id="5j1-Kg-C22"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Game Boy Advance" tag="2" id="7N7-jK-06T">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <binding destination="-2" name="value" keyPath="mainWindow.document.consoleIsGBA" id="V8X-Mb-h6r"/>
+                                    <binding destination="-2" name="value" keyPath="mainWindow.document.emulator.consoleIsGBA" id="hXd-mb-Q0B"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="Y66-Uw-kBv"/>
@@ -396,8 +396,8 @@
                             <menuItem title="Emulate Sound" state="on" id="UWM-vF-feo">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <binding destination="-2" name="enabled" keyPath="mainWindow.document.canEnableSound" id="17Q-Ei-mBf"/>
-                                    <binding destination="-2" name="value" keyPath="mainWindow.document.soundEnabled" id="T5p-tK-md6">
+                                    <binding destination="-2" name="enabled" keyPath="mainWindow.document.emulator.canEnableSound" id="s4M-at-MsY"/>
+                                    <binding destination="-2" name="value" keyPath="mainWindow.document.emulator.soundEnabled" id="Dmx-UG-jic">
                                         <dictionary key="options">
                                             <bool key="NSAllowsEditingMultipleValuesSelection" value="NO"/>
                                         </dictionary>

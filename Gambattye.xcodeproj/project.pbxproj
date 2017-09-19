@@ -39,6 +39,7 @@
 		B5A6DA6E1EF69B40006F0D05 /* ControlPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5A6DA701EF69B40006F0D05 /* ControlPreferencesView.xib */; };
 		B5A7C9131F0457720019D877 /* LoadState.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5A7C9151F0457720019D877 /* LoadState.xib */; };
 		B5A7DB391E80635500404A5E /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5A7DB381E80635500404A5E /* Defaults.plist */; };
+		B5C36BD51F71AEA600A14BE1 /* Emulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C36BD41F71AEA600A14BE1 /* Emulator.swift */; };
 		B5CA00EB1F057B84002505A0 /* GBWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CA00EA1F057B84002505A0 /* GBWindow.swift */; };
 		B5D669F11E997A390050EE2A /* GeneralPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D669F01E997A390050EE2A /* GeneralPreferencesViewController.swift */; };
 		B5D669F31E997DC50050EE2A /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D669F21E997DC50050EE2A /* PreferencesWindowController.swift */; };
@@ -90,6 +91,7 @@
 		B5A6DA6F1EF69B40006F0D05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ControlPreferencesView.xib; sourceTree = "<group>"; };
 		B5A7C9141F0457720019D877 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LoadState.xib; sourceTree = "<group>"; };
 		B5A7DB381E80635500404A5E /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
+		B5C36BD41F71AEA600A14BE1 /* Emulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emulator.swift; sourceTree = "<group>"; };
 		B5CA00EA1F057B84002505A0 /* GBWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBWindow.swift; sourceTree = "<group>"; };
 		B5D669F01E997A390050EE2A /* GeneralPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralPreferencesViewController.swift; sourceTree = "<group>"; };
 		B5D669F21E997DC50050EE2A /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				B577D3251E3D53F100B5A99F /* AppDelegate.swift */,
 				B52C8FBB1E3FF8A10027CC0E /* AudioEngine.swift */,
 				B577D3271E3D53F100B5A99F /* Document.swift */,
+				B5C36BD41F71AEA600A14BE1 /* Emulator.swift */,
 				B52C8FB91E3F7DD80027CC0E /* InputGetter.swift */,
 				B57B3BAB1F04071F00DD66EF /* NotificationsDelegate.swift */,
 				B5FFE16B1E3E58FE0014F99C /* Gambatte Interface */,
@@ -503,6 +506,7 @@
 				B5502B441EF5D311002AE301 /* Timer+Closures.swift in Sources */,
 				B5FFE1721E3E653A0014F99C /* InterfacePakInfo.mm in Sources */,
 				B5D669F31E997DC50050EE2A /* PreferencesWindowController.swift in Sources */,
+				B5C36BD51F71AEA600A14BE1 /* Emulator.swift in Sources */,
 				B51BA4F71F03E65E00847745 /* StateImage.swift in Sources */,
 				B53432871E9AB57C0065A1F4 /* KeyRecorderDelegate.swift in Sources */,
 				B57B3BAC1F04071F00DD66EF /* NotificationsDelegate.swift in Sources */,

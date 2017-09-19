@@ -25,7 +25,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
         for document in NSDocumentController.shared.documents {
             if let document = document as? Document {
-                document.saveSaveData()
+                document.prepareForQuit()
             }
         }
         
