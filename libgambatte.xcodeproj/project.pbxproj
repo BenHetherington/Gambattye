@@ -2922,6 +2922,7 @@
 				B5C5A0B11F5329D9006ED438 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		B5C5945F1F53291E006ED438 /* Gambatte */ = {
 			isa = PBXGroup;
