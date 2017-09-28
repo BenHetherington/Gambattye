@@ -212,6 +212,26 @@
 			path = Gambattye;
 			sourceTree = "<group>";
 		};
+		B5A0BD721F7D6D0F000E9C74 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				B5D669F01E997A390050EE2A /* GeneralPreferencesViewController.swift */,
+				B5A6DA6D1EF69B3C006F0D05 /* GeneralPreferencesView.xib */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		B5A0BD731F7D6D38000E9C74 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				B552C8B21E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift */,
+				B5A6DA701EF69B40006F0D05 /* ControlPreferencesView.xib */,
+				B552C8B61E9A74DD0020A4D2 /* KeyRecorderControl.swift */,
+				B53432861E9AB57C0065A1F4 /* KeyRecorderDelegate.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
 		B5A2966F1F633D800045F3D3 /* Audio Unit Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,12 +260,8 @@
 			isa = PBXGroup;
 			children = (
 				B5D669F21E997DC50050EE2A /* PreferencesWindowController.swift */,
-				B5D669F01E997A390050EE2A /* GeneralPreferencesViewController.swift */,
-				B5A6DA6D1EF69B3C006F0D05 /* GeneralPreferencesView.xib */,
-				B552C8B21E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift */,
-				B5A6DA701EF69B40006F0D05 /* ControlPreferencesView.xib */,
-				B552C8B61E9A74DD0020A4D2 /* KeyRecorderControl.swift */,
-				B53432861E9AB57C0065A1F4 /* KeyRecorderDelegate.swift */,
+				B5A0BD721F7D6D0F000E9C74 /* General */,
+				B5A0BD731F7D6D38000E9C74 /* Controls */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
