@@ -27,7 +27,7 @@ class InputGetter: NSResponder, InputGetterProtocol {
         super.init()
         setKeys()
         
-        prefsChangedObserver = NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil) { [weak self] (_) in
+        prefsChangedObserver = NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil) { [weak self] _ in
             self?.setKeys()
         }
     }
@@ -36,7 +36,7 @@ class InputGetter: NSResponder, InputGetterProtocol {
         super.init(coder: coder)
         setKeys()
         
-        prefsChangedObserver = NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil) { [weak self] (_) in
+        prefsChangedObserver = NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil) { [weak self] _ in
             self?.setKeys()
         }
     }

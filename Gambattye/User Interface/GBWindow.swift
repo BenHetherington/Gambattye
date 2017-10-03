@@ -22,7 +22,7 @@ import Cocoa
         
         trackingArea = NSTrackingArea(rect: NSRect(), options: [.inVisibleRect, .mouseEnteredAndExited, .mouseMoved, .activeInKeyWindow], owner: self, userInfo: nil)
         
-        enterFullScreenObserver = NotificationCenter.default.addObserver(forName: NSWindow.didEnterFullScreenNotification, object: self, queue: nil) {[weak self] (_) in
+        enterFullScreenObserver = NotificationCenter.default.addObserver(forName: NSWindow.didEnterFullScreenNotification, object: self, queue: nil) {[weak self] _ in
             self?.isFullScreen = true
             self?.hideMouseAfterDelay()
             
@@ -31,7 +31,7 @@ import Cocoa
             }
         }
         
-        exitFullScreenObserver = NotificationCenter.default.addObserver(forName: NSWindow.didExitFullScreenNotification, object: self, queue: nil) {[weak self] (_) in
+        exitFullScreenObserver = NotificationCenter.default.addObserver(forName: NSWindow.didExitFullScreenNotification, object: self, queue: nil) {[weak self] _ in
             self?.isFullScreen = false
             self?.disableHiddenMouse()
             
