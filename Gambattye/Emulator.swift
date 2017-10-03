@@ -108,7 +108,6 @@ class Emulator: NSObject {
     func reset() {
         emulationStateAccessQueue.sync {
             emulator.reset()
-            audioEngine?.restartAudio()
         }
     }
 
