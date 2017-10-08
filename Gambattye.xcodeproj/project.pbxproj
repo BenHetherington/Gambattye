@@ -23,6 +23,9 @@
 		B5502B441EF5D311002AE301 /* Timer+Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5502B431EF5D311002AE301 /* Timer+Closures.swift */; };
 		B552C8B41E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552C8B21E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift */; };
 		B552C8B71E9A74DD0020A4D2 /* KeyRecorderControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552C8B61E9A74DD0020A4D2 /* KeyRecorderControl.swift */; };
+		B55B17851F7AE4900031E1AB /* AdvancedPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55B17831F7AE4900031E1AB /* AdvancedPreferencesViewController.swift */; };
+		B55B17861F7AE4900031E1AB /* AdvancedPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B55B17841F7AE4900031E1AB /* AdvancedPreferencesView.xib */; };
+		B55B17881F7AFE410031E1AB /* UrlStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55B17871F7AFE410031E1AB /* UrlStorage.swift */; };
 		B56ED5771EE1C7E50088DBBE /* URL+ExtendedAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ED5761EE1C7E50088DBBE /* URL+ExtendedAttributes.swift */; };
 		B577D3261E3D53F100B5A99F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577D3251E3D53F100B5A99F /* AppDelegate.swift */; };
 		B577D3281E3D53F100B5A99F /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577D3271E3D53F100B5A99F /* Document.swift */; };
@@ -71,6 +74,9 @@
 		B5502B431EF5D311002AE301 /* Timer+Closures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Timer+Closures.swift"; sourceTree = "<group>"; };
 		B552C8B21E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPreferencesViewController.swift; sourceTree = "<group>"; };
 		B552C8B61E9A74DD0020A4D2 /* KeyRecorderControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyRecorderControl.swift; sourceTree = "<group>"; };
+		B55B17831F7AE4900031E1AB /* AdvancedPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedPreferencesViewController.swift; sourceTree = "<group>"; };
+		B55B17841F7AE4900031E1AB /* AdvancedPreferencesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdvancedPreferencesView.xib; sourceTree = "<group>"; };
+		B55B17871F7AFE410031E1AB /* UrlStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlStorage.swift; sourceTree = "<group>"; };
 		B56ED5761EE1C7E50088DBBE /* URL+ExtendedAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+ExtendedAttributes.swift"; sourceTree = "<group>"; };
 		B577D3221E3D53F100B5A99F /* Gambattye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gambattye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B577D3251E3D53F100B5A99F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -232,6 +238,16 @@
 			path = Controls;
 			sourceTree = "<group>";
 		};
+		B5A0BD741F7D6D5A000E9C74 /* Advanced */ = {
+			isa = PBXGroup;
+			children = (
+				B55B17831F7AE4900031E1AB /* AdvancedPreferencesViewController.swift */,
+				B55B17841F7AE4900031E1AB /* AdvancedPreferencesView.xib */,
+				B55B17871F7AFE410031E1AB /* UrlStorage.swift */,
+			);
+			path = Advanced;
+			sourceTree = "<group>";
+		};
 		B5A2966F1F633D800045F3D3 /* Audio Unit Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +278,7 @@
 				B5D669F21E997DC50050EE2A /* PreferencesWindowController.swift */,
 				B5A0BD721F7D6D0F000E9C74 /* General */,
 				B5A0BD731F7D6D38000E9C74 /* Controls */,
+				B5A0BD741F7D6D5A000E9C74 /* Advanced */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -361,6 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5A6DA6E1EF69B40006F0D05 /* ControlPreferencesView.xib in Resources */,
+				B55B17861F7AE4900031E1AB /* AdvancedPreferencesView.xib in Resources */,
 				B5A7DB391E80635500404A5E /* Defaults.plist in Resources */,
 				B5D669F61E9992650050EE2A /* dsa_pub.pem in Resources */,
 				B577D32D1E3D53F100B5A99F /* Assets.xcassets in Resources */,
@@ -532,9 +550,11 @@
 				B58CE5D81F018C8200E5A57C /* StateView.swift in Sources */,
 				B5CA00EB1F057B84002505A0 /* GBWindow.swift in Sources */,
 				B552C8B71E9A74DD0020A4D2 /* KeyRecorderControl.swift in Sources */,
+				B55B17851F7AE4900031E1AB /* AdvancedPreferencesViewController.swift in Sources */,
 				B52C8FBC1E3FF8A10027CC0E /* AudioEngine.swift in Sources */,
 				B52C8FBA1E3F7DD80027CC0E /* InputGetter.swift in Sources */,
 				B5FFE1641E3E47130014F99C /* GB.mm in Sources */,
+				B55B17881F7AFE410031E1AB /* UrlStorage.swift in Sources */,
 				B51BA4F91F04005200847745 /* SaveState.swift in Sources */,
 				B56ED5771EE1C7E50088DBBE /* URL+ExtendedAttributes.swift in Sources */,
 				B5A2966D1F633B020045F3D3 /* AudioComponentDescription.swift in Sources */,

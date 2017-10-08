@@ -12,8 +12,13 @@ import MASPreferences
 class PreferencesWindowController: MASPreferencesWindowController {
 
     init(_: ()) {
+        if !ValueTransformer.valueTransformerNames().contains(NSValueTransformerName(rawValue: "UrlStorage")) {
+            ValueTransformer.setValueTransformer(UrlStorage(), forName: NSValueTransformerName(rawValue: "UrlStorage"))
+        }
+
         super.init(viewControllers: [GeneralPreferencesViewController(),
-                                     ControlPreferencesViewController()],
+                                     ControlPreferencesViewController(),
+                                     AdvancedPreferencesViewController()],
                    title: NSLocalizedString("Preferences", comment: "Preferences Title"))
     }
     

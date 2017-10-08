@@ -36,6 +36,7 @@
 		B5C0AAD61F5336AC00B41A3A /* ppu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5C595BA1F532949006ED438 /* ppu.cpp */; };
 		B5C0AAD71F5336AC00B41A3A /* sprite_mapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5C595BD1F532949006ED438 /* sprite_mapper.cpp */; };
 		B5C0AAD81F5336AC00B41A3A /* video.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5C595C01F532949006ED438 /* video.cpp */; };
+		B5F326901F7596CA00DDCC3E /* bootrom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5F3268E1F7596CA00DDCC3E /* bootrom.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -2902,6 +2903,9 @@
 		B5C5A0AE1F53294D006ED438 /* run_tests.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = run_tests.sh; sourceTree = "<group>"; };
 		B5C5A0AF1F53294D006ED438 /* SConstruct */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SConstruct; sourceTree = "<group>"; };
 		B5C5A0B01F53294D006ED438 /* testrunner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = testrunner.cpp; sourceTree = "<group>"; };
+		B5F3268E1F7596CA00DDCC3E /* bootrom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bootrom.cpp; sourceTree = "<group>"; usesTabs = 1; };
+		B5F3268F1F7596CA00DDCC3E /* bootrom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bootrom.h; sourceTree = "<group>"; usesTabs = 1; };
+		B5FD5C721F7FCC7B0012515F /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; name = Makefile; path = gambatte/Makefile; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2929,6 +2933,7 @@
 			children = (
 				B5C594641F532949006ED438 /* common */,
 				B5C5954E1F532949006ED438 /* libgambatte */,
+				B5FD5C721F7FCC7B0012515F /* Makefile */,
 				B5C595C31F532949006ED438 /* LICENSE */,
 				B5C595C51F532949006ED438 /* README.md */,
 				B5C595C61F532949006ED438 /* test */,
@@ -3113,6 +3118,8 @@
 		B5C595791F532949006ED438 /* mem */ = {
 			isa = PBXGroup;
 			children = (
+				B5F3268E1F7596CA00DDCC3E /* bootrom.cpp */,
+				B5F3268F1F7596CA00DDCC3E /* bootrom.h */,
 				B5C5957A1F532949006ED438 /* cartridge.cpp */,
 				B5C5957B1F532949006ED438 /* cartridge.h */,
 				B5C5957D1F532949006ED438 /* memptrs.cpp */,
@@ -6484,6 +6491,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5F326901F7596CA00DDCC3E /* bootrom.cpp in Sources */,
 				B5C0AAB11F53363800B41A3A /* cpu.cpp in Sources */,
 				B5C0AAB31F53364500B41A3A /* file.cpp in Sources */,
 				B5C0AAB51F53364500B41A3A /* file_zip.cpp in Sources */,

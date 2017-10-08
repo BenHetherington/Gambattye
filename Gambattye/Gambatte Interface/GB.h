@@ -152,6 +152,13 @@ typedef NS_OPTIONS(int, LoadFlags) {
  */
 - (void)setGameShark:(NSString *)codes;
 
+/**
+ * Set the boot ROM to use when starting a game as an original Game Boy.
+ * @param url The path to the ROM
+ * @return success
+ */
+- (BOOL)loadDMGBootROM:(nullable NSURL *)url;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="AdvancedPreferencesViewController" customModule="Gambattye" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="470" height="82"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="klT-VH-Wmh">
+                    <rect key="frame" x="18" y="45" width="81" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Boot ROMs:" id="9Pd-CP-bho">
+                        <font key="font" metaFont="systemBold"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LMR-dN-0RI">
+                    <rect key="frame" x="18" y="20" width="120" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Original Game Boy:" id="DX6-VC-RG8">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <pathControl toolTip="Double-click here to choose the ROM file, or just drag the ROM file here." verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H8O-91-gwQ">
+                    <rect key="frame" x="144" y="22" width="282" height="14"/>
+                    <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" placeholderString="Double-click here to set" id="pWa-xE-uUa">
+                        <font key="font" metaFont="smallSystem"/>
+                        <allowedTypes>
+                            <string>bin</string>
+                            <string></string>
+                        </allowedTypes>
+                    </pathCell>
+                    <connections>
+                        <action trigger="doubleAction" selector="bootRomPathControlClickedWithSender:" target="-2" id="95G-9N-BMh"/>
+                        <binding destination="6m4-B3-oAm" name="value" keyPath="values.OriginalGBBootROM" id="AuP-7I-zwd">
+                            <dictionary key="options">
+                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                <string key="NSMultipleValuesPlaceholder">Double-click here to set</string>
+                                <string key="NSNoSelectionPlaceholder">Double-click here to set</string>
+                                <string key="NSNotApplicablePlaceholder">Double-click here to set</string>
+                                <string key="NSNullPlaceholder">Double-click here to set</string>
+                                <bool key="NSValidatesImmediately" value="YES"/>
+                                <string key="NSValueTransformerName">UrlStorage</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </pathControl>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="DrH-ZF-O6w">
+                    <rect key="frame" x="434" y="21" width="16" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="FZZ-AU-tNe"/>
+                        <constraint firstAttribute="width" constant="16" id="VGQ-Z4-CoV"/>
+                    </constraints>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSStopProgressFreestandingTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="wVx-ld-vzz">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="resetOriginalGBRom:" target="-2" id="8gW-8P-WEI"/>
+                        <binding destination="6m4-B3-oAm" name="hidden" keyPath="values.OriginalGBBootROM" id="Day-TW-b6Y">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="0"/>
+                                <integer key="NSNullPlaceholder" value="1"/>
+                                <string key="NSValueTransformerName">NSIsNil</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="LMR-dN-0RI" firstAttribute="centerY" secondItem="H8O-91-gwQ" secondAttribute="centerY" id="5ba-NN-t6c"/>
+                <constraint firstItem="klT-VH-Wmh" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="9c3-KX-nDV"/>
+                <constraint firstItem="H8O-91-gwQ" firstAttribute="centerY" secondItem="DrH-ZF-O6w" secondAttribute="centerY" id="EC5-DW-IYr"/>
+                <constraint firstAttribute="trailing" secondItem="DrH-ZF-O6w" secondAttribute="trailing" constant="20" id="FH2-sf-XWn"/>
+                <constraint firstItem="LMR-dN-0RI" firstAttribute="top" secondItem="klT-VH-Wmh" secondAttribute="bottom" constant="8" id="HM5-Yc-eaZ"/>
+                <constraint firstItem="LMR-dN-0RI" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="PWM-df-ACm"/>
+                <constraint firstItem="H8O-91-gwQ" firstAttribute="leading" secondItem="LMR-dN-0RI" secondAttribute="trailing" constant="8" id="kHK-P5-Y2S"/>
+                <constraint firstItem="klT-VH-Wmh" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="ynD-sr-Jga"/>
+                <constraint firstItem="DrH-ZF-O6w" firstAttribute="leading" secondItem="H8O-91-gwQ" secondAttribute="trailing" constant="8" id="ysd-WM-GkG"/>
+            </constraints>
+            <point key="canvasLocation" x="103" y="73"/>
+        </customView>
+        <userDefaultsController representsSharedInstance="YES" id="6m4-B3-oAm"/>
+    </objects>
+    <resources>
+        <image name="NSStopProgressFreestandingTemplate" width="11" height="11"/>
+    </resources>
+</document>

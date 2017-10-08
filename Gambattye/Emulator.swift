@@ -34,6 +34,8 @@ class Emulator: NSObject {
     private var shouldReschedule = false
     private var frameDivisor = 4
 
+    private var gbBootRomObserver: NSObjectProtocol?
+
     var runWithLowLatency = true {
         didSet {
             shouldReschedule = true
@@ -43,6 +45,8 @@ class Emulator: NSObject {
     private var loadFlags: LoadFlags = []
     private var keyToConsole = ["consoleIsGB": Console.GB, "consoleIsGBC": .GBC, "consoleIsGBA": .GBA]
 
+    private var gbBootRomUrl: URL?
+
     override init() {
         do {
             try audioEngine = AudioEngine()
@@ -50,6 +54,19 @@ class Emulator: NSObject {
             Swift.print(error.localizedDescription)
             audioEngine = nil
             internalSoundEnabled = false
+        }
+        super.init()
+
+        gbBootRomUrl = UserDefaults.standard.url(forKey: "OriginalGBBootROM")
+        emulator.loadDMGBootROM(gbBootRomUrl)
+        gbBootRomObserver = NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil) { [weak self] _ in
+            self?.emulationStateAccessQueue.async {
+                let newBootRomUrl = UserDefaults.standard.url(forKey: "OriginalGBBootROM")
+                if self?.gbBootRomUrl != newBootRomUrl {
+                    self?.gbBootRomUrl = newBootRomUrl
+                    self?.emulator.loadDMGBootROM(newBootRomUrl)
+                }
+            }
         }
     }
 
