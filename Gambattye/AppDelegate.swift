@@ -37,8 +37,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         return false
     }
     
-    @IBAction func showPreferences(_ sender: NSView) {
-        preferences.showWindow(nil)
+    @IBAction func showPreferences(sender: NSMenuItem) {
+        preferences.showWindow(sender)
     }
     
 }

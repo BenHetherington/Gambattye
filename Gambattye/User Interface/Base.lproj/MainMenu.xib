@@ -29,7 +29,7 @@
                             <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
                             <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW">
                                 <connections>
-                                    <action selector="showPreferences:" target="-1" id="AkH-w4-893"/>
+                                    <action selector="showPreferencesWithSender:" target="-1" id="4vK-Se-veK"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Check for Updates…" id="haI-9Z-fmn">
