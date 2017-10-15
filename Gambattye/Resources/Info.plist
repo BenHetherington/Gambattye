@@ -107,7 +107,7 @@ Licenced under the GNU General Public Licence v2.</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
-	<string>NSApplication</string>
+	<string>Gambattye.Application</string>
 	<key>SUFeedURL</key>
 	<string>https://ben10do.github.io/Gambattye/appcast.xml</string>
 	<key>SUPublicDSAKeyFile</key>

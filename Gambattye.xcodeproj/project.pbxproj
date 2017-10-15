@@ -27,6 +27,9 @@
 		B55B17861F7AE4900031E1AB /* AdvancedPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B55B17841F7AE4900031E1AB /* AdvancedPreferencesView.xib */; };
 		B55B17881F7AFE410031E1AB /* UrlStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55B17871F7AFE410031E1AB /* UrlStorage.swift */; };
 		B56ED5771EE1C7E50088DBBE /* URL+ExtendedAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ED5761EE1C7E50088DBBE /* URL+ExtendedAttributes.swift */; };
+		B5737C521F92860700380F4C /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5737C511F92860700380F4C /* Application.swift */; };
+		B5737C541F92941D00380F4C /* AboutPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5737C531F92941D00380F4C /* AboutPanel.xib */; };
+		B5737C571F929BC100380F4C /* AboutPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5737C561F929BC100380F4C /* AboutPanelController.swift */; };
 		B577D3261E3D53F100B5A99F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577D3251E3D53F100B5A99F /* AppDelegate.swift */; };
 		B577D3281E3D53F100B5A99F /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577D3271E3D53F100B5A99F /* Document.swift */; };
 		B577D32B1E3D53F100B5A99F /* Document.xib in Resources */ = {isa = PBXBuildFile; fileRef = B577D3291E3D53F100B5A99F /* Document.xib */; };
@@ -78,6 +81,9 @@
 		B55B17841F7AE4900031E1AB /* AdvancedPreferencesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdvancedPreferencesView.xib; sourceTree = "<group>"; };
 		B55B17871F7AFE410031E1AB /* UrlStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlStorage.swift; sourceTree = "<group>"; };
 		B56ED5761EE1C7E50088DBBE /* URL+ExtendedAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+ExtendedAttributes.swift"; sourceTree = "<group>"; };
+		B5737C511F92860700380F4C /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		B5737C531F92941D00380F4C /* AboutPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutPanel.xib; sourceTree = "<group>"; };
+		B5737C561F929BC100380F4C /* AboutPanelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPanelController.swift; sourceTree = "<group>"; };
 		B577D3221E3D53F100B5A99F /* Gambattye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gambattye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B577D3251E3D53F100B5A99F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B577D3271E3D53F100B5A99F /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -180,6 +186,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		B5737C551F929B2D00380F4C /* About Box */ = {
+			isa = PBXGroup;
+			children = (
+				B5737C531F92941D00380F4C /* AboutPanel.xib */,
+				B5737C561F929BC100380F4C /* AboutPanelController.swift */,
+			);
+			path = "About Box";
+			sourceTree = "<group>";
+		};
 		B577D3191E3D53F100B5A99F = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				B577D3251E3D53F100B5A99F /* AppDelegate.swift */,
+				B5737C511F92860700380F4C /* Application.swift */,
 				B52C8FBB1E3FF8A10027CC0E /* AudioEngine.swift */,
 				B577D3271E3D53F100B5A99F /* Document.swift */,
 				B5C36BD41F71AEA600A14BE1 /* Emulator.swift */,
@@ -268,6 +284,7 @@
 				B577D3391E3D5A7300B5A99F /* VibrantDarkWindow.swift */,
 				B51C8F561F05308300DD810C /* TouchBarController.swift */,
 				B53E8D941EF41324000D8800 /* Touch Bar.xib */,
+				B5737C551F929B2D00380F4C /* About Box */,
 			);
 			path = "User Interface";
 			sourceTree = "<group>";
@@ -384,6 +401,7 @@
 				B577D32D1E3D53F100B5A99F /* Assets.xcassets in Resources */,
 				B5EEAE331F0024B3004FCF33 /* No State.png in Resources */,
 				B53E8D951EF4139C000D8800 /* Credits.rtf in Resources */,
+				B5737C541F92941D00380F4C /* AboutPanel.xib in Resources */,
 				B54FA4A41F01B5150062E470 /* StateView.xib in Resources */,
 				B5A6DA6B1EF69B3C006F0D05 /* GeneralPreferencesView.xib in Resources */,
 				B577D32B1E3D53F100B5A99F /* Document.xib in Resources */,
@@ -537,6 +555,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5737C521F92860700380F4C /* Application.swift in Sources */,
 				B5502B441EF5D311002AE301 /* Timer+Closures.swift in Sources */,
 				B5FFE1721E3E653A0014F99C /* InterfacePakInfo.mm in Sources */,
 				B5D669F31E997DC50050EE2A /* PreferencesWindowController.swift in Sources */,
@@ -560,6 +579,7 @@
 				B5A2966D1F633B020045F3D3 /* AudioComponentDescription.swift in Sources */,
 				B577D3381E3D56CD00B5A99F /* GBView.swift in Sources */,
 				B577D33A1E3D5A7300B5A99F /* VibrantDarkWindow.swift in Sources */,
+				B5737C571F929BC100380F4C /* AboutPanelController.swift in Sources */,
 				B5D669F11E997A390050EE2A /* GeneralPreferencesViewController.swift in Sources */,
 				B577D3261E3D53F100B5A99F /* AppDelegate.swift in Sources */,
 				B54FA4A91F01B5650062E470 /* LoadState.swift in Sources */,
