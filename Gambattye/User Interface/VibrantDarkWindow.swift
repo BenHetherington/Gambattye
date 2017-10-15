@@ -9,11 +9,10 @@
 import Cocoa
 
 @IBDesignable class VibrantDarkWindow: NSWindow {
-    
-    override func layoutIfNeeded() {
-        super.layoutIfNeeded()
-        
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
         appearance = appearance ?? NSAppearance(named: .vibrantDark)
     }
-    
+
 }
