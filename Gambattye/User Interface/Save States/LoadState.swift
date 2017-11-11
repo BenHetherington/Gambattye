@@ -34,7 +34,7 @@ class LoadState: NSWindowController {
         
         for subview in stateView!.contentView!.subviews {
             if let button = subview as? DoubleClickButton {
-                button.doubleClickAction = { [weak self] (button) in
+                button.doubleClickAction = { [weak self] button in
                     self?.ok(button)
                 }
             }

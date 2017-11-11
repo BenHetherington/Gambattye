@@ -72,7 +72,7 @@ class Document: NSDocument, NSWindowDelegate {
     }
     
     override func read(from url: URL, ofType typeName: String) throws {
-        emulator.renderer = { [weak self] (dataProvider) in
+        emulator.renderer = { [weak self] dataProvider in
             self?.render(dataProvider: dataProvider)
         }
 

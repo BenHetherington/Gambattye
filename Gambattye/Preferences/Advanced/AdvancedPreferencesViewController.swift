@@ -41,7 +41,7 @@ class AdvancedPreferencesViewController: NSViewController, MASPreferencesViewCon
 
         let openPanel = NSOpenPanel()
         openPanel.allowedFileTypes = ["", "bin"]
-        openPanel.beginSheetModal(for: window) { (result) in
+        openPanel.beginSheetModal(for: window) { result in
             guard result == .OK else {
                 return
             }

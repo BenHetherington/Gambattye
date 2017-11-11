@@ -33,7 +33,7 @@ class AudioEngine {
         let format = AVAudioFormat(commonFormat: .pcmFormatInt16, sampleRate: sampleRate, channels: 2, interleaved: true)!
         try audioUnit.inputBusses[0].setFormat(format)
 
-        audioUnit.outputProvider = {[weak self] (_, _, frameCount, _, inputData) -> AUAudioUnitStatus in
+        audioUnit.outputProvider = { [weak self] _, _, frameCount, _, inputData in
             if let renderVars = self?.renderVars {
                 if let buffer = UnsafeMutablePointer<UInt32>(OpaquePointer(inputData[0].mBuffers.mData)) {
                     let (data, bytes) = renderVars.circularBuffer.tail()

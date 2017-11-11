@@ -103,10 +103,7 @@ class AboutPanelController: NSWindowController {
 
         // We only care about string values, so let's get rid of the values we don't need to avoid casting
         let inputAppInfo = Bundle.main.localizedInfoDictionary ?? Bundle.main.infoDictionary ?? [:]
-        let filteredAppInfo = inputAppInfo.filter { (_, value) in
-            return value is String
-        }
-        let appInfo = filteredAppInfo as? [String: String] ?? [:]
+        let appInfo = inputAppInfo.filter { _, value in value is String } as? [String: String] ?? [:]
 
         self.icon = icon ?? NSImage(named: .applicationIcon) ?? NSWorkspace.shared.icon(forFileType: "app")
         self.appName = appName ?? appInfo["CFBundleName"] ?? ProcessInfo.processInfo.processName
