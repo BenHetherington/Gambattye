@@ -37,7 +37,7 @@ class TouchBarController: NSObject {
     var saveState: ((Int) -> Void)?
     var loadState: ((Int) -> Void)?
     
-    private let placeholderImage = NSImage(named: NSImage.Name("No State"))
+    private let placeholderImage = #imageLiteral(resourceName: "No State.png")
     private var optionPressedObserver: NSObjectProtocol?
     private var optionReleasedObserver: NSObjectProtocol?
     private var stateSavedObserver: NSObjectProtocol?

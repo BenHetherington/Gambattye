@@ -8,7 +8,7 @@
 
 import Cocoa
 
-private let placeholderImage = NSImage(named: NSImage.Name("No State"))
+private let placeholderImage = #imageLiteral(resourceName: "No State.png")
 
 class StateView: NSView {
     
