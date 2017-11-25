@@ -7,14 +7,14 @@
 //
 
 #import "GB.h"
-#import "libgambatte/include/gambatte.h"
+#import "libgambatte/include/debugger.h"
 #import "libgambatte/include/pakinfo.h"
 
 const NSErrorDomain GBErrorDomain = @"com.Ben10do.Gambattye.Interface";
 
 @interface GB ()
 
-@property (assign) gambatte::GB *GB;
+@property (assign) gambatte::GBDebugger *GB;
 @property (assign) gambatte::InputGetter *internalInputGetter;
 
 @end
@@ -24,7 +24,7 @@ const NSErrorDomain GBErrorDomain = @"com.Ben10do.Gambattye.Interface";
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _GB = new gambatte::GB();
+        _GB = new gambatte::GBDebugger();
     }
     return self;
 }

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B54BB8811FC9C09900D14FEA /* debugger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B54BB8801FC9C09900D14FEA /* debugger.cpp */; };
+		B54BB8841FC9C0B800D14FEA /* cpuregisters.h in Headers */ = {isa = PBXBuildFile; fileRef = B54BB8821FC9C0B700D14FEA /* cpuregisters.h */; };
+		B54BB8851FC9C0B800D14FEA /* debugger.h in Headers */ = {isa = PBXBuildFile; fileRef = B54BB8831FC9C0B700D14FEA /* debugger.h */; };
+		B54BB8871FC9C0C400D14FEA /* gambattepriv.h in Headers */ = {isa = PBXBuildFile; fileRef = B54BB8861FC9C0C400D14FEA /* gambattepriv.h */; };
 		B5C0AAB11F53363800B41A3A /* cpu.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5C5955C1F532949006ED438 /* cpu.cpp */; };
 		B5C0AAB31F53364500B41A3A /* file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5C595601F532949006ED438 /* file.cpp */; };
 		B5C0AAB51F53364500B41A3A /* file_zip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B5C595631F532949006ED438 /* file_zip.cpp */; };
@@ -40,6 +44,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B54BB8801FC9C09900D14FEA /* debugger.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = debugger.cpp; sourceTree = "<group>"; };
+		B54BB8821FC9C0B700D14FEA /* cpuregisters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cpuregisters.h; sourceTree = "<group>"; };
+		B54BB8831FC9C0B700D14FEA /* debugger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = debugger.h; sourceTree = "<group>"; };
+		B54BB8861FC9C0C400D14FEA /* gambattepriv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gambattepriv.h; sourceTree = "<group>"; };
 		B5C0AA9E1F5335AC00B41A3A /* libgambatte.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libgambatte.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C594651F532949006ED438 /* adaptivesleep.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = adaptivesleep.cpp; sourceTree = "<group>"; };
 		B5C594661F532949006ED438 /* adaptivesleep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = adaptivesleep.h; sourceTree = "<group>"; };
@@ -3047,6 +3055,8 @@
 		B5C5954F1F532949006ED438 /* include */ = {
 			isa = PBXGroup;
 			children = (
+				B54BB8821FC9C0B700D14FEA /* cpuregisters.h */,
+				B54BB8831FC9C0B700D14FEA /* debugger.h */,
 				B5C595501F532949006ED438 /* gambatte.h */,
 				B5C595511F532949006ED438 /* gbint.h */,
 				B5C595521F532949006ED438 /* inputgetter.h */,
@@ -3062,8 +3072,10 @@
 				B5C5955B1F532949006ED438 /* counterdef.h */,
 				B5C5955C1F532949006ED438 /* cpu.cpp */,
 				B5C5955D1F532949006ED438 /* cpu.h */,
+				B54BB8801FC9C09900D14FEA /* debugger.cpp */,
 				B5C5955F1F532949006ED438 /* file */,
 				B5C5956B1F532949006ED438 /* gambatte.cpp */,
+				B54BB8861FC9C0C400D14FEA /* gambattepriv.h */,
 				B5C5956D1F532949006ED438 /* initstate.cpp */,
 				B5C5956E1F532949006ED438 /* initstate.h */,
 				B5C595701F532949006ED438 /* insertion_sort.h */,
@@ -6432,6 +6444,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B54BB8841FC9C0B800D14FEA /* cpuregisters.h in Headers */,
+				B54BB8851FC9C0B800D14FEA /* debugger.h in Headers */,
+				B54BB8871FC9C0C400D14FEA /* gambattepriv.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6506,6 +6521,7 @@
 				B5C0AAC31F53368500B41A3A /* rtc.cpp in Sources */,
 				B5C0AAC81F5336AC00B41A3A /* memory.cpp in Sources */,
 				B5C0AAC91F5336AC00B41A3A /* channel1.cpp in Sources */,
+				B54BB8811FC9C09900D14FEA /* debugger.cpp in Sources */,
 				B5C0AACA1F5336AC00B41A3A /* channel2.cpp in Sources */,
 				B5C0AACB1F5336AC00B41A3A /* channel3.cpp in Sources */,
 				B5C0AACC1F5336AC00B41A3A /* channel4.cpp in Sources */,
