@@ -36,12 +36,21 @@ class StateView: NSView {
         
         for subview in contentView!.subviews {
             if let button = subview as? NSButton {
-                if let image = StateImage(fromState: URL(fileURLWithPath: pathPrefix + "_\(button.tag).gqs"))?.toNSImage() {
+                let url = URL(fileURLWithPath: pathPrefix + "_\(button.tag).gqs")
+                if let image = StateImage(fromState: url)?.toNSImage() {
                     button.image = image
                     button.isEnabled = true
                 } else {
                     button.image = placeholderImage
                     button.isEnabled = false
+                }
+                
+                if let modifiedDate = (try? url.resourceValues(forKeys: [URLResourceKey.contentModificationDateKey]))?.contentModificationDate {
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateStyle = .medium
+                    dateFormatter.timeStyle = .short
+                    dateFormatter.doesRelativeDateFormatting = true
+                    button.toolTip = dateFormatter.string(from: modifiedDate)
                 }
             }
         }
