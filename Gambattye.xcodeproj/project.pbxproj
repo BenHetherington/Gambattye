@@ -519,7 +519,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "year=$(git log -1 --date=format:%Y --format=%ad)\ncopyright=\"Copyright © $year Ben10do.\\nLicenced under the GNU General Public Licence v2.\"\n/usr/libexec/PlistBuddy -c \"Set :NSHumanReadableCopyright $copyright\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+			shellScript = "year=$(git log -1 --date=format:%Y --format=%ad)\ncopyright=\"Copyright © 2017-$year Ben10do.\\nLicenced under the GNU General Public Licence v2.\"\n/usr/libexec/PlistBuddy -c \"Set :NSHumanReadableCopyright $copyright\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
 			showEnvVarsInLog = 0;
 		};
 		FB5AFB4EC76EFB60532F373B /* [CP] Embed Pods Frameworks */ = {
