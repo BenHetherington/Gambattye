@@ -282,7 +282,7 @@ class Emulator: NSObject {
                     self?.notificationTimer = nil
                     NSUserNotificationCenter.default.removeDeliveredNotification(notification)
                 }
-                self.notificationTimer?.tolerance = TimeInterval.infinity
+                self.notificationTimer?.tolerance = .infinity
             }
 
             notification.soundName = nil
