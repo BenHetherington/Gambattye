@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13196" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -14,11 +14,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="470" height="82"/>
+            <rect key="frame" x="0.0" y="0.0" width="470" height="126"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="klT-VH-Wmh">
-                    <rect key="frame" x="18" y="45" width="81" height="17"/>
+                    <rect key="frame" x="18" y="89" width="81" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Boot ROMs:" id="9Pd-CP-bho">
                         <font key="font" metaFont="systemBold"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -26,7 +26,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LMR-dN-0RI">
-                    <rect key="frame" x="18" y="20" width="120" height="17"/>
+                    <rect key="frame" x="18" y="64" width="120" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Original Game Boy:" id="DX6-VC-RG8">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -34,12 +34,13 @@
                     </textFieldCell>
                 </textField>
                 <pathControl toolTip="Double-click here to choose the ROM file, or just drag the ROM file here." verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H8O-91-gwQ">
-                    <rect key="frame" x="144" y="22" width="282" height="14"/>
+                    <rect key="frame" x="144" y="66" width="282" height="14"/>
                     <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" placeholderString="Double-click here to set" id="pWa-xE-uUa">
                         <font key="font" metaFont="smallSystem"/>
                         <allowedTypes>
                             <string>bin</string>
                             <string></string>
+                            <string>gb</string>
                         </allowedTypes>
                     </pathCell>
                     <connections>
@@ -58,7 +59,7 @@
                     </connections>
                 </pathControl>
                 <button translatesAutoresizingMaskIntoConstraints="NO" id="DrH-ZF-O6w">
-                    <rect key="frame" x="434" y="21" width="16" height="16"/>
+                    <rect key="frame" x="434" y="65" width="16" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="FZZ-AU-tNe"/>
                         <constraint firstAttribute="width" constant="16" id="VGQ-Z4-CoV"/>
@@ -78,19 +79,101 @@
                         </binding>
                     </connections>
                 </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="q7x-Bc-zTK">
+                    <rect key="frame" x="18" y="39" width="120" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Game Boy Color:" id="6JI-m8-3IE">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <pathControl toolTip="Double-click here to choose the ROM file, or just drag the ROM file here." verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" tag="1" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZMA-Xi-uHA">
+                    <rect key="frame" x="144" y="41" width="282" height="14"/>
+                    <pathCell key="cell" controlSize="small" selectable="YES" editable="YES" alignment="left" placeholderString="Double-click here to set" id="yDi-eI-03W">
+                        <font key="font" metaFont="smallSystem"/>
+                        <allowedTypes>
+                            <string>bin</string>
+                            <string></string>
+                            <string>gbc</string>
+                        </allowedTypes>
+                    </pathCell>
+                    <connections>
+                        <action trigger="doubleAction" selector="bootRomPathControlClickedWithSender:" target="-2" id="Oj2-VN-128"/>
+                        <binding destination="6m4-B3-oAm" name="value" keyPath="values.GBCBootROM" id="Rak-9n-Xvd">
+                            <dictionary key="options">
+                                <bool key="NSConditionallySetsEnabled" value="NO"/>
+                                <string key="NSMultipleValuesPlaceholder">Double-click here to set</string>
+                                <string key="NSNoSelectionPlaceholder">Double-click here to set</string>
+                                <string key="NSNotApplicablePlaceholder">Double-click here to set</string>
+                                <string key="NSNullPlaceholder">Double-click here to set</string>
+                                <bool key="NSValidatesImmediately" value="YES"/>
+                                <string key="NSValueTransformerName">UrlStorage</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </pathControl>
+                <button translatesAutoresizingMaskIntoConstraints="NO" id="a4e-m3-h0Z">
+                    <rect key="frame" x="434" y="40" width="16" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="16" id="Bu8-o8-CdY"/>
+                        <constraint firstAttribute="height" constant="16" id="oCP-KU-sQc"/>
+                    </constraints>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSStopProgressFreestandingTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="Ofx-4F-2y2">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="resetGBCRom:" target="-2" id="c5s-ki-xKH"/>
+                        <binding destination="6m4-B3-oAm" name="hidden" keyPath="values.GBCBootROM" id="qX3-b1-a4Q">
+                            <dictionary key="options">
+                                <integer key="NSMultipleValuesPlaceholder" value="0"/>
+                                <integer key="NSNullPlaceholder" value="1"/>
+                                <string key="NSValueTransformerName">NSIsNil</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RkX-Ye-04u">
+                    <rect key="frame" x="18" y="20" width="434" height="11"/>
+                    <textFieldCell key="cell" controlSize="mini" sendsActionOnEndEditing="YES" title="When emulating as a GBA with a GBC Boot ROM, games may think you're using a GBC." id="RlW-vv-Xcq">
+                        <font key="font" metaFont="miniSystem"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <binding destination="6m4-B3-oAm" name="hidden" keyPath="values.GBCBootROM" id="YSx-j3-r5Z">
+                            <dictionary key="options">
+                                <string key="NSValueTransformerName">NSIsNil</string>
+                            </dictionary>
+                        </binding>
+                    </connections>
+                </textField>
             </subviews>
             <constraints>
                 <constraint firstItem="LMR-dN-0RI" firstAttribute="centerY" secondItem="H8O-91-gwQ" secondAttribute="centerY" id="5ba-NN-t6c"/>
+                <constraint firstItem="ZMA-Xi-uHA" firstAttribute="trailing" secondItem="H8O-91-gwQ" secondAttribute="trailing" id="8UP-Kc-8vh"/>
                 <constraint firstItem="klT-VH-Wmh" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="9c3-KX-nDV"/>
+                <constraint firstAttribute="bottom" secondItem="RkX-Ye-04u" secondAttribute="bottom" constant="20" id="Dwo-PK-v24"/>
                 <constraint firstItem="H8O-91-gwQ" firstAttribute="centerY" secondItem="DrH-ZF-O6w" secondAttribute="centerY" id="EC5-DW-IYr"/>
                 <constraint firstAttribute="trailing" secondItem="DrH-ZF-O6w" secondAttribute="trailing" constant="20" id="FH2-sf-XWn"/>
                 <constraint firstItem="LMR-dN-0RI" firstAttribute="top" secondItem="klT-VH-Wmh" secondAttribute="bottom" constant="8" id="HM5-Yc-eaZ"/>
+                <constraint firstItem="RkX-Ye-04u" firstAttribute="top" secondItem="q7x-Bc-zTK" secondAttribute="bottom" constant="8" id="KaI-kA-PYC"/>
+                <constraint firstItem="a4e-m3-h0Z" firstAttribute="trailing" secondItem="DrH-ZF-O6w" secondAttribute="trailing" id="OPh-f1-adc"/>
                 <constraint firstItem="LMR-dN-0RI" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="PWM-df-ACm"/>
+                <constraint firstItem="a4e-m3-h0Z" firstAttribute="leading" secondItem="DrH-ZF-O6w" secondAttribute="leading" id="VV3-rn-y4f"/>
+                <constraint firstItem="q7x-Bc-zTK" firstAttribute="top" secondItem="LMR-dN-0RI" secondAttribute="bottom" constant="8" id="VxW-Do-rbU"/>
+                <constraint firstItem="q7x-Bc-zTK" firstAttribute="centerY" secondItem="ZMA-Xi-uHA" secondAttribute="centerY" id="XvF-Nt-00q"/>
+                <constraint firstAttribute="trailing" secondItem="RkX-Ye-04u" secondAttribute="trailing" constant="20" id="eTV-MG-1yU"/>
+                <constraint firstItem="ZMA-Xi-uHA" firstAttribute="leading" secondItem="H8O-91-gwQ" secondAttribute="leading" id="g1Q-Hl-oA7"/>
+                <constraint firstItem="ZMA-Xi-uHA" firstAttribute="centerY" secondItem="a4e-m3-h0Z" secondAttribute="centerY" id="i3x-s4-YYJ"/>
                 <constraint firstItem="H8O-91-gwQ" firstAttribute="leading" secondItem="LMR-dN-0RI" secondAttribute="trailing" constant="8" id="kHK-P5-Y2S"/>
+                <constraint firstItem="RkX-Ye-04u" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="uhX-xK-nyY"/>
+                <constraint firstItem="q7x-Bc-zTK" firstAttribute="leading" secondItem="LMR-dN-0RI" secondAttribute="leading" id="vJM-wA-Fjf"/>
+                <constraint firstItem="q7x-Bc-zTK" firstAttribute="trailing" secondItem="LMR-dN-0RI" secondAttribute="trailing" id="xok-eV-sE8"/>
                 <constraint firstItem="klT-VH-Wmh" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" constant="20" id="ynD-sr-Jga"/>
                 <constraint firstItem="DrH-ZF-O6w" firstAttribute="leading" secondItem="H8O-91-gwQ" secondAttribute="trailing" constant="8" id="ysd-WM-GkG"/>
             </constraints>
-            <point key="canvasLocation" x="103" y="73"/>
+            <point key="canvasLocation" x="103" y="99"/>
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="6m4-B3-oAm"/>
     </objects>

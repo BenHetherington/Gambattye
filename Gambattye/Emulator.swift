@@ -35,6 +35,7 @@ class Emulator: NSObject {
     private var frameDivisor = 4
 
     private var gbBootRomObserver: NSObjectProtocol?
+    private var gbcBootRomObserver: NSObjectProtocol?
 
     var runWithLowLatency = true {
         didSet {
@@ -46,6 +47,7 @@ class Emulator: NSObject {
     private var keyToConsole = ["consoleIsGB": Console.GB, "consoleIsGBC": .GBC, "consoleIsGBA": .GBA]
 
     private var gbBootRomUrl: URL?
+    private var gbcBootRomUrl: URL?
 
     override init() {
         do {
@@ -57,17 +59,28 @@ class Emulator: NSObject {
         }
         super.init()
 
-        gbBootRomUrl = UserDefaults.standard.url(forKey: "OriginalGBBootROM")
-        emulator.loadDMGBootROM(gbBootRomUrl)
-        gbBootRomObserver = NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil) { [weak self] _ in
-            self?.emulationStateAccessQueue.async {
-                let newBootRomUrl = UserDefaults.standard.url(forKey: "OriginalGBBootROM")
-                if self?.gbBootRomUrl != newBootRomUrl {
-                    self?.gbBootRomUrl = newBootRomUrl
-                    self?.emulator.loadDMGBootROM(newBootRomUrl)
+        let setupBootRoms = { (key: String, url: ReferenceWritableKeyPath<Emulator, URL?>, observer: inout NSObjectProtocol?, gbc: Bool) in
+            self[keyPath: url] = UserDefaults.standard.url(forKey: key)
+            observer = NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil) { [weak self] _ in
+                self?.emulationStateAccessQueue.async {
+                    let newBootRomUrl = UserDefaults.standard.url(forKey: key)
+                    if self?[keyPath: url] != newBootRomUrl {
+                        self?[keyPath: url] = newBootRomUrl
+                        if gbc {
+                            self?.emulator.loadGBCBootROM(newBootRomUrl)
+                        } else {
+                            self?.emulator.loadDMGBootROM(newBootRomUrl)
+                        }
+                    }
                 }
             }
         }
+
+        setupBootRoms("OriginalGBBootROM", \Emulator.gbBootRomUrl, &gbBootRomObserver, false)
+        setupBootRoms("GBCBootROM", \Emulator.gbcBootRomUrl, &gbcBootRomObserver, true)
+
+        emulator.loadDMGBootROM(gbBootRomUrl)
+        emulator.loadGBCBootROM(gbcBootRomUrl)
     }
 
     func load(from url: URL) throws {
@@ -297,6 +310,11 @@ class Emulator: NSObject {
     deinit {
         audioEngine?.stopAudio()
         timer.cancel()
+
+        if let gbBootRomObserver = gbBootRomObserver, let gbcBootRomObserver = gbcBootRomObserver {
+            NotificationCenter.default.removeObserver(gbBootRomObserver)
+            NotificationCenter.default.removeObserver(gbcBootRomObserver)
+        }
     }
 
 }

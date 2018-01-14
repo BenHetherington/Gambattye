@@ -159,6 +159,13 @@ typedef NS_OPTIONS(int, LoadFlags) {
  */
 - (BOOL)loadDMGBootROM:(nullable NSURL *)url;
 
+/**
+ * Set the boot ROM to use when starting a game as a Game Boy Color.
+ * @param url The path to the ROM
+ * @return success
+ */
+- (BOOL)loadGBCBootROM:(nullable NSURL *)url;
+
 @end
 
 NS_ASSUME_NONNULL_END
