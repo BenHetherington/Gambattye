@@ -5,6 +5,6 @@ xcode_scheme: Gambattye
 
 osx_image: xcode9
 
-install: travis_wait pod repo update --silent && pod install --repo-update
+install: travis_wait pod repo update --silent && pod install --repo-update && gem install xcpretty
 
-script: xcodebuild -workspace Gambattye.xcworkspace -scheme Gambattye
+script: set -o pipefail && xcodebuild -workspace Gambattye.xcworkspace -scheme Gambattye | xcpretty
