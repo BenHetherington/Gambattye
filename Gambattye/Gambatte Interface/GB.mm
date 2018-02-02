@@ -156,4 +156,8 @@ const NSErrorDomain GBErrorDomain = @"com.Ben10do.Gambattye.Interface";
     return _GB->setDmgBootRom([[url path] UTF8String] ?: "");
 }
 
+- (BOOL)loadGBCBootROM:(NSURL *)url {
+    return _GB->setCgbBootRom([[url path] UTF8String] ?: "");
+}
+
 @end

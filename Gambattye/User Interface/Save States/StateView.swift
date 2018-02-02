@@ -8,13 +8,15 @@
 
 import Cocoa
 
-private let placeholderImage = #imageLiteral(resourceName: "No State.png")
+private let gbPlaceholderImage = #imageLiteral(resourceName: "No State (GB).png")
+private let gbcPlaceholderImage = #imageLiteral(resourceName: "No State (GBC).png")
 
 class StateView: NSView {
     
     @IBOutlet var contentView: NSView?
     private(set) var selectedState: Int?
     @objc dynamic private(set) var isStateSelected = false
+    private weak var placeholderImage: NSImage?
     
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
@@ -31,17 +33,27 @@ class StateView: NSView {
         addSubview(contentView!)
     }
     
-    func setUpDisplay(romPath: URL) {
+    func setUpDisplay(romPath: URL, console: Emulator.Console) {
         let pathPrefix = romPath.deletingPathExtension().path
+        placeholderImage = console == .GB ? gbPlaceholderImage : gbcPlaceholderImage
         
         for subview in contentView!.subviews {
             if let button = subview as? NSButton {
-                if let image = StateImage(fromState: URL(fileURLWithPath: pathPrefix + "_\(button.tag).gqs"))?.toNSImage() {
+                let url = URL(fileURLWithPath: pathPrefix + "_\(button.tag).gqs")
+                if let image = StateImage(fromState: url)?.toNSImage() {
                     button.image = image
                     button.isEnabled = true
                 } else {
                     button.image = placeholderImage
                     button.isEnabled = false
+                }
+                
+                if let modifiedDate = (try? url.resourceValues(forKeys: [URLResourceKey.contentModificationDateKey]))?.contentModificationDate {
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateStyle = .medium
+                    dateFormatter.timeStyle = .short
+                    dateFormatter.doesRelativeDateFormatting = true
+                    button.toolTip = dateFormatter.string(from: modifiedDate)
                 }
             }
         }

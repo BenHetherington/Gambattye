@@ -34,20 +34,25 @@ class AdvancedPreferencesViewController: NSViewController, MASPreferencesViewCon
         NSUserDefaultsController.shared.defaults.removeObject(forKey: "OriginalGBBootROM")
     }
 
+    @IBAction func resetGBCRom(_: NSButton) {
+        NSUserDefaultsController.shared.defaults.removeObject(forKey: "GBCBootROM")
+    }
+
     @IBAction func bootRomPathControlClicked(sender: NSPathControl) {
         guard let window = view.window else {
             return
         }
+        let isGBC = sender.tag == 1
 
         let openPanel = NSOpenPanel()
-        openPanel.allowedFileTypes = ["", "bin"]
+        openPanel.allowedFileTypes = ["", "bin", isGBC ? "gbc" : "gb"]
         openPanel.beginSheetModal(for: window) { result in
             guard result == .OK else {
                 return
             }
 
             sender.url = openPanel.url
-            UserDefaults.standard.set(sender.url, forKey: "OriginalGBBootROM")
+            UserDefaults.standard.set(sender.url, forKey: isGBC ? "GBCBootROM" : "OriginalGBBootROM")
         }
     }
     

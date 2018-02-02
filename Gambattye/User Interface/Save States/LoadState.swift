@@ -16,7 +16,14 @@ class LoadState: NSWindowController {
     var romURL: URL? {
         didSet {
             if let romURL = romURL {
-                stateView?.setUpDisplay(romPath: romURL)
+                stateView?.setUpDisplay(romPath: romURL, console: console)
+            }
+        }
+    }
+    var console: Emulator.Console = .GBC {
+        didSet {
+            if let romURL = romURL {
+                stateView?.setUpDisplay(romPath: romURL, console: console)
             }
         }
     }
@@ -29,7 +36,7 @@ class LoadState: NSWindowController {
         super.windowDidLoad()
         
         if let romURL = romURL {
-            stateView?.setUpDisplay(romPath: romURL)
+            stateView?.setUpDisplay(romPath: romURL, console: console)
         }
         
         for subview in stateView!.contentView!.subviews {
