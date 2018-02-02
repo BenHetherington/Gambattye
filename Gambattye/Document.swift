@@ -87,7 +87,7 @@ class Document: NSDocument, NSWindowDelegate {
     override var displayName: String! {
         get {
             // If possible, use the title in the ROM header
-            return emulator.romTitle ?? super.displayName
+            return emulator.romTitle?.trimmingCharacters(in: .whitespaces) ?? super.displayName
         }
         set {
             super.displayName = newValue
