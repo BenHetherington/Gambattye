@@ -34,8 +34,7 @@ class Emulator: NSObject {
     private var shouldReschedule = false
     private var frameDivisor = 4
 
-    private var gbBootRomObserver: NSObjectProtocol?
-    private var gbcBootRomObserver: NSObjectProtocol?
+    private var observers = [NSObjectProtocol]()
 
     var runWithLowLatency = true {
         didSet {
@@ -59,9 +58,9 @@ class Emulator: NSObject {
         }
         super.init()
 
-        let setupBootRoms = { (key: String, url: ReferenceWritableKeyPath<Emulator, URL?>, observer: inout NSObjectProtocol?, gbc: Bool) in
+        let setupBootRoms = { (key: String, url: ReferenceWritableKeyPath<Emulator, URL?>, gbc: Bool) -> NSObjectProtocol in
             self[keyPath: url] = UserDefaults.standard.url(forKey: key)
-            observer = NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil) { [weak self] _ in
+            return NotificationCenter.default.addObserver(forName: UserDefaults.didChangeNotification, object: nil, queue: nil) { [weak self] _ in
                 self?.emulationStateAccessQueue.async {
                     let newBootRomUrl = UserDefaults.standard.url(forKey: key)
                     if self?[keyPath: url] != newBootRomUrl {
@@ -76,8 +75,8 @@ class Emulator: NSObject {
             }
         }
 
-        setupBootRoms("OriginalGBBootROM", \Emulator.gbBootRomUrl, &gbBootRomObserver, false)
-        setupBootRoms("GBCBootROM", \Emulator.gbcBootRomUrl, &gbcBootRomObserver, true)
+        observers += setupBootRoms("OriginalGBBootROM", \Emulator.gbBootRomUrl, false)
+        observers += setupBootRoms("GBCBootROM", \Emulator.gbcBootRomUrl, true)
 
         emulator.loadDMGBootROM(gbBootRomUrl)
         emulator.loadGBCBootROM(gbcBootRomUrl)
@@ -313,9 +312,8 @@ class Emulator: NSObject {
         audioEngine?.stopAudio()
         timer.cancel()
 
-        if let gbBootRomObserver = gbBootRomObserver, let gbcBootRomObserver = gbcBootRomObserver {
-            NotificationCenter.default.removeObserver(gbBootRomObserver)
-            NotificationCenter.default.removeObserver(gbcBootRomObserver)
+        for observer in observers {
+            NotificationCenter.default.removeObserver(observer)
         }
     }
 

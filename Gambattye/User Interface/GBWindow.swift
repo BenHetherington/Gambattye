@@ -13,16 +13,15 @@ import Cocoa
     private var trackingArea: NSTrackingArea?
     private var timer: Timer?
     private(set) var isFullScreen = false
-    
-    private var enterFullScreenObserver: NSObjectProtocol?
-    private var exitFullScreenObserver: NSObjectProtocol?
+
+    private var observers = [NSObjectProtocol]()
     
     override init(contentRect: NSRect, styleMask style: NSWindow.StyleMask, backing bufferingType: NSWindow.BackingStoreType, defer flag: Bool) {
         super.init(contentRect: contentRect, styleMask: style, backing: bufferingType, defer: flag)
         
         trackingArea = NSTrackingArea(rect: NSRect(), options: [.inVisibleRect, .mouseEnteredAndExited, .mouseMoved, .activeInKeyWindow], owner: self, userInfo: nil)
         
-        enterFullScreenObserver = NotificationCenter.default.addObserver(forName: NSWindow.didEnterFullScreenNotification, object: self, queue: nil) { [weak self] _ in
+        observers += NotificationCenter.default.addObserver(forName: NSWindow.didEnterFullScreenNotification, object: self, queue: nil) { [weak self] _ in
             self?.isFullScreen = true
             self?.hideMouseAfterDelay()
             
@@ -31,7 +30,7 @@ import Cocoa
             }
         }
         
-        exitFullScreenObserver = NotificationCenter.default.addObserver(forName: NSWindow.didExitFullScreenNotification, object: self, queue: nil) { [weak self] _ in
+        observers += NotificationCenter.default.addObserver(forName: NSWindow.didExitFullScreenNotification, object: self, queue: nil) { [weak self] _ in
             self?.isFullScreen = false
             self?.disableHiddenMouse()
             
@@ -66,9 +65,8 @@ import Cocoa
     }
     
     deinit {
-        if let enterFullScreenObserver = enterFullScreenObserver, let exitFullScreenObserver = exitFullScreenObserver {
-            NotificationCenter.default.removeObserver(enterFullScreenObserver)
-            NotificationCenter.default.removeObserver(exitFullScreenObserver)
+        for observer in observers {
+            NotificationCenter.default.removeObserver(observer)
         }
     }
     

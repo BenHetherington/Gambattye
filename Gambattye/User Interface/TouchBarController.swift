@@ -46,9 +46,7 @@ class TouchBarController: NSObject {
     private let gbPlaceholderImage = #imageLiteral(resourceName: "No State (GB).png")
     private let gbcPlaceholderImage = #imageLiteral(resourceName: "No State (GBC).png")
 
-    private var optionPressedObserver: NSObjectProtocol?
-    private var optionReleasedObserver: NSObjectProtocol?
-    private var stateSavedObserver: NSObjectProtocol?
+    private var observers = [NSObjectProtocol]()
 
     override init() {
         super.init()
@@ -56,17 +54,17 @@ class TouchBarController: NSObject {
         buttons = [button0, button1, button2, button3, button4, button5, button6, button7, button8, button9]
         setUpDisplay()
         
-        optionPressedObserver = NotificationCenter.default.addObserver(forName: .OptionPressed, object: nil, queue: nil) { [weak self] _ in
+        observers += NotificationCenter.default.addObserver(forName: .OptionPressed, object: nil, queue: nil) { [weak self] _ in
             self?.shouldSave = true
             self?.setUpDisplay()
         }
         
-        optionReleasedObserver = NotificationCenter.default.addObserver(forName: .OptionReleased, object: nil, queue: nil) { [weak self] _ in
+        observers += NotificationCenter.default.addObserver(forName: .OptionReleased, object: nil, queue: nil) { [weak self] _ in
             self?.shouldSave = false
             self?.setUpDisplay()
         }
         
-        stateSavedObserver = NotificationCenter.default.addObserver(forName: .SaveState, object: nil, queue: nil) { [weak self] _ in
+        observers += NotificationCenter.default.addObserver(forName: .SaveState, object: nil, queue: nil) { [weak self] _ in
             self?.setUpDisplay()
         }
     }
@@ -118,10 +116,8 @@ class TouchBarController: NSObject {
     }
     
     deinit {
-        if let optionPressedObserver = optionPressedObserver, let optionReleasedObserver = optionReleasedObserver, let stateSavedObserver = stateSavedObserver {
-            NotificationCenter.default.removeObserver(optionPressedObserver)
-            NotificationCenter.default.removeObserver(optionReleasedObserver)
-            NotificationCenter.default.removeObserver(stateSavedObserver)
+        for observer in observers {
+            NotificationCenter.default.removeObserver(observer)
         }
     }
     

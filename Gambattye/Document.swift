@@ -13,9 +13,7 @@ class Document: NSDocument, NSWindowDelegate {
     @objc dynamic let emulator = Emulator()
     private let inputGetter = InputGetter()
 
-    private var saveStateObserver: NSObjectProtocol?
-    private var loadStateObserver: NSObjectProtocol?
-    private var consoleObserver: NSObjectProtocol?
+    private var observers = [NSObjectProtocol]()
 
     @IBOutlet var gbWindow: GBWindow? {
         willSet {
@@ -31,19 +29,19 @@ class Document: NSDocument, NSWindowDelegate {
     override init() {
         super.init()
         
-        saveStateObserver = NotificationCenter.default.addObserver(forName: .SaveState, object: nil, queue: nil) { [weak self] notification in
+        observers += NotificationCenter.default.addObserver(forName: .SaveState, object: nil, queue: nil) { [weak self] notification in
             if self?.gbWindow?.isMainWindow ?? false, let id = notification.userInfo?["id"] as? Int {
                 self?.emulator.saveState(id: id)
             }
         }
         
-        loadStateObserver = NotificationCenter.default.addObserver(forName: .LoadState, object: nil, queue: nil) { [weak self] notification in
+        observers += NotificationCenter.default.addObserver(forName: .LoadState, object: nil, queue: nil) { [weak self] notification in
             if self?.gbWindow?.isMainWindow ?? false, let id = notification.userInfo?["id"] as? Int {
                 self?.emulator.loadState(id: id)
             }
         }
 
-        consoleObserver = NotificationCenter.default.addObserver(forName: .ConsoleChanged, object: emulator, queue: nil) { [weak self] _ in
+        observers += NotificationCenter.default.addObserver(forName: .ConsoleChanged, object: emulator, queue: nil) { [weak self] _ in
             if #available(macOS 10.12.2, *), let gbWindow = self?.gbWindow, let emulator = self?.emulator {
                 gbWindow.touchBarController?.console = emulator.console
             }
@@ -148,10 +146,8 @@ class Document: NSDocument, NSWindowDelegate {
     }
     
     deinit {
-        if let saveStateObserver = saveStateObserver, let loadStateObserver = loadStateObserver, let consoleObserver = consoleObserver {
-            NotificationCenter.default.removeObserver(saveStateObserver)
-            NotificationCenter.default.removeObserver(loadStateObserver)
-            NotificationCenter.default.removeObserver(consoleObserver)
+        for observer in observers {
+            NotificationCenter.default.removeObserver(observer)
         }
     }
 
