@@ -15,7 +15,8 @@ class Document: NSDocument, NSWindowDelegate {
 
     private var saveStateObserver: NSObjectProtocol?
     private var loadStateObserver: NSObjectProtocol?
-    
+    private var consoleObserver: NSObjectProtocol?
+
     @IBOutlet var gbWindow: GBWindow? {
         willSet {
             gbWindow?.delegate = nil
@@ -39,6 +40,12 @@ class Document: NSDocument, NSWindowDelegate {
         loadStateObserver = NotificationCenter.default.addObserver(forName: .LoadState, object: nil, queue: nil) { [weak self] notification in
             if self?.gbWindow?.isMainWindow ?? false, let id = notification.userInfo?["id"] as? Int {
                 self?.emulator.loadState(id: id)
+            }
+        }
+
+        consoleObserver = NotificationCenter.default.addObserver(forName: .ConsoleChanged, object: emulator, queue: nil) { [weak self] _ in
+            if #available(macOS 10.12.2, *), let gbWindow = self?.gbWindow, let emulator = self?.emulator {
+                gbWindow.touchBarController?.console = emulator.console
             }
         }
     }
@@ -108,12 +115,15 @@ class Document: NSDocument, NSWindowDelegate {
         emulator.runWithLowLatency = true
         
         if #available(macOS 10.12.2, *) {
-            gbWindow?.touchBarController?.setUpDisplay()
+            _ = gbWindow?.makeTouchBar() // Without this, the touch bar may not exist (on startup)
+            gbWindow?.touchBarController?.console = emulator.console
+            // touchBarController.setUpDisplay() will be implicitly called
         }
     }
     
     @IBAction func goToSaveState(_: NSMenuItem) {
         let controller = SaveState()
+        controller.console = emulator.console
         controller.romURL = fileURL
         gbWindow?.beginSheet(controller.window!) { [weak emulator] response in
             if response == .OK, let state = controller.stateView?.selectedState {
@@ -124,6 +134,7 @@ class Document: NSDocument, NSWindowDelegate {
     
     @IBAction func goToLoadState(_: NSMenuItem) {
         let controller = LoadState()
+        controller.console = emulator.console
         controller.romURL = fileURL
         gbWindow?.beginSheet(controller.window!) { [weak emulator] response in
             if response == .OK, let state = controller.stateView?.selectedState {
@@ -137,9 +148,10 @@ class Document: NSDocument, NSWindowDelegate {
     }
     
     deinit {
-        if let saveStateObserver = saveStateObserver, let loadStateObserver = loadStateObserver {
+        if let saveStateObserver = saveStateObserver, let loadStateObserver = loadStateObserver, let consoleObserver = consoleObserver {
             NotificationCenter.default.removeObserver(saveStateObserver)
             NotificationCenter.default.removeObserver(loadStateObserver)
+            NotificationCenter.default.removeObserver(consoleObserver)
         }
     }
 

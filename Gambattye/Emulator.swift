@@ -218,6 +218,8 @@ class Emulator: NSObject {
             }
 
             romUrl?.setExtendedAttribute(name: consoleAttributeKey, value: console)
+
+            NotificationCenter.default.post(name: .ConsoleChanged, object: self)
         }
     }
 
@@ -317,4 +319,8 @@ class Emulator: NSObject {
         }
     }
 
+}
+
+extension NSNotification.Name {
+    static let ConsoleChanged = NSNotification.Name("GBConsoleChanged")
 }

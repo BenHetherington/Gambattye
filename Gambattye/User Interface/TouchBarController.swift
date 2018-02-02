@@ -32,12 +32,20 @@ class TouchBarController: NSObject {
             setUpDisplay()
         }
     }
+    var console: Emulator.Console = .GBC {
+        didSet {
+            setUpDisplay()
+        }
+    }
     private(set) var shouldSave = false
     
     var saveState: ((Int) -> Void)?
     var loadState: ((Int) -> Void)?
-    
-    private let placeholderImage = #imageLiteral(resourceName: "No State.png")
+
+    private weak var placeholderImage: NSImage?
+    private let gbPlaceholderImage = #imageLiteral(resourceName: "No State (GB).png")
+    private let gbcPlaceholderImage = #imageLiteral(resourceName: "No State (GBC).png")
+
     private var optionPressedObserver: NSObjectProtocol?
     private var optionReleasedObserver: NSObjectProtocol?
     private var stateSavedObserver: NSObjectProtocol?
@@ -64,6 +72,7 @@ class TouchBarController: NSObject {
     }
     
     func setUpDisplay() {
+        placeholderImage = console == .GB ? gbPlaceholderImage : gbcPlaceholderImage
         let pathPrefix = romURL?.deletingPathExtension().path
         
         for button in buttons {

@@ -40,6 +40,7 @@
 		B57B3BAC1F04071F00DD66EF /* NotificationsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57B3BAB1F04071F00DD66EF /* NotificationsDelegate.swift */; };
 		B57B3BAE1F04134200DD66EF /* DoubleClickButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57B3BAD1F04134200DD66EF /* DoubleClickButton.swift */; };
 		B58CE5D81F018C8200E5A57C /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CE5D61F018C8200E5A57C /* StateView.swift */; };
+		B59C34F5200E9751000642EC /* No State (GBC).png in Resources */ = {isa = PBXBuildFile; fileRef = B59C34F4200E9751000642EC /* No State (GBC).png */; };
 		B5A2966D1F633B020045F3D3 /* AudioComponentDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A2966C1F633B020045F3D3 /* AudioComponentDescription.swift */; };
 		B5A6DA6B1EF69B3C006F0D05 /* GeneralPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5A6DA6D1EF69B3C006F0D05 /* GeneralPreferencesView.xib */; };
 		B5A6DA6E1EF69B40006F0D05 /* ControlPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5A6DA701EF69B40006F0D05 /* ControlPreferencesView.xib */; };
@@ -50,7 +51,7 @@
 		B5D669F11E997A390050EE2A /* GeneralPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D669F01E997A390050EE2A /* GeneralPreferencesViewController.swift */; };
 		B5D669F31E997DC50050EE2A /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D669F21E997DC50050EE2A /* PreferencesWindowController.swift */; };
 		B5D669F61E9992650050EE2A /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = B5D669F51E9992650050EE2A /* dsa_pub.pem */; };
-		B5EEAE331F0024B3004FCF33 /* No State.png in Resources */ = {isa = PBXBuildFile; fileRef = B5EEAE321F0024B3004FCF33 /* No State.png */; };
+		B5EEAE331F0024B3004FCF33 /* No State (GB).png in Resources */ = {isa = PBXBuildFile; fileRef = B5EEAE321F0024B3004FCF33 /* No State (GB).png */; };
 		B5FFE1641E3E47130014F99C /* GB.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5FFE1631E3E47130014F99C /* GB.mm */; };
 		B5FFE1721E3E653A0014F99C /* InterfacePakInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5FFE1711E3E653A0014F99C /* InterfacePakInfo.mm */; };
 		B5FFE1751E3E6AF90014F99C /* InterfaceInputGetter.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5FFE1741E3E6AF90014F99C /* InterfaceInputGetter.mm */; };
@@ -97,6 +98,7 @@
 		B57B3BAD1F04134200DD66EF /* DoubleClickButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleClickButton.swift; sourceTree = "<group>"; };
 		B58CD9201EA0E898006B0F50 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		B58CE5D61F018C8200E5A57C /* StateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateView.swift; sourceTree = "<group>"; };
+		B59C34F4200E9751000642EC /* No State (GBC).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "No State (GBC).png"; sourceTree = "<group>"; };
 		B5A2966C1F633B020045F3D3 /* AudioComponentDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioComponentDescription.swift; sourceTree = "<group>"; };
 		B5A2966E1F633D790045F3D3 /* Enums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Enums.h; sourceTree = "<group>"; };
 		B5A6DA6C1EF69B3C006F0D05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/GeneralPreferencesView.xib; sourceTree = "<group>"; };
@@ -108,7 +110,7 @@
 		B5D669F01E997A390050EE2A /* GeneralPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralPreferencesViewController.swift; sourceTree = "<group>"; };
 		B5D669F21E997DC50050EE2A /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		B5D669F51E9992650050EE2A /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
-		B5EEAE321F0024B3004FCF33 /* No State.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "No State.png"; sourceTree = "<group>"; };
+		B5EEAE321F0024B3004FCF33 /* No State (GB).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "No State (GB).png"; sourceTree = "<group>"; };
 		B5FFE1611E3E47130014F99C /* Gambattye-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gambattye-Bridging-Header.h"; sourceTree = "<group>"; };
 		B5FFE1621E3E47130014F99C /* GB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GB.h; sourceTree = "<group>"; };
 		B5FFE1631E3E47130014F99C /* GB.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GB.mm; sourceTree = "<group>"; };
@@ -304,7 +306,8 @@
 			isa = PBXGroup;
 			children = (
 				B577D32C1E3D53F100B5A99F /* Assets.xcassets */,
-				B5EEAE321F0024B3004FCF33 /* No State.png */,
+				B5EEAE321F0024B3004FCF33 /* No State (GB).png */,
+				B59C34F4200E9751000642EC /* No State (GBC).png */,
 				B5D669F51E9992650050EE2A /* dsa_pub.pem */,
 				B577D3311E3D53F100B5A99F /* Info.plist */,
 				B5A7DB381E80635500404A5E /* Defaults.plist */,
@@ -399,7 +402,7 @@
 				B5A7DB391E80635500404A5E /* Defaults.plist in Resources */,
 				B5D669F61E9992650050EE2A /* dsa_pub.pem in Resources */,
 				B577D32D1E3D53F100B5A99F /* Assets.xcassets in Resources */,
-				B5EEAE331F0024B3004FCF33 /* No State.png in Resources */,
+				B5EEAE331F0024B3004FCF33 /* No State (GB).png in Resources */,
 				B53E8D951EF4139C000D8800 /* Credits.rtf in Resources */,
 				B5737C541F92941D00380F4C /* AboutPanel.xib in Resources */,
 				B54FA4A41F01B5150062E470 /* StateView.xib in Resources */,
@@ -407,6 +410,7 @@
 				B577D32B1E3D53F100B5A99F /* Document.xib in Resources */,
 				B53E8D921EF41324000D8800 /* Touch Bar.xib in Resources */,
 				B5A7C9131F0457720019D877 /* LoadState.xib in Resources */,
+				B59C34F5200E9751000642EC /* No State (GBC).png in Resources */,
 				B577D3301E3D53F100B5A99F /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
