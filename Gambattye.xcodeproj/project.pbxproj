@@ -781,7 +781,10 @@
 					"$(inherited)",
 					HAVE_STDINT_H,
 				);
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/gambatte/";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(PROJECT_DIR)/gambatte/\"",
+				);
 				INFOPLIST_FILE = Gambattye/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -800,8 +803,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon";
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = HAVE_STDINT_H;
-				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/gambatte/";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					HAVE_STDINT_H,
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(PROJECT_DIR)/gambatte/\"",
+				);
 				INFOPLIST_FILE = Gambattye/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
