@@ -19,7 +19,7 @@ class Emulator: NSObject {
     private(set) var romData = Data()
     private(set) var romUrl: URL?
     private let emulator = GB()
-    private var timer = DispatchSource.makeTimerSource()
+    private var timer = DispatchSource.makeTimerSource(flags: [], queue: DispatchQueue(label: "com.ben10do.Gambattye.EmulationTimer"))
     private let audioEngine: AudioEngine?
     private var internalSoundEnabled = true
     private let emulationStateAccessQueue = DispatchQueue(label: "com.ben10do.Gambattye.EmulationStateAccess")
