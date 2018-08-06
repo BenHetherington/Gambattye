@@ -88,7 +88,9 @@ class Emulator: NSObject {
         try romData = Data(contentsOf: url) // Just in case someone tries to save the ROM
         console = url.getExtendedAttribute(name: consoleAttributeKey) ?? .GBC
 
-        try emulator.load(from: url, flags: loadFlags)
+        try emulationStateAccessQueue.sync {
+            try emulator.load(from: url, flags: loadFlags)
+        }
     }
 
     func beginEmulation(inputGetter: InputGetter) {
