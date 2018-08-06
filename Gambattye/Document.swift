@@ -52,6 +52,10 @@ class Document: NSDocument, NSWindowDelegate {
         return true
     }
 
+    override class func canConcurrentlyReadDocuments(ofType _: String) -> Bool {
+        return true
+    }
+
     override var windowNibName: NSNib.Name? {
         // Returns the nib file name of the document
         return NSNib.Name("Document")
