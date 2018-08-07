@@ -1,9 +1,9 @@
 PODS:
-  - MASPreferences (1.2.1)
+  - MASPreferences (1.3)
   - ShortcutRecorder/Core (2.17)
-  - Sparkle (1.18.1)
-  - SwiftLint (0.22.0)
-  - TPCircularBuffer (1.4)
+  - Sparkle (1.20.0)
+  - SwiftLint (0.27.0)
+  - TPCircularBuffer (1.6.1)
 
 DEPENDENCIES:
   - MASPreferences
@@ -12,6 +12,13 @@ DEPENDENCIES:
   - SwiftLint
   - TPCircularBuffer
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - MASPreferences
+    - Sparkle
+    - SwiftLint
+    - TPCircularBuffer
+
 EXTERNAL SOURCES:
   ShortcutRecorder:
     :branch: master
@@ -19,16 +26,16 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   ShortcutRecorder:
-    :commit: d8aab0e3534f4321b7f7f9fc4df4185a2c89ca6a
+    :commit: c978ce9bb482c31acfabe23baa2b075808a1fdd8
     :git: https://github.com/Kentzo/ShortcutRecorder
 
 SPEC CHECKSUMS:
-  MASPreferences: 23946c155d77f0e72a6e5af9d8b67c52210a1fd0
+  MASPreferences: c08b8622dd17b47da87669e741efd7c92e970e8c
   ShortcutRecorder: c0e1ae0e97917925feab04e8817d2be6ef1b0548
-  Sparkle: 06ea33170007c5937ee54da481b4481af98fac79
-  SwiftLint: 1134786caedd2caab0560d2f36b76414a5a56808
-  TPCircularBuffer: c0160545b63019adf85231e3de543bbc97cb9041
+  Sparkle: 48999e7ee032f05ca05e28451eadf4af8ede6b44
+  SwiftLint: 3207c1faa2240bf8973b191820a116113cd11073
+  TPCircularBuffer: c13243556527551c4d320709c7b14a6d20cdc30a
 
 PODFILE CHECKSUM: f1a5ad5ef0a99984336152432b9138f4f148790a
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3

@@ -11,7 +11,7 @@ import TPCircularBuffer
 
 extension TPCircularBuffer {
     
-    init(length: Int32) {
+    init(length: UInt32) {
         self.init()
         _TPCircularBufferInit(&self, length, MemoryLayout<TPCircularBuffer>.size)
     }
@@ -20,21 +20,21 @@ extension TPCircularBuffer {
         TPCircularBufferClear(&self)
     }
     
-    mutating func tail() -> (UnsafeMutableRawPointer?, Int32) {
-        var availableBytes: Int32 = 0
+    mutating func tail() -> (UnsafeMutableRawPointer?, UInt32) {
+        var availableBytes: UInt32 = 0
         let tail = TPCircularBufferTail(&self, &availableBytes)
         return (tail, availableBytes)
     }
     
-    mutating func consume(bytes: Int32) {
+    mutating func consume(bytes: UInt32) {
         TPCircularBufferConsume(&self, bytes)
     }
     
-    @discardableResult mutating func produceBytes(from source: [UInt32], count: Int32) -> Bool {
-        return produceBytes(from: source, length: Int32(MemoryLayout<UInt32>.size) * count)
+    @discardableResult mutating func produceBytes(from source: [UInt32], count: UInt32) -> Bool {
+        return produceBytes(from: source, length: UInt32(MemoryLayout<UInt32>.size) * count)
     }
     
-    @discardableResult mutating func produceBytes(from source: UnsafeRawPointer, length: Int32) -> Bool {
+    @discardableResult mutating func produceBytes(from source: UnsafeRawPointer, length: UInt32) -> Bool {
         return TPCircularBufferProduceBytes(&self, source, length)
     }
     

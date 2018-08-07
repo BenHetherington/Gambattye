@@ -41,7 +41,7 @@ class AudioEngine {
                     let framesToCopy = min(Int(bytes) / MemoryLayout<UInt32>.size, Int(frameCount))
                     let bytesToCopy = framesToCopy * MemoryLayout<UInt32>.size
                     memcpy(buffer, data, bytesToCopy)
-                    renderVars.circularBuffer.consume(bytes: Int32(bytesToCopy))
+                    renderVars.circularBuffer.consume(bytes: UInt32(bytesToCopy))
 
                     if framesToCopy > 0 {
                         renderVars.lastSample = buffer[framesToCopy - 1]
@@ -72,7 +72,7 @@ class AudioEngine {
     }
     
     func pushData(newData: [UInt32], count: Int) {
-        renderVars.circularBuffer.produceBytes(from: newData, count: Int32(count))
+        renderVars.circularBuffer.produceBytes(from: newData, count: UInt32(count))
     }
     
     deinit {

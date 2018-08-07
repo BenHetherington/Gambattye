@@ -16,7 +16,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         if let defaultsURL = Bundle.main.url(forResource: "Defaults", withExtension: "plist"),
-        let defaults = NSDictionary(contentsOf: defaultsURL) as? [String : Any] {
+        let defaults = NSDictionary(contentsOf: defaultsURL) as? [String: Any] {
             UserDefaults.standard.register(defaults: defaults)
         }
         NSUserNotificationCenter.default.delegate = notificationsDelegate

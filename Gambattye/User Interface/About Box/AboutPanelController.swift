@@ -83,7 +83,7 @@ class AboutPanelController: NSWindowController {
         orderFrontAboutPanel()
     }
 
-    func orderFrontAboutPanel(options: [NSApplication.AboutPanelOptionKey : Any]) {
+    func orderFrontAboutPanel(options: [NSApplication.AboutPanelOptionKey: Any]) {
         // TODO: Use the enum values if the minimum macOS version is increased to macOS 10.13
         orderFrontAboutPanel(icon: options[NSApplication.AboutPanelOptionKey(rawValue: "ApplicationIcon")] as? NSImage,
                              appName: options[NSApplication.AboutPanelOptionKey(rawValue: "ApplicationName")] as? String,

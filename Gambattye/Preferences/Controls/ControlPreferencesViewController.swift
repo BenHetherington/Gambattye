@@ -11,6 +11,8 @@ import MASPreferences
 
 class ControlPreferencesViewController: NSViewController, MASPreferencesViewController {
 
+    let viewIdentifier = "ControlPreferences"
+
     init() {
         super.init(nibName: NSNib.Name("ControlPreferencesView"), bundle: nil)
         identifier = NSUserInterfaceItemIdentifier("ControlPreferences")

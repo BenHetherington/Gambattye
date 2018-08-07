@@ -349,7 +349,6 @@
 				B5A189A01E7F45840011FE10 /* Set Build Number to "dev" */,
 				B5C594431F52D006006ED438 /* Reset Copyright Message */,
 				FB5AFB4EC76EFB60532F373B /* [CP] Embed Pods Frameworks */,
-				405C147B4CF35DEF3B56D567 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -439,21 +438,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		405C147B4CF35DEF3B56D567 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gambattye/Pods-Gambattye-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B58CD91F1EA0E73F006B0F50 /* Run SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -539,7 +523,6 @@
 				"${BUILT_PRODUCTS_DIR}/MASPreferences/MASPreferences.framework",
 				"${BUILT_PRODUCTS_DIR}/ShortcutRecorder/ShortcutRecorder.framework",
 				"${PODS_ROOT}/Sparkle/Sparkle.framework",
-				"${PODS_ROOT}/Sparkle/Sparkle.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/TPCircularBuffer/TPCircularBuffer.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -547,7 +530,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MASPreferences.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ShortcutRecorder.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sparkle.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/Sparkle.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPCircularBuffer.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

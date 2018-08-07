@@ -13,9 +13,10 @@ class AdvancedPreferencesViewController: NSViewController, MASPreferencesViewCon
 
     @IBOutlet var gbRomPathControl: NSPathControl?
 
+    let viewIdentifier = "AdvancedPreferences"
+
     init() {
         super.init(nibName: NSNib.Name("AdvancedPreferencesView"), bundle: nil)
-        identifier = NSUserInterfaceItemIdentifier("AdvancedPreferences")
     }
 
     required init?(coder: NSCoder) {

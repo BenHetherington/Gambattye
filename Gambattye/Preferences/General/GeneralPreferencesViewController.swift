@@ -10,10 +10,11 @@ import Cocoa
 import MASPreferences
 
 class GeneralPreferencesViewController: NSViewController, MASPreferencesViewController {
-    
+
+    let viewIdentifier = "GeneralPreferences"
+
     init() {
         super.init(nibName: NSNib.Name("GeneralPreferencesView"), bundle: nil)
-        identifier = NSUserInterfaceItemIdentifier("GeneralPreferences")
     }
     
     required init?(coder: NSCoder) {
