@@ -23,7 +23,7 @@ class ControlPreferencesViewController: NSViewController, MASPreferencesViewCont
     }
     
     var toolbarItemImage: NSImage? {
-        return NSImage(named: .applicationIcon)
+        return NSImage(named: NSImage.applicationIconName)
     }
     
     var toolbarItemLabel: String? {

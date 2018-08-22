@@ -105,7 +105,7 @@ class AboutPanelController: NSWindowController {
         let inputAppInfo = Bundle.main.localizedInfoDictionary ?? Bundle.main.infoDictionary ?? [:]
         let appInfo = inputAppInfo.filter { _, value in value is String } as? [String: String] ?? [:]
 
-        self.icon = icon ?? NSImage(named: .applicationIcon) ?? NSWorkspace.shared.icon(forFileType: "app")
+        self.icon = icon ?? NSImage(named: NSImage.applicationIconName) ?? NSWorkspace.shared.icon(forFileType: "app")
         self.appName = appName ?? appInfo["CFBundleName"] ?? ProcessInfo.processInfo.processName
         self.shortVersion = shortVersion ?? appInfo["CFBundleShortVersionString"] ?? ""
         self.version = version ?? appInfo["CFBundleVersion"] ?? ""
@@ -139,7 +139,7 @@ class AboutPanelController: NSWindowController {
 
     private func prepareCreditsAttributes() {
         creditsView.textColor = NSColor.labelColor
-        creditsView.linkTextAttributes?[NSAttributedStringKey.foregroundColor] = NSColor.systemBlue
+        creditsView.linkTextAttributes?[.foregroundColor] = NSColor.systemBlue
 
         // Let's also flash the scrollers if we need to
         let creditsScrollView = creditsView?.superview?.superview as? NSScrollView

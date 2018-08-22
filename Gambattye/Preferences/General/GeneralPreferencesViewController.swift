@@ -22,7 +22,7 @@ class GeneralPreferencesViewController: NSViewController, MASPreferencesViewCont
     }
     
     var toolbarItemImage: NSImage? {
-        return NSImage(named: .preferencesGeneral)
+        return NSImage(named: NSImage.preferencesGeneralName)
     }
     
     var toolbarItemLabel: String? {

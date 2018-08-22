@@ -24,7 +24,7 @@ class AdvancedPreferencesViewController: NSViewController, MASPreferencesViewCon
     }
 
     var toolbarItemImage: NSImage? {
-        return NSImage(named: .advanced)
+        return NSImage(named: NSImage.advancedName)
     }
 
     var toolbarItemLabel: String? {

@@ -13,7 +13,7 @@ class GBView: NSView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         layer = CALayer()
-        layer?.magnificationFilter = kCAFilterNearest
+        layer?.magnificationFilter = .nearest
         layer?.isOpaque = true
     }
     
