@@ -60,6 +60,7 @@ Gw
                     <constraint firstAttribute="trailing" secondItem="2ox-AZ-XTr" secondAttribute="trailing" constant="20" id="4k6-uf-VeK"/>
                     <constraint firstAttribute="bottom" secondItem="TAp-1n-dhV" secondAttribute="bottom" constant="20" id="HSd-U8-P9d"/>
                     <constraint firstAttribute="bottom" secondItem="2ox-AZ-XTr" secondAttribute="bottom" constant="20" id="PPX-qN-wv9"/>
+                    <constraint firstItem="TAp-1n-dhV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="utP-Pj-P0l" secondAttribute="leading" constant="20" id="wT5-PX-dOT"/>
                     <constraint firstItem="2ox-AZ-XTr" firstAttribute="leading" secondItem="TAp-1n-dhV" secondAttribute="trailing" constant="11" id="znf-as-BGb"/>
                 </constraints>
             </view>
