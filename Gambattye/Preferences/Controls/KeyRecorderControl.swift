@@ -18,7 +18,8 @@ class KeyRecorderControl: SRRecorderControl {
             objectValue = UserDefaults.standard.dictionary(forKey: name + "ButtonKey")
         }
     }
-    
+
+    // swiftlint:disable unused_setter_value
     override var toolTip: String? {
         get {
             return nil
@@ -27,6 +28,7 @@ class KeyRecorderControl: SRRecorderControl {
             super.toolTip = nil
         }
     }
+    // swiftlint:enable unused_setter_value
 
     override func flagsChanged(with event: NSEvent) {
         let modifierFlags = event.modifierFlags.intersection(SRCocoaModifierFlagsMask)
