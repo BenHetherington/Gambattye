@@ -27,16 +27,7 @@ class KeyRecorderControl: SRRecorderControl {
             super.toolTip = nil
         }
     }
-    
-    override func view(_ view: NSView, stringForToolTip tag: NSView.ToolTipTag, point: NSPoint, userData data: UnsafeMutableRawPointer?) -> String {
-        let returnValue = super.view(view, stringForToolTip: tag, point: point, userData: data)
-        if returnValue == SRLoc("Use old shortcut") {
-            return NSLocalizedString("Use previous key", comment: "Controls Preferences")
-        } else {
-            return returnValue
-        }
-    }
-    
+
     override func flagsChanged(with event: NSEvent) {
         let modifierFlags = event.modifierFlags.intersection(SRCocoaModifierFlagsMask)
         if isRecording && !modifierFlags.isEmpty { // Ignore the Fn key
