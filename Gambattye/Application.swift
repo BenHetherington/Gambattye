@@ -13,9 +13,6 @@ class Application: NSApplication {
     lazy var aboutPanelController = AboutPanelController()
 
     override func orderFrontStandardAboutPanel(options: [NSApplication.AboutPanelOptionKey: Any] = [:]) {
-        if aboutPanelController.appearance == nil {
-            aboutPanelController.appearance = NSAppearance(named: .vibrantDark)
-        }
         aboutPanelController.orderFrontAboutPanel(options)
     }
 

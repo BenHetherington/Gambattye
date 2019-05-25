@@ -20,8 +20,6 @@ class AboutPanelController: NSWindowController {
         return window as? NSPanel
     }
 
-    var appearance: NSAppearance?
-
     private var icon: NSImage? {
         get {
             return iconView.image
@@ -74,11 +72,6 @@ class AboutPanelController: NSWindowController {
         return NSNib.Name("AboutPanel")
     }
 
-    override func windowDidLoad() {
-        super.windowDidLoad()
-        window?.appearance = NSAppearance(named: .vibrantDark)
-    }
-
     func orderFrontAboutPanel(_ sender: Any?) {
         orderFrontAboutPanel()
     }
@@ -98,8 +91,6 @@ class AboutPanelController: NSWindowController {
         guard let window = window else {
             return
         }
-
-        window.appearance = appearance
 
         // We only care about string values, so let's get rid of the values we don't need to avoid casting
         let inputAppInfo = Bundle.main.localizedInfoDictionary ?? Bundle.main.infoDictionary ?? [:]

@@ -22,11 +22,6 @@ class PreferencesWindowController: MASPreferencesWindowController {
                    title: NSLocalizedString("Preferences", comment: "Preferences Title"))
     }
     
-    override func windowDidLoad() {
-        super.windowDidLoad()
-        window?.appearance = NSAppearance(named: .vibrantDark)
-    }
-    
     override init(window: NSWindow?) {
         super.init(window: window)
     }

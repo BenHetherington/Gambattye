@@ -12,6 +12,10 @@ import ShortcutRecorder
 class KeyRecorderControl: SRRecorderControl {
     
     // TODO: See if we can mitigate this mess
+
+    override func viewDidChangeEffectiveAppearance() {
+        appearance = NSAppearance(named: .aqua)
+    }
     
     @objc dynamic var name: String = "" {
         didSet {

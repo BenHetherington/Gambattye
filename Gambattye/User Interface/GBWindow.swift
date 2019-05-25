@@ -8,7 +8,7 @@
 
 import Cocoa
 
-@IBDesignable class GBWindow: VibrantDarkWindow {
+@IBDesignable class GBWindow: NSWindow {
     
     private var trackingArea: NSTrackingArea?
     private var timer: Timer?

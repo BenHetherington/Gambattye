@@ -37,7 +37,6 @@
 		B577D32D1E3D53F100B5A99F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B577D32C1E3D53F100B5A99F /* Assets.xcassets */; };
 		B577D3301E3D53F100B5A99F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B577D32E1E3D53F100B5A99F /* MainMenu.xib */; };
 		B577D3381E3D56CD00B5A99F /* GBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577D3371E3D56CD00B5A99F /* GBView.swift */; };
-		B577D33A1E3D5A7300B5A99F /* VibrantDarkWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577D3391E3D5A7300B5A99F /* VibrantDarkWindow.swift */; };
 		B57B3BAC1F04071F00DD66EF /* NotificationsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57B3BAB1F04071F00DD66EF /* NotificationsDelegate.swift */; };
 		B57B3BAE1F04134200DD66EF /* DoubleClickButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57B3BAD1F04134200DD66EF /* DoubleClickButton.swift */; };
 		B58CE5D81F018C8200E5A57C /* StateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CE5D61F018C8200E5A57C /* StateView.swift */; };
@@ -95,7 +94,6 @@
 		B577D32F1E3D53F100B5A99F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		B577D3311E3D53F100B5A99F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B577D3371E3D56CD00B5A99F /* GBView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GBView.swift; sourceTree = "<group>"; };
-		B577D3391E3D5A7300B5A99F /* VibrantDarkWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VibrantDarkWindow.swift; sourceTree = "<group>"; };
 		B57B3BAB1F04071F00DD66EF /* NotificationsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsDelegate.swift; sourceTree = "<group>"; };
 		B57B3BAD1F04134200DD66EF /* DoubleClickButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleClickButton.swift; sourceTree = "<group>"; };
 		B58CD9201EA0E898006B0F50 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
@@ -286,7 +284,6 @@
 				B5275EA61F01B4B4002C414F /* Save States */,
 				B577D3371E3D56CD00B5A99F /* GBView.swift */,
 				B5CA00EA1F057B84002505A0 /* GBWindow.swift */,
-				B577D3391E3D5A7300B5A99F /* VibrantDarkWindow.swift */,
 				B51C8F561F05308300DD810C /* TouchBarController.swift */,
 				B53E8D941EF41324000D8800 /* Touch Bar.xib */,
 				B5737C551F929B2D00380F4C /* About Box */,
@@ -569,7 +566,6 @@
 				B56ED5771EE1C7E50088DBBE /* URL+ExtendedAttributes.swift in Sources */,
 				B5A2966D1F633B020045F3D3 /* AudioComponentDescription.swift in Sources */,
 				B577D3381E3D56CD00B5A99F /* GBView.swift in Sources */,
-				B577D33A1E3D5A7300B5A99F /* VibrantDarkWindow.swift in Sources */,
 				B5737C571F929BC100380F4C /* AboutPanelController.swift in Sources */,
 				B5D669F11E997A390050EE2A /* GeneralPreferencesViewController.swift in Sources */,
 				B577D3261E3D53F100B5A99F /* AppDelegate.swift in Sources */,
