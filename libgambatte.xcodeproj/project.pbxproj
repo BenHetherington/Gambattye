@@ -170,7 +170,7 @@
 		B5C595BE1F532949006ED438 /* sprite_mapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sprite_mapper.h; sourceTree = "<group>"; };
 		B5C595C01F532949006ED438 /* video.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = video.cpp; sourceTree = "<group>"; };
 		B5C595C11F532949006ED438 /* video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = video.h; sourceTree = "<group>"; };
-		B5C595C31F532949006ED438 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		B5C595C31F532949006ED438 /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
 		B5C595C51F532949006ED438 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B5C595C71F532949006ED438 /* assemble_tests.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = assemble_tests.sh; sourceTree = "<group>"; };
 		B5C595C81F532949006ED438 /* clean_tests.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = clean_tests.sh; sourceTree = "<group>"; };
@@ -2934,7 +2934,7 @@
 				B5C594641F532949006ED438 /* common */,
 				B5C5954E1F532949006ED438 /* libgambatte */,
 				B5FD5C721F7FCC7B0012515F /* Makefile */,
-				B5C595C31F532949006ED438 /* LICENSE */,
+				B5C595C31F532949006ED438 /* COPYING */,
 				B5C595C51F532949006ED438 /* README.md */,
 				B5C595C61F532949006ED438 /* test */,
 			);
