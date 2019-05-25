@@ -25,11 +25,9 @@
 		B552C8B41E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552C8B21E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift */; };
 		B552C8B71E9A74DD0020A4D2 /* KeyRecorderControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B552C8B61E9A74DD0020A4D2 /* KeyRecorderControl.swift */; };
 		B55B17851F7AE4900031E1AB /* AdvancedPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55B17831F7AE4900031E1AB /* AdvancedPreferencesViewController.swift */; };
-		B55B17861F7AE4900031E1AB /* AdvancedPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B55B17841F7AE4900031E1AB /* AdvancedPreferencesView.xib */; };
 		B55B17881F7AFE410031E1AB /* UrlStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55B17871F7AFE410031E1AB /* UrlStorage.swift */; };
 		B56ED5771EE1C7E50088DBBE /* URL+ExtendedAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56ED5761EE1C7E50088DBBE /* URL+ExtendedAttributes.swift */; };
 		B5737C521F92860700380F4C /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5737C511F92860700380F4C /* Application.swift */; };
-		B5737C541F92941D00380F4C /* AboutPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5737C531F92941D00380F4C /* AboutPanel.xib */; };
 		B5737C571F929BC100380F4C /* AboutPanelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5737C561F929BC100380F4C /* AboutPanelController.swift */; };
 		B577D3261E3D53F100B5A99F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577D3251E3D53F100B5A99F /* AppDelegate.swift */; };
 		B577D3281E3D53F100B5A99F /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = B577D3271E3D53F100B5A99F /* Document.swift */; };
@@ -52,6 +50,8 @@
 		B5D669F31E997DC50050EE2A /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D669F21E997DC50050EE2A /* PreferencesWindowController.swift */; };
 		B5D669F61E9992650050EE2A /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = B5D669F51E9992650050EE2A /* dsa_pub.pem */; };
 		B5EEAE331F0024B3004FCF33 /* No State (GB).png in Resources */ = {isa = PBXBuildFile; fileRef = B5EEAE321F0024B3004FCF33 /* No State (GB).png */; };
+		B5FB1A7A2299A97C00181806 /* AdvancedPreferencesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5FB1A7C2299A97C00181806 /* AdvancedPreferencesView.xib */; };
+		B5FB1A7D2299A98A00181806 /* AboutPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5FB1A7F2299A98A00181806 /* AboutPanel.xib */; };
 		B5FFE1641E3E47130014F99C /* GB.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5FFE1631E3E47130014F99C /* GB.mm */; };
 		B5FFE1721E3E653A0014F99C /* InterfacePakInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5FFE1711E3E653A0014F99C /* InterfacePakInfo.mm */; };
 		B5FFE1751E3E6AF90014F99C /* InterfaceInputGetter.mm in Sources */ = {isa = PBXBuildFile; fileRef = B5FFE1741E3E6AF90014F99C /* InterfaceInputGetter.mm */; };
@@ -80,11 +80,9 @@
 		B552C8B21E9A6A9C0020A4D2 /* ControlPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlPreferencesViewController.swift; sourceTree = "<group>"; };
 		B552C8B61E9A74DD0020A4D2 /* KeyRecorderControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyRecorderControl.swift; sourceTree = "<group>"; };
 		B55B17831F7AE4900031E1AB /* AdvancedPreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedPreferencesViewController.swift; sourceTree = "<group>"; };
-		B55B17841F7AE4900031E1AB /* AdvancedPreferencesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdvancedPreferencesView.xib; sourceTree = "<group>"; };
 		B55B17871F7AFE410031E1AB /* UrlStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlStorage.swift; sourceTree = "<group>"; };
 		B56ED5761EE1C7E50088DBBE /* URL+ExtendedAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+ExtendedAttributes.swift"; sourceTree = "<group>"; };
 		B5737C511F92860700380F4C /* Application.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
-		B5737C531F92941D00380F4C /* AboutPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutPanel.xib; sourceTree = "<group>"; };
 		B5737C561F929BC100380F4C /* AboutPanelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPanelController.swift; sourceTree = "<group>"; };
 		B577D3221E3D53F100B5A99F /* Gambattye.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gambattye.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B577D3251E3D53F100B5A99F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +109,8 @@
 		B5D669F21E997DC50050EE2A /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		B5D669F51E9992650050EE2A /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		B5EEAE321F0024B3004FCF33 /* No State (GB).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "No State (GB).png"; sourceTree = "<group>"; };
+		B5FB1A7B2299A97C00181806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AdvancedPreferencesView.xib; sourceTree = "<group>"; };
+		B5FB1A7E2299A98A00181806 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AboutPanel.xib; sourceTree = "<group>"; };
 		B5FFE1611E3E47130014F99C /* Gambattye-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Gambattye-Bridging-Header.h"; sourceTree = "<group>"; };
 		B5FFE1621E3E47130014F99C /* GB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GB.h; sourceTree = "<group>"; };
 		B5FFE1631E3E47130014F99C /* GB.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GB.mm; sourceTree = "<group>"; };
@@ -192,7 +192,7 @@
 		B5737C551F929B2D00380F4C /* About Box */ = {
 			isa = PBXGroup;
 			children = (
-				B5737C531F92941D00380F4C /* AboutPanel.xib */,
+				B5FB1A7F2299A98A00181806 /* AboutPanel.xib */,
 				B5737C561F929BC100380F4C /* AboutPanelController.swift */,
 			);
 			path = "About Box";
@@ -261,7 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				B55B17831F7AE4900031E1AB /* AdvancedPreferencesViewController.swift */,
-				B55B17841F7AE4900031E1AB /* AdvancedPreferencesView.xib */,
+				B5FB1A7C2299A97C00181806 /* AdvancedPreferencesView.xib */,
 				B55B17871F7AFE410031E1AB /* UrlStorage.swift */,
 			);
 			path = Advanced;
@@ -397,13 +397,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5A6DA6E1EF69B40006F0D05 /* ControlPreferencesView.xib in Resources */,
-				B55B17861F7AE4900031E1AB /* AdvancedPreferencesView.xib in Resources */,
+				B5FB1A7A2299A97C00181806 /* AdvancedPreferencesView.xib in Resources */,
 				B5A7DB391E80635500404A5E /* Defaults.plist in Resources */,
 				B5D669F61E9992650050EE2A /* dsa_pub.pem in Resources */,
 				B577D32D1E3D53F100B5A99F /* Assets.xcassets in Resources */,
 				B5EEAE331F0024B3004FCF33 /* No State (GB).png in Resources */,
 				B53E8D951EF4139C000D8800 /* Credits.rtf in Resources */,
-				B5737C541F92941D00380F4C /* AboutPanel.xib in Resources */,
+				B5FB1A7D2299A98A00181806 /* AboutPanel.xib in Resources */,
 				B54FA4A41F01B5150062E470 /* StateView.xib in Resources */,
 				B5A6DA6B1EF69B3C006F0D05 /* GeneralPreferencesView.xib in Resources */,
 				B577D32B1E3D53F100B5A99F /* Document.xib in Resources */,
@@ -642,6 +642,22 @@
 				B5A7C9141F0457720019D877 /* Base */,
 			);
 			name = LoadState.xib;
+			sourceTree = "<group>";
+		};
+		B5FB1A7C2299A97C00181806 /* AdvancedPreferencesView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5FB1A7B2299A97C00181806 /* Base */,
+			);
+			name = AdvancedPreferencesView.xib;
+			sourceTree = "<group>";
+		};
+		B5FB1A7F2299A98A00181806 /* AboutPanel.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5FB1A7E2299A98A00181806 /* Base */,
+			);
+			name = AboutPanel.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
