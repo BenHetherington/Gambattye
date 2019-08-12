@@ -102,14 +102,14 @@
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © Ben10do.
+	<string>Copyright © Ben Hetherington.
 Licenced under the GNU General Public Licence v2.</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>Gambattye.Application</string>
 	<key>SUFeedURL</key>
-	<string>https://ben10do.github.io/Gambattye/appcast.xml</string>
+	<string>https://ben-h.uk/Gambattye/appcast.xml</string>
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
 </dict>

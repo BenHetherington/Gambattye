@@ -477,7 +477,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion dev\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+			shellScript = "/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion dev\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B5C594431F52D006006ED438 /* Reset Copyright Message */ = {
@@ -492,7 +492,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "copyright=\"Copyright © Ben10do.\\nLicenced under the GNU General Public Licence v2.\"\n/usr/libexec/PlistBuddy -c \"Set :NSHumanReadableCopyright $copyright\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+			shellScript = "copyright=\"Copyright © Ben Hetherington.\\nLicenced under the GNU General Public Licence v2.\"\n/usr/libexec/PlistBuddy -c \"Set :NSHumanReadableCopyright $copyright\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B5F4882F1F0EEB96002FBF38 /* Set Copyright Year */ = {
@@ -507,7 +507,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "year=$(git log -1 --date=format:%Y --format=%ad)\ncopyright=\"Copyright © 2017-$year Ben10do.\\nLicenced under the GNU General Public Licence v2.\"\n/usr/libexec/PlistBuddy -c \"Set :NSHumanReadableCopyright $copyright\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"";
+			shellScript = "year=$(git log -1 --date=format:%Y --format=%ad)\ncopyright=\"Copyright © 2017-$year Ben Hetherington.\\nLicenced under the GNU General Public Licence v2.\"\n/usr/libexec/PlistBuddy -c \"Set :NSHumanReadableCopyright $copyright\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FB5AFB4EC76EFB60532F373B /* [CP] Embed Pods Frameworks */ = {
