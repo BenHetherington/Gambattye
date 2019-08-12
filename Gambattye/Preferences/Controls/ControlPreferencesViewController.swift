@@ -2,8 +2,8 @@
 //  ControlPreferencesViewController.swift
 //  Gambattye
 //
-//  Created by Ben10do on 09/04/2017.
-//  Copyright © 2017 Ben10do. Licenced under the GPL v2 (see LICENCE).
+//  Created by Ben Hetherington on 09/04/2017.
+//  Copyright © 2017 Ben Hetherington. Licenced under the GPL v2 (see LICENCE).
 //
 
 import Cocoa
