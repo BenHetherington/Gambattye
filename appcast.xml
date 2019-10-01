@@ -2,10 +2,10 @@
 
 <item>
 <title>Gambattye 0.3</title>
-<sparkle:releaseNotesLink>https://ben10do.github.io/Gambattye/release-notes/0.3.html</sparkle:releaseNotesLink>
+<sparkle:releaseNotesLink>https://ben-h.uk/Gambattye/release-notes/0.3.html</sparkle:releaseNotesLink>
 <pubDate>Wed, 30 Aug 2017 22:03:11 +0100</pubDate>
 <sparkle:minimumSystemVersion>10.11</sparkle:minimumSystemVersion>
-<enclosure url="https://github.com/Ben10do/Gambattye/releases/download/v0.3/Gambattye-0.3.zip" sparkle:version="67" sparkle:shortVersionString="0.3" length="5949418" type="application/octet-stream" sparkle:dsaSignature="MC0CFB2ng6Si6eSyNRE8Auou513ahaSrAhUAu8P4Hsot4jHK16por0F61d3qoFg="/>
+<enclosure url="https://github.com/BenHetherington/Gambattye/releases/download/v0.3/Gambattye-0.3.zip" sparkle:version="67" sparkle:shortVersionString="0.3" length="5949418" type="application/octet-stream" sparkle:dsaSignature="MC0CFB2ng6Si6eSyNRE8Auou513ahaSrAhUAu8P4Hsot4jHK16por0F61d3qoFg="/>
 </item>
 
 </channel></rss>
