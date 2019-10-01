@@ -1,14 +1,14 @@
-# [![Gambattye](https://ben10do.github.io/Gambattye/repo-images/banner-0.3.png)](https://github.com/Ben10do/Gambattye)
-[![Travis](https://img.shields.io/travis/Ben10do/Gambattye.svg?label=Gambattye&style=for-the-badge)](https://travis-ci.org/Ben10do/Gambattye) [![Travis](https://img.shields.io/travis/Ben10do/gambatte.svg?label=libgambatte&style=for-the-badge)](https://travis-ci.org/Ben10do/gambatte)
+# [![Gambattye](https://ben-h.uk/Gambattye/repo-images/banner-0.3.png)](https://github.com/BenHetherington/Gambattye)
+[![Travis](https://img.shields.io/travis/BenHetherington/Gambattye.svg?label=Gambattye&style=for-the-badge)](https://travis-ci.org/BenHetherington/Gambattye) [![Travis](https://img.shields.io/travis/BenHetherington/gambatte.svg?label=libgambatte&style=for-the-badge)](https://travis-ci.org/BenHetherington/gambatte)
 
-Gambattye is a Game Boy Color emulator for macOS, powered by a [fork of Gambatte](https://github.com/Ben10do/gambatte).
+Gambattye is a Game Boy Color emulator for macOS, powered by a [fork of Gambatte](https://github.com/BenHetherington/gambatte).
 
 Unlike Gambatte's QT or SDL frontends, Gambattye is a native Mac app. It also contains additional features, including support for larger saves (used, for example, by Little Sound DJ).
 
 At present, the core emulation works nicely. Some features you might expect may not yet be available, but I'm planning on implementing these (as well as some features you might not expect) in due course.
 
 ## Installing
-To download Gambattye, head to the [releases page](https://github.com/Ben10do/Gambattye/releases) and grab the latest version.
+To download Gambattye, head to the [releases page](https://github.com/BenHetherington/Gambattye/releases) and grab the latest version.
 
 Download the top zip file, decompress it if necessary, and then drag Gambattye to your Applications folder.
 
@@ -41,4 +41,4 @@ Unlike some other emulators, Gambatte included, there's no concept of a 'selecte
 You can also go through the menus to glance at your save states, including a preview image for each. From the menu bar, go to the Emulation menu, and choose either 'Load State…' or 'Save State…'.
 
 ## Licence
-Gambattye is licenced under the GNU General Public Licence v2. See the about box and [LICENCE](https://github.com/Ben10do/Gambattye/blob/master/LICENCE) for more information.
+Gambattye is licenced under the GNU General Public Licence v2. See the about box and [LICENCE](https://github.com/BenHetherington/Gambattye/blob/master/LICENCE) for more information.
