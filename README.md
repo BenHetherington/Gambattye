@@ -1,5 +1,5 @@
 # [![Gambattye](https://ben-h.uk/Gambattye/repo-images/banner-0.3.png)](https://github.com/BenHetherington/Gambattye)
-[![Travis](https://img.shields.io/travis/BenHetherington/Gambattye.svg?label=Gambattye&style=for-the-badge)](https://travis-ci.org/BenHetherington/Gambattye) [![Travis](https://img.shields.io/travis/BenHetherington/gambatte.svg?label=libgambatte&style=for-the-badge)](https://travis-ci.org/BenHetherington/gambatte)
+[![Travis](https://img.shields.io/travis/com/BenHetherington/Gambattye/master.svg?label=Gambattye&style=for-the-badge)](https://travis-ci.com/BenHetherington/Gambattye) [![Travis](https://img.shields.io/travis/BenHetherington/gambatte/master.svg?label=libgambatte&style=for-the-badge)](https://travis-ci.com/BenHetherington/gambatte)
 
 Gambattye is a Game Boy Color emulator for macOS, powered by a [fork of Gambatte](https://github.com/BenHetherington/gambatte).
 
